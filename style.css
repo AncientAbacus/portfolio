@@ -22,7 +22,7 @@ nav {
   padding: 0.5em; /* Add padding around the nav */
   margin-bottom: 1em; /* Separate the nav from the content below */
   border-bottom: 1px solid oklch(80% 3% 200); /* Subtle bottom border for separation */
-  background-color: #f8f9fa; /* Optional: Background color for the nav */
+  background-color: rgb(20, 186, 20); /* Optional: Background color for the nav */
 }
 
 nav a {
@@ -34,7 +34,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #f0f0f0; /* Optional: Add a hover effect */
+  background-color: #bb2121; /* Optional: Add a hover effect */
   border-radius: 4px; /* Optional: Rounded corners for hover effect */
 }
 
@@ -81,7 +81,7 @@ textarea {
 button {
   cursor: pointer; /* Change cursor to pointer on hover */
   background-color: #007bff; /* Button background color */
-  color: white; /* Button text color */
+  color: rgb(167, 52, 52); /* Button text color */
   border: none; /* Remove border */
   border-radius: 4px; /* Round corners of the button */
   padding: 0.75em; /* Add padding inside the button */
