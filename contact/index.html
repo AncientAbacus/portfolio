@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <h1>Contact</h1>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Contact</h1>
+    </header>
+    
     <nav>
         <ul>
           <li><a href="https://AncientAbacus.github.io/portfolio/contact/">Contact</a></li>
@@ -12,21 +18,22 @@
           <li><a href="https://AncientAbacus.github.io/portfolio/resume/">Resume</a></li>
           <li><a href="https://AncientAbacus.github.io/portfolio/">Home</a></li>
         </ul>
-      </nav>
-    <form action="mailto:gangelici@ucsd.edu" method="POST" enctype="text/plain">
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
-        
-        <label for="subject">Subject:</label>
-        <input id="subject" name="subject" required><br><br>
-        
-        <label for="body">Message:</label><br>
-        <textarea id="body" name="body" rows="5" cols="30" required></textarea><br><br>
-        
-        <button>Send</button>
-    </form>
-</head>
-<body>
-    
+    </nav>
+
+    <section>
+        <h2>Get in Touch</h2>
+        <form action="mailto:gangelici@ucsd.edu" method="POST" enctype="text/plain">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="subject">Subject:</label>
+            <input id="subject" name="subject" required><br><br>
+            
+            <label for="body">Message:</label><br>
+            <textarea id="body" name="body" rows="5" cols="30" required></textarea><br><br>
+            
+            <button type="submit">Send</button>
+        </form>
+    </section>
 </body>
 </html>

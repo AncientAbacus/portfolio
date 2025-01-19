@@ -1,55 +1,57 @@
 body {
-    /* Set line height to 1.5 times the font size
-         and use the OS’s UI font as the website font
-       */
-    font: 100%/1.5 system-ui;
-    max-width: 100ch;
-    margin-inline: auto;
-    padding: 1em;
-    nav ul {
-      display: contents; /* Removes layout and styling for the <ul> */
-    }
-      
-    nav li {
-      display: contents; /* Removes layout and styling for the <li> */
-    }
-    
-    nav {
-      display: flex; /* Enable Flexbox layout */
-      justify-content: space-between; /* Evenly space out links */
-      align-items: center; /* Vertically align links */
-      padding: 0.5em; /* Add padding around the nav */
-      margin-bottom: 1em; /* Separate the nav from the content below */
-      border-bottom: 1px solid oklch(80% 3% 200); /* Subtle bottom border for separation */
-      background-color: #f8f9fa; /* Optional: Background color for the nav */
-    }
-    
-    nav a {
-      flex: 1; /* Make all links take up equal space */
-      text-align: center; /* Center the text within each link */
-      text-decoration: none; /* Remove the underline */
-      color: inherit; /* Use the parent’s text color */
-      padding: 0.5em; /* Add spacing inside each link */
-    }
-    
-    nav a:hover {
-      background-color: #f0f0f0; /* Optional: Add a hover effect */
-      border-radius: 4px; /* Optional: Rounded corners for hover effect */
-    }
-    
-    nav a.current {
-      font-weight: bold; /* Make the current page visually distinct */
-      color: #007bff; /* Optional: Set a distinct color */
-      border-bottom: 0.4em solid oklch(90% 3% 200); /* Thick bottom border for the current page */
-      padding-bottom: 0.1em; /* Reduce padding-bottom to offset border height */
-    }
-    
-    :root {
-      --color-accent: oklch(65% 50% 0); /* Define the accent color */
-    }
-    
-    html {
-      accent-color: var(--color-accent); /* Set the accent color for interactive elements */
-    }
-  }
+  /* Set line height to 1.5 times the font size and use the OS’s UI font as the website font */
+  font: 100%/1.5 system-ui;
+  max-width: 100ch;
+  margin-inline: auto;
+  padding: 1em;
+  box-sizing: border-box; /* Ensure padding and border are part of the element's width and height */
+}
 
+nav ul {
+  display: contents; /* Removes layout and styling for the <ul> */
+}
+
+nav li {
+  display: contents; /* Removes layout and styling for the <li> */
+}
+
+nav {
+  display: flex; /* Enable Flexbox layout */
+  justify-content: space-between; /* Evenly space out links */
+  align-items: center; /* Vertically align links */
+  padding: 0.5em; /* Add padding around the nav */
+  margin-bottom: 1em; /* Separate the nav from the content below */
+  border-bottom: 1px solid oklch(80% 3% 200); /* Subtle bottom border for separation */
+  background-color: #f8f9fa; /* Optional: Background color for the nav */
+}
+
+nav a {
+  flex: 1; /* Make all links take up equal space */
+  text-align: center; /* Center the text within each link */
+  text-decoration: none; /* Remove the underline */
+  color: inherit; /* Use the parent’s text color */
+  padding: 0.5em; /* Add spacing inside each link */
+}
+
+nav a:hover {
+  background-color: #f0f0f0; /* Optional: Add a hover effect */
+  border-radius: 4px; /* Optional: Rounded corners for hover effect */
+}
+
+nav a.current {
+  font-weight: bold; /* Make the current page visually distinct */
+  color: #007bff; /* Optional: Set a distinct color */
+  border-bottom: 0.4em solid oklch(90% 3% 200); /* Thick bottom border for the current page */
+  padding-bottom: 0.1em; /* Reduce padding-bottom to offset border height */
+}
+
+:root {
+  --color-accent: oklch(65% 50% 0); /* Define the accent color */
+}
+
+html {
+  accent-color: var(--color-accent); /* Set the accent color for interactive elements */
+}
+input, textarea, button {
+  font: inherit; /* Inherit font styles from the parent element */
+}
