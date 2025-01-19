@@ -52,6 +52,144 @@ nav a.current {
 html {
   accent-color: var(--color-accent); /* Set the accent color for interactive elements */
 }
+
+form {
+  display: grid; /* Use grid layout for the form */
+  grid-template-columns: 1fr; /* One column, the form controls will stretch across the whole width */
+  gap: 1em; /* Add spacing between form controls */
+}
+
+label {
+  display: grid; /* Make labels grid containers */
+  grid-template-columns: subgrid; /* Use subgrid to inherit the form's grid layout */
+  grid-column: 1 / -1; /* Make labels span the whole row */
+  margin-block: 0.5em; /* Add vertical spacing around the label */
+}
+
 input, textarea, button {
-  font: inherit; /* Inherit font styles from the parent element */
+  display: block; /* Form controls should behave like block-level elements */
+  width: 100%; /* Make sure form controls take up the full width of their container */
+  box-sizing: border-box; /* Include padding and border in the element’s total width */
+  padding: 0.5em; /* Add padding inside the form controls */
+  margin-bottom: 1em; /* Add margin below the form controls */
+}
+
+textarea {
+  resize: vertical; /* Allow users to resize the textarea vertically */
+}
+
+button {
+  cursor: pointer; /* Change cursor to pointer on hover */
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Round corners of the button */
+  padding: 0.75em; /* Add padding inside the button */
+  font-size: 1em; /* Set font size */
+  grid-column: 1 / -1; /* Make the button span the whole row */
+}
+
+button:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}
+
+.projects {
+  display: grid; /* Make .projects a grid container */
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Flexible number of columns */
+  gap: 1em; /* Spacing between the grid items */
+  padding: 1em; /* Optional: Padding inside the container */
+}
+
+.project-item {
+  display: grid; /* Make each project item a grid container */
+  grid-template-rows: subgrid; /* Use subgrid for rows to align with the parent grid */
+  gap: 1em; /* Optional: Add spacing inside each project item */
+}
+
+.project-item h2 {
+  margin: 0; /* Remove excessive margin from the heading */
+  grid-column: 1 / -1; /* Make the heading span the full width of the grid */
+}
+
+.project-item img {
+  grid-column: 1 / -1; /* Make the image span the full width of the grid */
+  width: 100%; /* Ensure the image takes up the full width of the container */
+  height: auto; /* Maintain the aspect ratio of the image */
+}
+
+/* Optional: Styling for the articles */
+.project-item p {
+  margin: 0;
+  grid-column: 1 / -1; /* Make paragraph span the full width */
+}
+
+/* General heading styles */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1; /* Slightly smaller leading (line height) for headings */
+  text-wrap: balance; /* Prevent uneven text wrapping */
+}
+
+/* Make <h1> significantly larger */
+h1 {
+  font-size: 4em; /* 400% of body text size */
+  margin-bottom: 0.5em; /* Space below the heading */
+}
+
+/* Make <h2> large enough to contrast with <h1> */
+h2 {
+  font-size: 2.5em; /* 250% of body text size */
+  margin-bottom: 0.5em; /* Space below the heading */
+}
+
+/* Optional: Adjust other heading sizes to maintain hierarchy */
+h3 {
+  font-size: 1.75em; /* 175% of body text size */
+}
+
+h4 {
+  font-size: 1.5em; /* 150% of body text size */
+}
+
+h5 {
+  font-size: 1.25em; /* 125% of body text size */
+}
+
+h6 {
+  font-size: 1em; /* 100% of body text size (same as body) */
+}
+
+/* Optional: Add margins for spacing between headings */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.resume {
+  display: grid; /* Make .projects a grid container */
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Flexible number of columns */
+  gap: 1em; /* Spacing between the grid items */
+  padding: 1em; /* Optional: Padding inside the container */
+}
+
+.resumes-item {
+  display: grid; /* Make each project item a grid container */
+  grid-template-rows: subgrid; /* Use subgrid for rows to align with the parent grid */
+  gap: 1em; /* Optional: Add spacing inside each project item */
+}
+
+.resumes-item h2 {
+  margin: 0; /* Remove excessive margin from the heading */
+  grid-column: 1 / -1; /* Make the heading span the full width of the grid */
+}
+
+.resumes-item img {
+  grid-column: 1 / -1; /* Make the image span the full width of the grid */
+  width: 100%; /* Ensure the image takes up the full width of the container */
+  height: auto; /* Maintain the aspect ratio of the image */
+}
+
+/* Optional: Styling for the articles */
+.resumes-item p {
+  margin: 0;
+  grid-column: 1 / -1; /* Make paragraph span the full width */
 }
