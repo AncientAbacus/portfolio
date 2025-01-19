@@ -3,4 +3,15 @@ body {
          and use the OS’s UI font as the website font
        */
     font: 100%/1.5 system-ui;
+    max-width: 100ch;
+    margin-inline: auto;
+    padding: 1em;
   }
+
+nav ul {
+  display: contents; /* Removes layout and styling for the <ul> */
+}
+  
+nav li {
+  display: contents; /* Removes layout and styling for the <li> */
+}
