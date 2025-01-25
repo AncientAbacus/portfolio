@@ -1,3 +1,23 @@
+html {
+  --color-accent: oklch(90% 100% 180);
+  --border-color: oklch(50% 10% 200 / 40%);
+  color-scheme: light dark
+}
+
+.color-scheme {
+  position: absolute;
+  top: -1rem;          
+  right: 1rem;
+  padding: 1em;        
+  font-size: 80%;     
+  font-family: inherit;
+}
+
+.color-scheme select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
 body {
   font: 100%/1.5 system-ui;
   max-width: 100ch;
@@ -21,7 +41,7 @@ nav {
   align-items: center;
   padding: 0em;
   margin-bottom: 0em;
-  border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom: 1px solid var(--border-color);
   }
 
 nav a {
@@ -36,17 +56,13 @@ nav a:hover {
   font-weight: bold;
   border-bottom: 0.4em solid var(--color-accent);
   padding-bottom: 0em;
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 nav a.current {
   font-weight: bold;
   border-bottom: 0.4em solid oklch(80% 3% 200);
   padding-bottom: 0em;
-}
-
-:root {
-  --color-accent: oklch(90% 100% 180);
 }
 
 form {
@@ -103,7 +119,6 @@ h6 {
 
 .resume {
   line-height: 1.5;
-  color: #333;
   max-width: 800px;
   margin: 2em auto;
   padding: 1em;
@@ -138,7 +153,6 @@ h6 {
 
 .resume time {
   font-style: italic;
-  color: #666;
 }
 
 .resume strong {
@@ -156,3 +170,4 @@ h6 {
 .resume header {
   margin-bottom: 0.5em;
 }
+

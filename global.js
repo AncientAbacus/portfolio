@@ -3,3 +3,67 @@ console.log("IT'S ALIVE!");
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
+
+let pages = [
+    { url: '', title: 'Home' },
+    { url: 'projects/', title: 'Projects' },
+    { url: 'resume/', title: 'Resume' },
+    { url: 'contact/', title: 'Contact' },
+    { url: 'https://github.com/AncientAbacus', title: 'Github' }
+];
+
+let nav = document.createElement('nav');
+document.body.prepend(nav);
+
+const ARE_WE_HOME = document.documentElement.classList.contains('home');
+
+for (let p of pages) {
+    let url = p.url;
+    url = !ARE_WE_HOME && !url.startsWith('http') ? '../' + url : url;
+    let title = p.title;
+    let a = document.createElement('a');
+    a.href = url;
+    a.textContent = title;
+    a.classList.toggle(
+        'current',
+        a.host === location.host && a.pathname === location.pathname
+    );
+    if (a.host !== location.host) {
+        a.target = "_blank";
+    }
+    nav.append(a);
+}
+
+document.body.insertAdjacentHTML(
+    'afterbegin',
+    `
+      <label class="color-scheme">
+        Theme:
+        <select>
+            <option> Automatic
+            <option> Light
+            <option> Dark
+        </select>
+      </label>`
+);
+
+const select = document.querySelector('.color-scheme select');
+
+if ("colorScheme" in localStorage) {
+    const savedScheme = localStorage.colorScheme;
+    document.documentElement.style.setProperty('color-scheme', savedScheme);
+    select.value = savedScheme;
+  } else {
+    document.documentElement.style.setProperty('color-scheme', 'auto');
+    select.value = 'auto';
+  }
+
+select.addEventListener('input', function (event) {
+    console.log('color scheme changed to', event.target.value);
+    document.documentElement.style.setProperty('color-scheme', event.target.value);
+    localStorage.colorScheme = event.target.value;
+  });
+
+
+
+
