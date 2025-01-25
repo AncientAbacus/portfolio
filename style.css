@@ -1,195 +1,158 @@
 body {
-  /* Set line height to 1.5 times the font size and use the OS’s UI font as the website font */
   font: 100%/1.5 system-ui;
   max-width: 100ch;
   margin-inline: auto;
   padding: 1em;
-  box-sizing: border-box; /* Ensure padding and border are part of the element's width and height */
+  box-sizing: border-box;
+  accent-color: var(--color-accent);
 }
 
 nav ul {
-  display: contents; /* Removes layout and styling for the <ul> */
+  display: contents;
 }
 
 nav li {
-  display: contents; /* Removes layout and styling for the <li> */
+  display: contents;
 }
 
 nav {
-  display: flex; /* Enable Flexbox layout */
-  justify-content: space-between; /* Evenly space out links */
-  align-items: center; /* Vertically align links */
-  padding: 0.5em; /* Add padding around the nav */
-  margin-bottom: 1em; /* Separate the nav from the content below */
-  border-bottom: 1px solid oklch(80% 3% 200); /* Subtle bottom border for separation */
-  background-color: rgb(20, 186, 20); /* Optional: Background color for the nav */
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0em;
+  margin-bottom: 0em;
+  border-bottom: 1px solid oklch(80% 3% 200);
+  }
 
 nav a {
-  flex: 1; /* Make all links take up equal space */
-  text-align: center; /* Center the text within each link */
-  text-decoration: none; /* Remove the underline */
-  color: inherit; /* Use the parent’s text color */
-  padding: 0.5em; /* Add spacing inside each link */
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 0em;
 }
 
 nav a:hover {
-  background-color: #bb2121; /* Optional: Add a hover effect */
-  border-radius: 4px; /* Optional: Rounded corners for hover effect */
+  font-weight: bold;
+  border-bottom: 0.4em solid var(--color-accent);
+  padding-bottom: 0em;
+  background-color: oklch(from var(--color-accent) 95% 5% h);
 }
 
 nav a.current {
-  font-weight: bold; /* Make the current page visually distinct */
-  color: #007bff; /* Optional: Set a distinct color */
-  border-bottom: 0.4em solid oklch(90% 3% 200); /* Thick bottom border for the current page */
-  padding-bottom: 0.1em; /* Reduce padding-bottom to offset border height */
+  font-weight: bold;
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  padding-bottom: 0em;
 }
 
 :root {
-  --color-accent: oklch(65% 50% 0); /* Define the accent color */
-}
-
-html {
-  accent-color: var(--color-accent); /* Set the accent color for interactive elements */
+  --color-accent: oklch(90% 100% 180);
 }
 
 form {
-  display: grid; /* Use grid layout for the form */
-  grid-template-columns: 1fr; /* One column, the form controls will stretch across the whole width */
-  gap: 1em; /* Add spacing between form controls */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
 }
 
 label {
-  display: grid; /* Make labels grid containers */
-  grid-template-columns: subgrid; /* Use subgrid to inherit the form's grid layout */
-  grid-column: 1 / -1; /* Make labels span the whole row */
-  margin-block: 0.5em; /* Add vertical spacing around the label */
-}
-
-input, textarea, button {
-  display: block; /* Form controls should behave like block-level elements */
-  width: 100%; /* Make sure form controls take up the full width of their container */
-  box-sizing: border-box; /* Include padding and border in the element’s total width */
-  padding: 0.5em; /* Add padding inside the form controls */
-  margin-bottom: 1em; /* Add margin below the form controls */
-}
-
-textarea {
-  resize: vertical; /* Allow users to resize the textarea vertically */
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1 / -1;
 }
 
 button {
-  cursor: pointer; /* Change cursor to pointer on hover */
-  background-color: #007bff; /* Button background color */
-  color: rgb(167, 52, 52); /* Button text color */
-  border: none; /* Remove border */
-  border-radius: 4px; /* Round corners of the button */
-  padding: 0.75em; /* Add padding inside the button */
-  font-size: 1em; /* Set font size */
-  grid-column: 1 / -1; /* Make the button span the whole row */
+  grid-column: 1 / -1;
 }
 
-button:hover {
-  background-color: #0056b3; /* Change background color on hover */
+.projects{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  gap: 1em;
 }
 
-.projects {
-  display: grid; /* Make .projects a grid container */
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Flexible number of columns */
-  gap: 1em; /* Spacing between the grid items */
-  padding: 1em; /* Optional: Padding inside the container */
-}
-
-.project-item {
-  display: grid; /* Make each project item a grid container */
-  grid-template-rows: subgrid; /* Use subgrid for rows to align with the parent grid */
-  gap: 1em; /* Optional: Add spacing inside each project item */
-}
-
-.project-item h2 {
-  margin: 0; /* Remove excessive margin from the heading */
-  grid-column: 1 / -1; /* Make the heading span the full width of the grid */
-}
-
-.project-item img {
-  grid-column: 1 / -1; /* Make the image span the full width of the grid */
-  width: 100%; /* Ensure the image takes up the full width of the container */
-  height: auto; /* Maintain the aspect ratio of the image */
-}
-
-/* Optional: Styling for the articles */
-.project-item p {
-  margin: 0;
-  grid-column: 1 / -1; /* Make paragraph span the full width */
-}
-
-/* General heading styles */
 h1, h2, h3, h4, h5, h6 {
-  line-height: 1.1; /* Slightly smaller leading (line height) for headings */
-  text-wrap: balance; /* Prevent uneven text wrapping */
+  line-height: 1.1;
+  text-wrap: balance;
+  margin: 0.5em 0;
+  font-weight: bold;
 }
 
-/* Make <h1> significantly larger */
 h1 {
-  font-size: 4em; /* 400% of body text size */
-  margin-bottom: 0.5em; /* Space below the heading */
+  font-size: 400%;
 }
 
-/* Make <h2> large enough to contrast with <h1> */
 h2 {
-  font-size: 2.5em; /* 250% of body text size */
-  margin-bottom: 0.5em; /* Space below the heading */
+  font-size: 200%;
 }
 
-/* Optional: Adjust other heading sizes to maintain hierarchy */
 h3 {
-  font-size: 1.75em; /* 175% of body text size */
+  font-size: 150%;
 }
-
 h4 {
-  font-size: 1.5em; /* 150% of body text size */
+  font-size: 125%;
 }
-
 h5 {
-  font-size: 1.25em; /* 125% of body text size */
+  font-size: 110%;
 }
-
 h6 {
-  font-size: 1em; /* 100% of body text size (same as body) */
-}
-
-/* Optional: Add margins for spacing between headings */
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  font-size: 100%;
 }
 
 .resume {
-  display: grid; /* Make .projects a grid container */
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Flexible number of columns */
-  gap: 1em; /* Spacing between the grid items */
-  padding: 1em; /* Optional: Padding inside the container */
+  line-height: 1.5;
+  color: #333;
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 1em;
 }
 
-.resumes-item {
-  display: grid; /* Make each project item a grid container */
-  grid-template-rows: subgrid; /* Use subgrid for rows to align with the parent grid */
-  gap: 1em; /* Optional: Add spacing inside each project item */
+.resume h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid #007BFF;
+  padding-bottom: 0.2em;
+  margin-bottom: 1em;
 }
 
-.resumes-item h2 {
-  margin: 0; /* Remove excessive margin from the heading */
-  grid-column: 1 / -1; /* Make the heading span the full width of the grid */
+.resume h3 {
+  font-size: 1.5rem;
+  color: #0056b3;
+  margin: 0.5em 0;
 }
 
-.resumes-item img {
-  grid-column: 1 / -1; /* Make the image span the full width of the grid */
-  width: 100%; /* Ensure the image takes up the full width of the container */
-  height: auto; /* Maintain the aspect ratio of the image */
+.resume p,
+.resume ul {
+  margin: 0.5em 0;
 }
 
-/* Optional: Styling for the articles */
-.resumes-item p {
-  margin: 0;
-  grid-column: 1 / -1; /* Make paragraph span the full width */
+.resume ul {
+  list-style-type: disc;
+  padding-left: 2em;
+}
+
+.resume li {
+  margin-bottom: 0.5em;
+}
+
+.resume time {
+  font-style: italic;
+  color: #666;
+}
+
+.resume strong {
+  font-weight: bold;
+}
+
+.resume section {
+  margin-bottom: 2em;
+}
+
+.resume article {
+  margin-bottom: 1.5em;
+}
+
+.resume header {
+  margin-bottom: 0.5em;
 }
