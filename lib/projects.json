@@ -1,62 +1,86 @@
 [
     {
-        "title": "Lorem ipsum dolor sit.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente fugiat impedit vel ipsam incidunt ipsum enim velit voluptatum laborum, adipisci odio architecto amet iure sed at molestiae reprehenderit aspernatur illum?"
+        "title": "Sun-Lovers Special",
+        "year": 2025,
+        "image": "/images/Project1.png",
+        "imageClass": "project-image",
+        "description": "An analytical deep dive into how solar energy adoption correlates with regional climate, income levels, and policy incentives. This project uses geospatial data and machine learning to predict solar panel viability across different states."
     },
     {
-        "title": "Aut sapiente laudantium nisi!",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Laudantium non dicta alias minima tempore reprehenderit veniam, quo necessitatibus molestias excepturi inventore repellendus aliquid officiis commodi voluptates aliquam consequuntur fugit, pariatur tenetur facilis. Dicta fugit aliquid praesentium hic velit."
+        "title": "Bad Graphs, Worse Intentions",
+        "year": 2025,
+        "image": "/images/thoracic.png",
+        "imageClass": "project-image",
+        "description": "An exploration of misleading data visualizations used in media and research. This project categorizes deceptive graphing techniques and evaluates their impact using sentiment analysis and survey-based experiments."
     },
     {
-        "title": "Consequuntur reiciendis molestias odio.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Nostrum eos voluptas cupiditate quo iste necessitatibus voluptatum expedita voluptates laborum veritatis, quos architecto vitae omnis laudantium eum excepturi itaque veniam. Facere iusto ullam, possimus omnis reiciendis illum? Laudantium, repellat."
+        "title": "Pokémon: Parsed",
+        "year": 2025,
+        "image": "/images/dancinglitwicks.gif",
+        "imageClass": "project-image",
+        "description": "A natural language processing (NLP) and computer vision approach to analyzing Pokémon game mechanics, player behavior, and competitive metagame trends using battle logs and forum discussions."
     },
     {
-        "title": "Distinctio quis magni eum.",
+        "title": "Electrical Grid Americana",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Maxime quis possimus quae id a molestias porro sunt enim animi reprehenderit dolore similique error commodi cum earum, vel placeat dolorem? Ut quasi vero exercitationem atque excepturi cum temporibus libero."
+        "imageClass": "project-image",
+        "description": "An infrastructure-focused data visualization project mapping the aging U.S. electrical grid, identifying outage-prone regions, and forecasting future failures using time-series analysis."
     },
     {
-        "title": "Quo voluptate ab voluptates.",
+        "title": "Viewpoint Obstruction: Clouds or Fog?",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Est voluptates sit beatae numquam ab assumenda corporis repellendus error nulla. Doloremque necessitatibus omnis at dicta quasi facilis molestiae, eveniet fugiat provident illo, hic alias voluptatem ducimus dolorum labore aperiam?"
+        "imageClass": "project-image",
+        "description": "A machine learning model trained on weather satellite data to classify obstructions in aerial imagery, distinguishing between cloud cover and fog to improve flight navigation predictions."
     },
     {
-        "title": "Officia sapiente rem quia.",
+        "title": "Hit Me. BLACKJACK",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Iusto numquam enim exercitationem ad dicta aliquid illo? Quas, nesciunt. Natus commodi ea, eveniet doloribus doloremque id eos sint necessitatibus atque porro aspernatur, vitae modi quis dolores? Nisi, fuga quas?"
+        "imageClass": "project-image",
+        "description": "A reinforcement learning project that trains AI agents to optimize Blackjack strategy, comparing different counting systems and probability-based decision-making techniques."
     },
     {
-        "title": "Veritatis sunt quaerat possimus.",
+        "title": "Who's Driving this Thing?",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Ullam expedita voluptates ducimus. Aliquid, debitis dicta atque praesentium, facere sed accusamus voluptatibus temporibus libero error velit, porro exercitationem? Doloremque minima porro error distinctio voluptates neque culpa aspernatur quasi nulla?"
+        "imageClass": "project-image",
+        "description": "An autonomous driving analysis that evaluates decision-making in self-driving cars, comparing human and AI driving styles using real-world sensor data from simulated urban environments."
     },
     {
-        "title": "Dignissimos sequi quaerat nobis.",
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Magnam, maxime incidunt. Adipisci blanditiis, modi voluptates, ipsam eos culpa consequatur fuga totam voluptatum debitis dolorum officiis, esse sunt atque provident repellat aspernatur est nemo aut commodi! Quo, dolore libero."
+        "title": "Deloitte Data Dive",
+        "year": 2025,
+        "image": "/images/delot.webp",
+        "imageClass": "project-image",
+        "description": "A comprehensive statistical analysis of socioeconomic factors influencing substance abuse in young adults, leveraging public health datasets and predictive modeling."
     },
     {
-        "title": "Velit ipsam quis distinctio.",
+        "title": "Every City is a Walkable City if You're Strong Enough",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Autem amet non iusto! At error tempora quisquam ducimus odio recusandae dignissimos fugiat placeat consequuntur dolorem iure eveniet, cumque unde nobis quo impedit. Commodi repudiandae corrupti non cumque modi ducimus?"
+        "imageClass": "project-image",
+        "description": "A study on urban walkability and its correlation with health outcomes, measuring pedestrian accessibility and infrastructure quality across major U.S. cities."
     },
     {
         "title": "Sunt tempore natus quidem.",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "imageClass": "project-image",
         "description": "Veniam voluptas nihil dolorem fuga optio aspernatur architecto harum! Enim, facilis debitis perferendis distinctio magni nemo labore expedita provident eius saepe placeat natus iste nesciunt laboriosam aliquam sapiente ipsam esse?"
     },
     {
         "title": "Commodi, dolorem. Illo, a!",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "imageClass": "project-image",
         "description": "Minus aliquid nulla tempore praesentium alias, quia quisquam. Est amet earum et beatae numquam deserunt atque cupiditate pariatur nemo illum minima consequatur necessitatibus exercitationem consequuntur, debitis vel. Consequatur, omnis quaerat."
     },
     {
         "title": "Fuga distinctio odio hic.",
+        "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "imageClass": "project-image",
         "description": "Nihil voluptates similique fuga aspernatur nam recusandae cupiditate ipsum reiciendis facere unde. Dolore recusandae corporis pariatur, cumque asperiores repellendus ullam repudiandae optio laudantium blanditiis! Laboriosam accusantium dignissimos repudiandae tenetur consequuntur."
     }
 ]
