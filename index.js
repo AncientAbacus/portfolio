@@ -11,17 +11,19 @@ async function loadLatestProjects() {
 }
 
 async function loadGitHubStats() {
-    const username = 'AncientAbacus';
-    const response = await fetch(`https://api.github.com/users/${username}`);
-    const data = await response.json();
+    const githubData = await fetchGitHubData('AncientAbacus');
+    const profileStats = document.querySelector('#profile-stats');
 
-    const profileStats = document.getElementById('profile-stats');
-    profileStats.innerHTML = `
-        <p><strong>Username:</strong> ${data.login}</p>
-        <p><strong>Public Repos:</strong> ${data.public_repos}</p>
-        <p><strong>Followers:</strong> ${data.followers}</p>
-        <p><strong>Following:</strong> ${data.following}</p>
-    `;
+    if (profileStats) {
+        profileStats.innerHTML = `
+            <dl>
+                <dt>Public Repos:</dt><dd>${githubData.public_repos}</dd>
+                <dt>Public Gists:</dt><dd>${githubData.public_gists}</dd>
+                <dt>Followers:</dt><dd>${githubData.followers}</dd>
+                <dt>Following:</dt><dd>${githubData.following}</dd>
+            </dl>
+        `;
+    }
 }
 
 loadLatestProjects();
