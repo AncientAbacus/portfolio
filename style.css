@@ -171,3 +171,7 @@ h6 {
   margin-bottom: 0.5em;
 }
 
+.project-image {
+  width: 300px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
