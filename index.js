@@ -1,7 +1,7 @@
-import { fetchJSON, renderProjects, fetchGitHubData } from './global.js';
+import { fetchJSON, renderProjects, fetchGitHubData } from '/global.js';
 
 async function loadLatestProjects() {
-    const projects = await fetchJSON('./lib/projects.json');
+    const projects = await fetchJSON('/lib/projects.json');
     const latestProjects = projects.slice(0, 3); // Get first 3 projects
 
     const projectsContainer = document.querySelector('.projects');
@@ -11,7 +11,7 @@ async function loadLatestProjects() {
 }
 
 async function loadGitHubStats() {
-    const githubData = await fetchGitHubData('your-github-username');
+    const githubData = await fetchGitHubData('AncientAbacus');
     const profileStats = document.querySelector('#profile-stats');
 
     if (profileStats) {
