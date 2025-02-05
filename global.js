@@ -83,16 +83,10 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   if (!containerElement) return;
   
   containerElement.innerHTML = ''; // Clear existing content
-  console.log("test")
-
-  const basePath = window.location.hostname === '127.0.0.1' ? '' : '/portfolio';
-
-  console.log(window.location.hostname)
-
-  console.log(basePath)
 
   projects.forEach(project => {
       const article = document.createElement('article');
+      console.log(project.image)
       article.innerHTML = `
           <${headingLevel}>${project.title}</${headingLevel}>
           <img src="${project.image}" class="${project.imageClass}" alt="${project.title}">
