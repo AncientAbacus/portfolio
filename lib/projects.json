@@ -9,14 +9,14 @@
     {
         "title": "Bad Graphs, Worse Intentions",
         "year": 2025,
-        "image": "./images/thoracic.png",
+        "image": "/images/thoracic.png",
         "imageClass": "project-image",
         "description": "An exploration of misleading data visualizations used in media and research. This project categorizes deceptive graphing techniques and evaluates their impact using sentiment analysis and survey-based experiments."
     },
     {
         "title": "Pokémon: Parsed",
         "year": 2024,
-        "image": "./images/dancinglitwicks.gif",
+        "image": "/images/dancinglitwicks.gif",
         "imageClass": "project-image",
         "description": "A natural language processing (NLP) and computer vision approach to analyzing Pokémon game mechanics, player behavior, and competitive metagame trends using battle logs and forum discussions."
     },
