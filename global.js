@@ -64,25 +64,36 @@ select.addEventListener('input', function (event) {
     document.documentElement.style.setProperty('color-scheme', event.target.value);
     localStorage.colorScheme = event.target.value;
   });
-  
+
+// Fetch JSON function
 export async function fetchJSON(url) {
-    const response = await fetch(url);
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    return await response.json();
+  try {
+      const response = await fetch(url);
+      if (!response.ok) {
+          throw new Error(`Failed to fetch: ${response.statusText}`);
+      }
+      return await response.json();
+  } catch (error) {
+      console.error('Error fetching or parsing JSON:', error);
+  }
 }
 
-export function renderProjects(projects, container, headingTag) {
-    projects.forEach(project => {
-        const projectElement = document.createElement('div');
-        projectElement.innerHTML = `
-            <${headingTag}>${project.title}</${headingTag}>
-            <img src="${project.image}" class="${project.imageClass}" alt="${project.title}">
-            <p>${project.description}</p>
-        `;
-        container.appendChild(projectElement);
-    });
+// Render Projects Function
+export function renderProjects(projects, containerElement, headingLevel = 'h2') {
+  if (!containerElement) return;
+  
+  containerElement.innerHTML = ''; // Clear existing content
+  console.log("test")
+
+  projects.forEach(project => {
+      const article = document.createElement('article');
+      article.innerHTML = `
+          <${headingLevel}>${project.title}</${headingLevel}>
+          <img src="${project.image}" class="${project.imageClass}" alt="${project.title}">
+          <p>${project.description}</p>
+      `;
+      containerElement.appendChild(article);
+  });
 }
 
 // Fetch GitHub Data
