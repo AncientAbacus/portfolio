@@ -2,21 +2,21 @@
     {
         "title": "Sun-Lovers Special",
         "year": 2025,
-        "image": "/portfolio/images/Project1.png",
+        "image": "/portfolio/portfolio/images/Project1.png",
         "imageClass": "project-image",
         "description": "An analytical deep dive into how solar energy adoption correlates with regional climate, income levels, and policy incentives. This project uses geospatial data and machine learning to predict solar panel viability across different states."
     },
     {
         "title": "Bad Graphs, Worse Intentions",
         "year": 2025,
-        "image": "/portfolio/images/thoracic.png",
+        "image": "./images/thoracic.png",
         "imageClass": "project-image",
         "description": "An exploration of misleading data visualizations used in media and research. This project categorizes deceptive graphing techniques and evaluates their impact using sentiment analysis and survey-based experiments."
     },
     {
         "title": "Pokémon: Parsed",
         "year": 2024,
-        "image": "/portfolio/images/dancinglitwicks.gif",
+        "image": "../images/dancinglitwicks.gif",
         "imageClass": "project-image",
         "description": "A natural language processing (NLP) and computer vision approach to analyzing Pokémon game mechanics, player behavior, and competitive metagame trends using battle logs and forum discussions."
     },
@@ -51,7 +51,7 @@
     {
         "title": "Deloitte Data Dive",
         "year": 2022,
-        "image": "/portfolio/images/delot.webp",
+        "image": "/images/delot.webp",
         "imageClass": "project-image",
         "description": "A comprehensive statistical analysis of socioeconomic factors influencing substance abuse in young adults, leveraging public health datasets and predictive modeling."
     },
