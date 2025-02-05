@@ -10,6 +10,8 @@ async function loadLatestProjects() {
     }
 }
 
+
+
 async function loadGitHubStats() {
     const githubData = await fetchGitHubData('AncientAbacus');
     const profileStats = document.querySelector('#profile-stats');
