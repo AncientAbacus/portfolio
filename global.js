@@ -85,7 +85,11 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   containerElement.innerHTML = ''; // Clear existing content
   console.log("test")
 
-  const basePath = window.location.hostname === 'localhost' ? '' : '/portfolio';
+  const basePath = window.location.hostname === '127.0.0.1' ? '' : '/portfolio';
+
+  console.log(window.location.hostname)
+
+  console.log(basePath)
 
   projects.forEach(project => {
       const article = document.createElement('article');
