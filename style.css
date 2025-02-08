@@ -204,7 +204,6 @@ svg {
   gap: 0.5em; /* Space between legend items */
   list-style: none;
   padding: 1em;
-  background-color: #f8f8f8;
   border: 2px solid #ccc;
   border-radius: 12px;
   width: fit-content;
@@ -225,3 +224,41 @@ svg {
   background-color: var(--color);
   border-radius: 50%;
 }
+
+.searchBar {
+  width: 100%; /* Full width */
+  padding: 10px; /* Padding inside the input */
+  font-size: 16px; /* Font size */
+  border: 1px solid #ccc; /* Border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin: 20px 0; /* Margin around the input */
+}
+
+&:has(path:hover) {
+  path:not(:hover) {
+    opacity: 0.5;
+  }
+  path {
+    transition: 300ms;
+    cursor: pointer;
+  }
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+.legend-item.selected .swatch {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
+
+
