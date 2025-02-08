@@ -175,3 +175,53 @@ h6 {
   width: 300px; /* Adjust the width as needed */
   height: auto; /* Maintain aspect ratio */
 }
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+
+  overflow: visible;
+}
+
+.container {
+  display: flex; /* Aligns pie chart and legend side by side */
+  align-items: center; /* Vertically centers items */
+  gap: 1.5em; /* Space between pie chart and legend */
+  justify-content: center; /* Centers content horizontally */
+  padding: 1em;
+}
+
+svg {
+  max-width: 200px; /* Limits the pie chart size */
+  height: auto;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr)); /* Responsive 2x3 grid */
+  grid-auto-rows: auto;
+  gap: 0.5em; /* Space between legend items */
+  list-style: none;
+  padding: 1em;
+  background-color: #f8f8f8;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  width: fit-content;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-right: 3em;
+}
+
+.legend-item .swatch {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: var(--color);
+  border-radius: 50%;
+}
