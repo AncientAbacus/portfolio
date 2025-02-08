@@ -9,7 +9,7 @@
     {
         "title": "Bad Graphs, Worse Intentions",
         "year": 2025,
-        "image": "../images/thoracic.png",
+        "image": "portfolio/images/thoracic.png",
         "imageClass": "project-image",
         "description": "An exploration of misleading data visualizations used in media and research. This project categorizes deceptive graphing techniques and evaluates their impact using sentiment analysis and survey-based experiments."
     },
