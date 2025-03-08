@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta - Repository Evolution Visualization</title>
+    <meta name="description" content="Interactive visualization of repository evolution and file size changes over time.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Meta</h1>
+    </header>
+    
+    <main>
+        <!-- Scrollytelling Container -->
+        <div id="scrollytelling">
+            <div id="scroll-container" role="region" aria-label="Commit history scrollytelling">
+                <div id="spacer"></div>
+                <div id="items-container"></div>
+            </div>
+            <div id="chart"></div>
+        </div>
+
+        <section id="file-size-visualization">
+            <h2>File Size Evolution</h2>
+            <div id="file-scrollytelling"></div>
+            <dl class="files">
+                <div>
+                    <dt><code>example.js</code></dt>
+                    <dd>150 lines</dd>
+                </div>
+            </dl>
+        </section>
+    </main>
+    
+    <script src="main.js" type="module"></script>
+</body>
+</html>
