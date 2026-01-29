@@ -1,40 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="meta-page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meta - Repository Evolution Visualization</title>
-    <meta name="description" content="Interactive visualization of repository evolution and file size changes over time.">
+    <title>Meta - Gino Angelici</title>
+    <meta name="description" content="Interactive visualization of GitHub activity, repository analytics, and coding journey.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ginoangelici.com/meta/">
+    <meta property="og:title" content="Meta - GitHub Analytics Dashboard">
+    <meta property="og:description" content="Interactive visualization of repository evolution and coding activity.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://d3js.org/d3.v7.min.js" integrity="sha384-..." crossorigin="anonymous"></script>
+    <script src="../global.js" type="module"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Meta</h1>
-    </header>
-    
-    <main>
-        <!-- Scrollytelling Container -->
-        <div id="scrollytelling">
-            <div id="scroll-container" role="region" aria-label="Commit history scrollytelling">
-                <div id="spacer"></div>
-                <div id="items-container"></div>
+    <div class="meta-bento-grid">
+        <!-- Header -->
+        <div class="bento-box meta-header">
+            <div class="header-content">
+                <h1>GitHub Analytics</h1>
+                <p class="meta-subtitle">Real-time visualization of my coding journey</p>
             </div>
-            <div id="chart"></div>
+            <a href="https://github.com/AncientAbacus" target="_blank" class="github-link">
+                <span class="gh-icon">GH</span>
+                <span>@AncientAbacus</span>
+            </a>
         </div>
 
-        <section id="file-size-visualization">
-            <h2>File Size Evolution</h2>
-            <div id="file-scrollytelling"></div>
-            <dl class="files">
-                <div>
-                    <dt><code>example.js</code></dt>
-                    <dd>150 lines</dd>
+        <!-- Loading overlay -->
+        <div id="loading-overlay" class="loading-overlay">
+            <div class="loader">
+                <div class="loader-ring"></div>
+                <span>Fetching GitHub Data...</span>
+            </div>
+        </div>
+
+        <!-- Total Repos - Big animated number -->
+        <div class="bento-box meta-stat stat-repos" data-tilt>
+            <div class="stat-icon">📦</div>
+            <div class="stat-content">
+                <span class="stat-number" id="stat-repos">0</span>
+                <span class="stat-label">Repositories</span>
+            </div>
+            <div class="stat-glow"></div>
+        </div>
+
+        <!-- Total Stars -->
+        <div class="bento-box meta-stat stat-stars" data-tilt>
+            <div class="stat-icon">⭐</div>
+            <div class="stat-content">
+                <span class="stat-number" id="stat-stars">0</span>
+                <span class="stat-label">Stars Earned</span>
+            </div>
+            <div class="stat-glow"></div>
+        </div>
+
+        <!-- Total Forks -->
+        <div class="bento-box meta-stat stat-forks" data-tilt>
+            <div class="stat-icon">🍴</div>
+            <div class="stat-content">
+                <span class="stat-number" id="stat-forks">0</span>
+                <span class="stat-label">Forks</span>
+            </div>
+            <div class="stat-glow"></div>
+        </div>
+
+        <!-- Languages Count -->
+        <div class="bento-box meta-stat stat-languages" data-tilt>
+            <div class="stat-icon">💻</div>
+            <div class="stat-content">
+                <span class="stat-number" id="stat-languages">0</span>
+                <span class="stat-label">Languages</span>
+            </div>
+            <div class="stat-glow"></div>
+        </div>
+
+        <!-- Language Donut Chart - Large -->
+        <div class="bento-box meta-languages">
+            <h2>Language Distribution</h2>
+            <div class="donut-container">
+                <svg id="language-donut" viewBox="0 0 300 300"></svg>
+                <div class="donut-center">
+                    <span class="donut-percentage" id="top-language-pct">0%</span>
+                    <span class="donut-label" id="top-language-name">Loading...</span>
                 </div>
-            </dl>
-        </section>
-    </main>
-    
+            </div>
+            <div id="language-bars" class="language-bars"></div>
+        </div>
+
+        <!-- Activity Heatmap -->
+        <div class="bento-box meta-heatmap">
+            <h2>Repository Activity</h2>
+            <div class="heatmap-container">
+                <svg id="activity-heatmap" viewBox="0 0 600 120"></svg>
+            </div>
+            <div class="heatmap-legend">
+                <span>Less</span>
+                <div class="heatmap-scale">
+                    <div class="scale-block" style="--level: 0"></div>
+                    <div class="scale-block" style="--level: 1"></div>
+                    <div class="scale-block" style="--level: 2"></div>
+                    <div class="scale-block" style="--level: 3"></div>
+                    <div class="scale-block" style="--level: 4"></div>
+                </div>
+                <span>More</span>
+            </div>
+        </div>
+
+        <!-- Coding Timeline -->
+        <div class="bento-box meta-timeline">
+            <h2>Coding Journey</h2>
+            <div class="timeline-stats">
+                <div class="timeline-stat">
+                    <span class="timeline-number" id="years-coding">0</span>
+                    <span class="timeline-label">Years on GitHub</span>
+                </div>
+                <div class="timeline-stat">
+                    <span class="timeline-number" id="repos-per-year">0</span>
+                    <span class="timeline-label">Repos/Year Avg</span>
+                </div>
+            </div>
+            <svg id="timeline-spark" viewBox="0 0 400 80"></svg>
+        </div>
+
+        <!-- Top Repository Card -->
+        <div class="bento-box meta-top-repo" id="top-repo-card">
+            <div class="top-repo-badge">⭐ Top Repository</div>
+            <h3 id="top-repo-name">Loading...</h3>
+            <p id="top-repo-desc">Fetching repository data...</p>
+            <div class="top-repo-stats">
+                <span class="repo-stat-item"><span class="stat-icon-small">⭐</span> <span id="top-repo-stars">0</span></span>
+                <span class="repo-stat-item"><span class="stat-icon-small">🍴</span> <span id="top-repo-forks">0</span></span>
+                <span class="repo-stat-item" id="top-repo-lang">—</span>
+            </div>
+        </div>
+
+        <!-- Repository Size Visualization -->
+        <div class="bento-box meta-sizes">
+            <h2>Repository Sizes</h2>
+            <div id="size-bubbles" class="size-bubbles"></div>
+        </div>
+
+        <!-- Recent Repos List -->
+        <div class="bento-box meta-recent">
+            <h2>Recently Updated</h2>
+            <div id="recent-repos" class="recent-repos-list"></div>
+        </div>
+
+        <!-- Tech Radar -->
+        <div class="bento-box meta-radar">
+            <h2>Tech Radar</h2>
+            <div class="radar-container">
+                <svg id="tech-radar" viewBox="0 0 300 300"></svg>
+            </div>
+        </div>
+
+        <!-- Commit Activity -->
+        <div class="bento-box meta-commits">
+            <h2>Code Activity</h2>
+            <div class="commit-bars" id="commit-bars"></div>
+        </div>
+
+        <!-- Profile Card -->
+        <div class="bento-box meta-profile">
+            <div class="profile-avatar">
+                <img src="https://github.com/AncientAbacus.png" alt="GitHub Avatar" id="github-avatar">
+            </div>
+            <div class="profile-info">
+                <h3>AncientAbacus</h3>
+                <p class="profile-joined">Member since <span id="join-date">2020</span></p>
+            </div>
+            <div class="profile-followers">
+                <div class="follower-stat">
+                    <span id="followers-count">0</span>
+                    <span>Followers</span>
+                </div>
+                <div class="follower-stat">
+                    <span id="following-count">0</span>
+                    <span>Following</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Globe/Network -->
+        <div class="bento-box meta-network">
+            <canvas id="particle-canvas"></canvas>
+            <div class="network-overlay">
+                <span class="network-text">Connected</span>
+            </div>
+        </div>
+    </div>
+
     <script src="main.js" type="module"></script>
 </body>
 </html>

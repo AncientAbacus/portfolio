@@ -1,85 +1,209 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="resume-page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gino Angelici: Resume</title>
+    <title>Resume - Gino Angelici</title>
+    <meta name="description" content="Data Science professional from UC San Diego with experience at Scripps Institution of Oceanography, Deloitte, and HDSI Autonomous Vehicle Development. Skills in Python, Machine Learning, and Data Visualization.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ginoangelici.com/resume/">
+    <meta property="og:title" content="Resume - Gino Angelici">
+    <meta property="og:description" content="Data Science professional with experience in Python, Machine Learning, and Data Visualization.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
     <link href="../style.css" rel="stylesheet">
-    <script src="../global.js" type="module" ></script>
+    <script src="../global.js" type="module"></script>
 </head>
 <body>
-    <header>
-        <h1>Gino's Resume</h1>
-    </header>
+    <div class="resume-bento-grid">
+        <!-- Header with name and download -->
+        <div class="bento-box resume-header">
+            <div class="resume-header-content">
+                <h1>Gino Angelici</h1>
+                <p class="resume-subtitle">Data Science Professional</p>
+            </div>
+            <a href="/resume/Gino_Angelici_DSC.pdf" download class="download-btn">
+                <span class="download-icon">↓</span>
+                <span>Download PDF</span>
+            </a>
+        </div>
 
-    <div class="resume">
-        <main>
-            <section>
-                <header>
-                    <h2>Education</h2>
-                </header>
-                <p>
-                    <strong>University of California, San Diego</strong> — B.S. Data Science, 
-                    <time datetime="2025">2025</time><br>
-                    <em>Data Science Student Society Member</em><br>
-                    <em>Provost Honors</em>
-                </p>
-            </section>
+        <!-- Quick Links -->
+        <div class="bento-box resume-links">
+            <a href="https://github.com/ancientabacus" target="_blank" class="resume-link-item">
+                <span class="link-icon">GH</span>
+            </a>
+            <a href="https://linkedin.com/in/gino-angelici" target="_blank" class="resume-link-item">
+                <span class="link-icon">IN</span>
+            </a>
+            <a href="mailto:gino.angelici@gmail.com" class="resume-link-item">
+                <span class="link-icon">@</span>
+            </a>
+        </div>
 
-            <section>
-                <header>
-                    <h2>Experience</h2>
-                </header>
-                
-                <article>
-                    <header>
-                        <h3>Data Research Assistant</h3>
-                        <time datetime="2022-09">September 2022</time> – 
-                        <time datetime="2023-12">December 2023</time><br>
-                        <strong>Scripps Institution of Oceanography</strong>
-                    </header>
-                    <p>
-                        Developed extensive R and Python algorithms to analyze and process over 70 years of airport data from 60 coastal airports to determine correlation between coastal low cloud coverage and climate change. Worked with industry-leading researchers and scientists to revise and publish globally impactful peer-reviewed research papers using statistical analysis and models. Employed regression models, best-fit lines, line charts, heat maps, and bar charts.
-                    </p>
-                </article>
-                
-                <article>
-                    <header>
-                        <h3>Deloitte Data Science Consultant Mentee</h3>
-                        <time datetime="2023-03">March 2023</time> – 
-                        <time datetime="2023-06">June 2023</time>
-                    </header>
-                    <p>
-                        Worked in a small group on a large dataset from USDHHS to help the NIH determine traits that lead to drug abuse in youth. Used models such as logistic regression and XGBoost to find top factors leading to drug use among teens and young adults. Illustrated expansive knowledge of plotly and seaborn visualizations when presented with real-life, unpredictable data.
-                    </p>
-                </article>
-            </section>
+        <!-- Education -->
+        <div class="bento-box resume-education">
+            <h2>Education</h2>
+            <div class="edu-content">
+                <div class="edu-header">
+                    <h3>UC San Diego</h3>
+                    <span class="edu-date">Spring 2025</span>
+                </div>
+                <p class="edu-degree">B.S. Data Science</p>
+                <p class="edu-location">San Diego, CA</p>
+            </div>
+        </div>
 
-            <section>
-                <header>
-                    <h2>Personal Projects</h2>
-                </header>
-                <ul>
-                    <li><strong>Internet Movie Database Search Engine</strong> (November 2022): Developed a search algorithm using binary search trees in Java to search over 627,000 movies by title, studio, and ratings.</li>
-                    <li><strong>Connect Four Bot</strong> (August 2022): Created a reinforcement learning program to simulate an optimized opponent in Connect Four.</li>
-                    <li><strong>House Price Modeling</strong> (August 2022): Used Random Forest models to predict house prices in suburban Iowa with minimum mean absolute error.</li>
-                    <li><strong>Blackjack Simulator</strong> (May 2022): Created a Python-based Blackjack game with ASCII visualization for enhanced player experience.</li>
-                </ul>
-            </section>
+        <!-- Coursework -->
+        <div class="bento-box resume-coursework">
+            <h2>Coursework</h2>
+            <div class="course-tags">
+                <span class="course-tag">Machine Learning</span>
+                <span class="course-tag">AI</span>
+                <span class="course-tag">Computer Vision</span>
+                <span class="course-tag">Data Structures</span>
+                <span class="course-tag">Algorithms</span>
+                <span class="course-tag">Probability</span>
+                <span class="course-tag">Statistics</span>
+                <span class="course-tag">Linear Algebra</span>
+                <span class="course-tag">Recommender Sys</span>
+                <span class="course-tag">Web Mining</span>
+            </div>
+        </div>
 
-            <section>
-                <header>
-                    <h2>Skills</h2>
-                </header>
-                <ul>
-                    <li>Python, NumPy, Pandas, SciKit-Learn, R, MATLAB, SQL</li>
-                    <li>Machine Learning, XGBoost, Data Analytics, Prediction Modeling</li>
-                    <li>Matplotlib, Plotly, Seaborn</li>
-                    <li>Sorting Algorithms, Search Trees, Statistics, Linear Algebra</li>
-                    <li>Git, Business Analytics, EDA</li>
-                </ul>
-            </section>
-        </main>
+        <!-- Languages -->
+        <div class="bento-box resume-skills resume-languages">
+            <h2>Languages</h2>
+            <div class="skill-list">
+                <span class="skill-item primary">Python</span>
+                <span class="skill-item primary">SQL</span>
+                <span class="skill-item">Java</span>
+                <span class="skill-item">C/C++</span>
+                <span class="skill-item">R</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">TypeScript</span>
+                <span class="skill-item">HTML/CSS</span>
+                <span class="skill-item">ROS2</span>
+                <span class="skill-item">Linux</span>
+            </div>
+        </div>
+
+        <!-- Libraries/Frameworks -->
+        <div class="bento-box resume-skills resume-frameworks">
+            <h2>Libraries & Frameworks</h2>
+            <div class="skill-list">
+                <span class="skill-item primary">PyTorch</span>
+                <span class="skill-item primary">TensorFlow</span>
+                <span class="skill-item primary">Pandas</span>
+                <span class="skill-item">Keras</span>
+                <span class="skill-item">Scikit-learn</span>
+                <span class="skill-item">XGBoost</span>
+                <span class="skill-item">NumPy</span>
+                <span class="skill-item">PySpark</span>
+                <span class="skill-item">D3.js</span>
+                <span class="skill-item">React</span>
+                <span class="skill-item">Hugging Face</span>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="bento-box resume-skills resume-tools">
+            <h2>Tools & Platforms</h2>
+            <div class="skill-list">
+                <span class="skill-item primary">AWS</span>
+                <span class="skill-item primary">Docker</span>
+                <span class="skill-item">Git/GitHub</span>
+                <span class="skill-item">Spark</span>
+                <span class="skill-item">Kafka</span>
+                <span class="skill-item">Airflow</span>
+                <span class="skill-item">Snowflake</span>
+                <span class="skill-item">BigQuery</span>
+                <span class="skill-item">Tableau</span>
+                <span class="skill-item">MongoDB</span>
+            </div>
+        </div>
+
+        <!-- Experience Header -->
+        <div class="bento-box resume-exp-header">
+            <h2>Experience</h2>
+            <div class="exp-timeline">
+                <span class="timeline-dot active"></span>
+                <span class="timeline-line"></span>
+            </div>
+        </div>
+
+        <!-- Experience 1 - HDSI -->
+        <div class="bento-box resume-experience exp-featured">
+            <div class="exp-badge">1st Place Winner</div>
+            <div class="exp-header">
+                <h3>Data Research Assistant</h3>
+                <span class="exp-date">Sep 2024 – Jun 2025</span>
+            </div>
+            <p class="exp-company">Halicioğlu Data Science Institute</p>
+            <p class="exp-subtitle">Autonomous Vehicle Development</p>
+            <ul class="exp-bullets">
+                <li>Optimized gradient descent steering algorithms for figure-8 track cornering with Docker environments for GPS/IMU integration</li>
+                <li>Won 1st place at Purdue's collegiate go kart race — 30 mph with autonomous emergency braking</li>
+            </ul>
+        </div>
+
+        <!-- Experience 2 - Scripps -->
+        <div class="bento-box resume-experience">
+            <div class="exp-header">
+                <h3>Data Research Assistant</h3>
+                <span class="exp-date">Sep 2022 – Sep 2024</span>
+            </div>
+            <p class="exp-company">Scripps Institution of Oceanography</p>
+            <ul class="exp-bullets">
+                <li>Developed Python pipelines analyzing 70+ years of climate data from 60 coastal airports</li>
+                <li>Applied PCA, polynomial & ridge regression for cloud cover/temperature correlations</li>
+                <li>Co-authored published research linking urbanization to local temperature changes</li>
+            </ul>
+        </div>
+
+        <!-- Experience 3 - Deloitte -->
+        <div class="bento-box resume-experience">
+            <div class="exp-header">
+                <h3>Data Science Intern</h3>
+                <span class="exp-date">Mar 2023 – Jun 2023</span>
+            </div>
+            <p class="exp-company">Deloitte</p>
+            <ul class="exp-bullets">
+                <li>Analyzed USDHHS data to identify traits leading to drug abuse using XGBoost & regression models</li>
+                <li>Presented findings to senior management with Seaborn & Plotly visualizations</li>
+            </ul>
+        </div>
+
+        <!-- Highlights box -->
+        <div class="bento-box resume-highlights">
+            <h2>Highlights</h2>
+            <div class="highlight-items">
+                <div class="highlight-item">
+                    <span class="highlight-number">70+</span>
+                    <span class="highlight-label">Years of Data Analyzed</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">16M+</span>
+                    <span class="highlight-label">Rows Processed</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">1st</span>
+                    <span class="highlight-label">Place at Purdue</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Projects CTA -->
+        <div class="bento-box resume-cta">
+            <a href="/projects/" class="cta-link">
+                <span>View My Projects</span>
+                <span class="arrow">→</span>
+            </a>
+        </div>
     </div>
 </body>
 </html>

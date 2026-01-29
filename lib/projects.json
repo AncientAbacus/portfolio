@@ -1,5 +1,26 @@
 [
     {
+        "title": "\"Organ\" Trail: Personalized Predictive Health Platform",
+        "year": 2025,
+        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Organ+Trail",
+        "imageClass": "project-image",
+        "description": "Developed scrollable experience to effectively display unique types of surgeries based on hospital database. Built website using D3.js and HTML to facilitate smooth user interaction with personalized histograms and ridgeline plots."
+    },
+    {
+        "title": "Autonomous Vehicle Development - 1st Place at Purdue",
+        "year": 2025,
+        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Autonomous+Vehicle",
+        "imageClass": "project-image",
+        "description": "Optimized gradient descent-based steering algorithms for figure-8 track cornering. Maintained Docker environments for GPS and IMU integration across scaled car prototypes. Won 1st place at Purdue's collegiate go kart race achieving 30 mph with autonomous emergency braking."
+    },
+    {
+        "title": "Recurrent Neural Network Research Paper",
+        "year": 2025,
+        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=RNN+Research",
+        "imageClass": "project-image",
+        "description": "Engineered custom character-level Recurrent Neural Network in TensorFlow to perform word sentiment analysis on Reddit comments from its top 200 communities using different batch sizes and sequence lengths. Wrote academic paper about how a uniquely genuine and personal tone is reflected in novel generated comments."
+    },
+    {
         "title": "Sun-Lovers Special",
         "year": 2025,
         "image": "/images/Project1.png",
@@ -9,78 +30,78 @@
     {
         "title": "Bad Graphs, Worse Intentions",
         "year": 2025,
-        "image": "portfolio/images/thoracic.png",
+        "image": "/images/thoracic.png",
         "imageClass": "project-image",
         "description": "An exploration of misleading data visualizations used in media and research. This project categorizes deceptive graphing techniques and evaluates their impact using sentiment analysis and survey-based experiments."
     },
     {
+        "title": "Seal Health Prediction Model",
+        "year": 2024,
+        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Seal+Health",
+        "imageClass": "project-image",
+        "description": "Analyzed environmental and economic datasets to assess human impact on Alaskan seal populations. Performed ridge regression, PCA, and correlation heat map analysis to identify statistically significant factors affecting seal weight, notably human ocean traffic and development."
+    },
+    {
+        "title": "Amazon Purchase Dataset Analysis",
+        "year": 2024,
+        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Amazon+Analysis",
+        "imageClass": "project-image",
+        "description": "Utilized AWS Lambda and Apache Spark to data engineer over 16 million rows of Amazon purchases. Practiced optimized batch calculations of root mean square error, one-hot encoding, PCA, all within AWS API and EC2."
+    },
+    {
+        "title": "San Diego Parking Analysis",
+        "year": 2024,
+        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=SD+Parking",
+        "imageClass": "project-image",
+        "description": "Developed dynamic D3.js-based website to help San Diego drivers find the best time and place to park. Created intuitive daily frequency histograms and a geospatial parking meter heat map."
+    },
+    {
+        "title": "Scripps Climate Research",
+        "year": 2024,
+        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Climate+Research",
+        "imageClass": "project-image",
+        "description": "Developed Python pipelines to analyze 70+ years of climate data from 60 coastal airports, including sliding-window PCA, polynomial and ridge regression to model correlations between low cloud cover and temperature trends. Results linked urbanization to reduced cloud thickness."
+    },
+    {
         "title": "Pokémon: Parsed",
         "year": 2024,
-        "image": "../images/dancinglitwicks.gif",
+        "image": "/images/dancinglitwicks.gif",
         "imageClass": "project-image",
         "description": "A natural language processing (NLP) and computer vision approach to analyzing Pokémon game mechanics, player behavior, and competitive metagame trends using battle logs and forum discussions."
     },
     {
+        "title": "Deloitte Drug Abuse Analysis",
+        "year": 2023,
+        "image": "/images/delot.webp",
+        "imageClass": "project-image",
+        "description": "Determined traits that lead to drug abuse in young adults by analyzing USDHHS data using XGBoost, ridge, and linear regression models. Presented findings to senior Deloitte management with intuitive visual graphics using Seaborn and plotly."
+    },
+    {
+        "title": "Every City is a Walkable City if You're Strong Enough",
+        "year": 2023,
+        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Walkability",
+        "imageClass": "project-image",
+        "description": "A study on urban walkability and its correlation with health outcomes, measuring pedestrian accessibility and infrastructure quality across major U.S. cities."
+    },
+    {
         "title": "Electrical Grid Americana",
         "year": 2022,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Electrical+Grid",
         "imageClass": "project-image",
         "description": "An infrastructure-focused data visualization project mapping the aging U.S. electrical grid, identifying outage-prone regions, and forecasting future failures using time-series analysis."
     },
     {
         "title": "Viewpoint Obstruction: Clouds or Fog?",
         "year": 2022,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Cloud+Detection",
         "imageClass": "project-image",
         "description": "A machine learning model trained on weather satellite data to classify obstructions in aerial imagery, distinguishing between cloud cover and fog to improve flight navigation predictions."
     },
     {
         "title": "Hit Me. BLACKJACK",
         "year": 2021,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Blackjack+AI",
         "imageClass": "project-image",
         "description": "A reinforcement learning project that trains AI agents to optimize Blackjack strategy, comparing different counting systems and probability-based decision-making techniques."
-    },
-    {
-        "title": "Who's Driving this Thing?",
-        "year": 2025,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "imageClass": "project-image",
-        "description": "An autonomous driving analysis that evaluates decision-making in self-driving cars, comparing human and AI driving styles using real-world sensor data from simulated urban environments."
-    },
-    {
-        "title": "Deloitte Data Dive",
-        "year": 2022,
-        "image": "../images/delot.webp",
-        "imageClass": "project-image",
-        "description": "A comprehensive statistical analysis of socioeconomic factors influencing substance abuse in young adults, leveraging public health datasets and predictive modeling."
-    },
-    {
-        "title": "Every City is a Walkable City if You're Strong Enough",
-        "year": 2023,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "imageClass": "project-image",
-        "description": "A study on urban walkability and its correlation with health outcomes, measuring pedestrian accessibility and infrastructure quality across major U.S. cities."
-    },
-    {
-        "title": "Sunt tempore natus quidem.",
-        "year": 2019,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "imageClass": "project-image",
-        "description": "Veniam voluptas nihil dolorem fuga optio aspernatur architecto harum! Enim, facilis debitis perferendis distinctio magni nemo labore expedita provident eius saepe placeat natus iste nesciunt laboriosam aliquam sapiente ipsam esse?"
-    },
-    {
-        "title": "Commodi, dolorem. Illo, a!",
-        "year": 2020,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "imageClass": "project-image",
-        "description": "Minus aliquid nulla tempore praesentium alias, quia quisquam. Est amet earum et beatae numquam deserunt atque cupiditate pariatur nemo illum minima consequatur necessitatibus exercitationem consequuntur, debitis vel. Consequatur, omnis quaerat."
-    },
-    {
-        "title": "Fuga distinctio odio hic.",
-        "year": 2020,
-        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "imageClass": "project-image",
-        "description": "Nihil voluptates similique fuga aspernatur nam recusandae cupiditate ipsum reiciendis facere unde. Dolore recusandae corporis pariatur, cumque asperiores repellendus ullam repudiandae optio laudantium blanditiis! Laboriosam accusantium dignissimos repudiandae tenetur consequuntur."
     }
 ]

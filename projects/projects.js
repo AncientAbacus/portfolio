@@ -1,22 +1,4 @@
 import { fetchJSON, renderProjects } from '../global.js';
-
-async function loadProjects() {
-    const projects = await fetchJSON('../lib/projects.json');
-    const projectsContainer = document.querySelector('.projects');
-    
-    if (projectsContainer) {
-        renderProjects(projects, projectsContainer, 'h2');
-    }
-
-    // Update project count
-    const projectTitle = document.querySelector('.projects-title');
-    if (projectTitle) {
-        projectTitle.textContent = `Projects (${projects.length})`;
-    }
-}
-
-loadProjects();
-
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 
 
@@ -65,11 +47,22 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7.9.0/+esm";
 //     renderProjects(filteredProjects, projectsContainer, 'h2');
 // });
 
-// Refactor all plotting into one function
-let projects = await fetchJSON("../lib/projects.json"); // fetch your project data
+// Fetch projects once and initialize page
+let projects = await fetchJSON("../lib/projects.json");
 let projectsContainer = document.querySelector('.projects');
 
-function renderPieChart(projectsGiven, projects) {
+// Initial render of all projects
+if (projectsContainer) {
+    renderProjects(projects, projectsContainer, 'h2');
+}
+
+// Update project count
+const projectTitle = document.querySelector('.projects-title');
+if (projectTitle) {
+    projectTitle.textContent = `Projects (${projects.length})`;
+}
+
+function renderPieChart(projectsGiven) {
     // re-calculate rolled data
     let newRolledData = d3.rollups(
       projectsGiven,
@@ -131,8 +124,7 @@ function renderPieChart(projectsGiven, projects) {
   }
   
 // Call this function on page load
-
-renderPieChart(projects, projects);
+renderPieChart(projects);
 
   
 let query = '';

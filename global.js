@@ -1,5 +1,3 @@
-console.log("IT'S ALIVE!");
-
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
@@ -9,8 +7,9 @@ let pages = [
     { url: 'projects/', title: 'Projects' },
     { url: 'resume/', title: 'Resume' },
     { url: 'contact/', title: 'Contact' },
-    { url: 'https://github.com/AncientAbacus', title: 'Github' },
-    { url: 'meta/', title: 'Meta' }
+    { url: 'meta/', title: 'Meta' },
+    { url: 'https://github.com/AncientAbacus', title: 'Github' }
+
 ];
 
 let nav = document.createElement('nav');
@@ -71,11 +70,12 @@ export async function fetchJSON(url) {
   try {
       const response = await fetch(url);
       if (!response.ok) {
-          throw new Error(`Failed to fetch: ${response.statusText}`);
+          throw new Error(`Failed to fetch ${url}: ${response.statusText}`);
       }
       return await response.json();
   } catch (error) {
       console.error('Error fetching or parsing JSON:', error);
+      throw error; // Re-throw to allow caller to handle
   }
 }
 
@@ -87,7 +87,6 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
   projects.forEach(project => {
       const article = document.createElement('article');
-      console.log(project.image)
       article.innerHTML = `
           <${headingLevel}>${project.title}</${headingLevel}>
           <img src="${project.image}" class="${project.imageClass}" alt="${project.title}">

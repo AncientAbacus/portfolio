@@ -1,180 +1,586 @@
-// Global variables
-let commits = []; // This should be populated with your actual commit data
-let commitProgress = 100;
-let selectedCommits = [];
-let timeScale, xScale, yScale, rScale;
+// GitHub Analytics Dashboard
+const GITHUB_USERNAME = 'AncientAbacus';
 
-// Function to load commit data
-async function loadCommitData() {
-    try {
-        const response = await fetch("https://api.github.com/repos/AncientAbacus/portfolio/commits"); // Replace with actual API endpoint
-        const data = await response.json();
+// Language colors (GitHub's official colors)
+const languageColors = {
+  JavaScript: '#f1e05a',
+  Python: '#3572A5',
+  HTML: '#e34c26',
+  CSS: '#563d7c',
+  TypeScript: '#2b7489',
+  Java: '#b07219',
+  'C++': '#f34b7d',
+  C: '#555555',
+  Ruby: '#701516',
+  Go: '#00ADD8',
+  Rust: '#dea584',
+  Swift: '#ffac45',
+  Jupyter: '#DA5B0B',
+  Shell: '#89e051',
+  R: '#198CE7'
+};
 
-        // Transform data into expected format
-        commits = data.map(commit => ({
-            id: commit.sha,
-            datetime: new Date(commit.commit.author.date),
-            totalLines: Math.floor(Math.random() * 500), // Placeholder for total lines, adjust as needed
-            hourFrac: (new Date(commit.commit.author.date).getHours() + new Date(commit.commit.author.date).getMinutes() / 60) / 24,
-            lines: [{ file: commit.files?.[0]?.filename || "unknown", type: "code" }],
-            url: commit.html_url
-        }));
+let repositories = [];
+let userData = null;
 
-        // Initialize visualization
-        setupScrollytelling();
-        setupVisualization();
-    } catch (error) {
-        console.error("Error fetching commit data:", error);
+// Animate number counting
+function animateNumber(element, target, duration = 1000) {
+  const start = 0;
+  const startTime = performance.now();
+
+  function update(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+    const current = Math.floor(start + (target - start) * eased);
+    element.textContent = current;
+
+    if (progress < 1) {
+      requestAnimationFrame(update);
     }
+  }
+
+  requestAnimationFrame(update);
 }
 
-// D3 Setup
-document.addEventListener("DOMContentLoaded", () => {
-    loadCommitData();
-});
-
-// Step 1: Evolution visualization
-function setupVisualization() {
-    const svg = d3.select("#chart")
-        .append("svg")
-        .attr("width", 1000)
-        .attr("height", 500)
-        .append("g")
-        .attr("transform", "translate(50, 20)"); // Adjust margins
-
-    xScale = d3.scaleTime()
-        .domain(d3.extent(commits, d => d.datetime))
-        .range([0, 900]); // Adjust based on SVG width
-
-    yScale = d3.scaleLinear()
-        .domain([0, 1]) // Assuming hourFrac is between 0 and 1
-        .range([450, 50]); // Adjust based on SVG height
-
-    rScale = d3.scaleSqrt()
-        .domain(d3.extent(commits, d => d.totalLines))
-        .range([2, 10]);
-
-    // Add X Axis
-    svg.append("g")
-        .attr("transform", "translate(0, 450)")
-        .call(d3.axisBottom(xScale).ticks(5))
-        .append("text")
-        .attr("fill", "#000")
-        .attr("x", 450)
-        .attr("y", 40)
-        .attr("text-anchor", "middle")
-        .text("Commit Date");
-
-    // Add Y Axis
-    svg.append("g")
-        .call(d3.axisLeft(yScale).ticks(5))
-        .append("text")
-        .attr("fill", "#000")
-        .attr("transform", "rotate(-90)")
-        .attr("y", -40)
-        .attr("x", -225)
-        .attr("text-anchor", "middle")
-        .text("Commit Time of Day");
-
-    // Draw scatterplot
-    updateScatterplot(commits);
+// Fetch user data
+async function fetchUserData() {
+  const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}`);
+  if (!response.ok) throw new Error('Failed to fetch user data');
+  return response.json();
 }
 
-function updateScatterplot(data) {
-    const svg = d3.select("#chart svg g");
+// Fetch repositories
+async function fetchRepositories() {
+  const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=updated`);
+  if (!response.ok) throw new Error('Failed to fetch repositories');
+  return response.json();
+}
 
-    // Bind data
-    const circles = svg.selectAll("circle")
-        .data(data, d => d.id);
+// Calculate language stats
+function calculateLanguageStats() {
+  const stats = {};
+  repositories.forEach(repo => {
+    if (repo.language) {
+      stats[repo.language] = (stats[repo.language] || 0) + 1;
+    }
+  });
+  return Object.entries(stats).sort((a, b) => b[1] - a[1]);
+}
 
-    // Exit
-    circles.exit().remove();
+// Render stats with animation
+function renderStats() {
+  const totalRepos = repositories.length;
+  const totalStars = repositories.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+  const totalForks = repositories.reduce((sum, repo) => sum + repo.forks_count, 0);
+  const languages = new Set(repositories.map(r => r.language).filter(Boolean)).size;
 
-    // Update
-    circles.transition()
-        .duration(500)
-        .attr("cx", d => xScale(d.datetime))
-        .attr("cy", d => yScale(d.hourFrac))
-        .attr("r", d => rScale(d.totalLines));
+  animateNumber(document.getElementById('stat-repos'), totalRepos);
+  animateNumber(document.getElementById('stat-stars'), totalStars);
+  animateNumber(document.getElementById('stat-forks'), totalForks);
+  animateNumber(document.getElementById('stat-languages'), languages);
+}
 
-    // Enter
-    circles.enter().append("circle")
-        .attr("cx", d => xScale(d.datetime))
-        .attr("cy", d => yScale(d.hourFrac))
-        .attr("r", 0)
+// Render donut chart
+function renderLanguageDonut() {
+  const langStats = calculateLanguageStats();
+  const total = langStats.reduce((sum, [, count]) => sum + count, 0);
+
+  if (langStats.length === 0) return;
+
+  // Update center text
+  const topLang = langStats[0];
+  const topPct = Math.round((topLang[1] / total) * 100);
+  document.getElementById('top-language-pct').textContent = `${topPct}%`;
+  document.getElementById('top-language-name').textContent = topLang[0];
+
+  // Create donut chart
+  const svg = d3.select('#language-donut');
+  const width = 300, height = 300;
+  const radius = Math.min(width, height) / 2;
+  const innerRadius = radius * 0.6;
+
+  const g = svg.append('g')
+    .attr('transform', `translate(${width/2}, ${height/2})`);
+
+  const pie = d3.pie()
+    .value(d => d[1])
+    .sort(null);
+
+  const arc = d3.arc()
+    .innerRadius(innerRadius)
+    .outerRadius(radius);
+
+  const hoverArc = d3.arc()
+    .innerRadius(innerRadius)
+    .outerRadius(radius + 10);
+
+  const arcs = g.selectAll('.arc')
+    .data(pie(langStats.slice(0, 8)))
+    .enter()
+    .append('g')
+    .attr('class', 'arc');
+
+  arcs.append('path')
+    .attr('d', arc)
+    .attr('fill', d => languageColors[d.data[0]] || '#52B788')
+    .attr('stroke', '#0D1F17')
+    .attr('stroke-width', 2)
+    .style('cursor', 'pointer')
+    .on('mouseover', function(event, d) {
+      d3.select(this)
         .transition()
-        .duration(500)
-        .attr("r", d => rScale(d.totalLines));
-}
+        .duration(200)
+        .attr('d', hoverArc);
 
-// Step 2: The race for the biggest file!
-function displayCommitFiles(filteredCommits) {
-    const lines = filteredCommits.flatMap(d => d.lines);
-    const files = d3.groups(lines, d => d.file)
-        .map(([name, lines]) => ({ name, lines }))
-        .sort((a, b) => d3.descending(a.lines.length, b.lines.length));
+      document.getElementById('top-language-pct').textContent = `${Math.round((d.data[1] / total) * 100)}%`;
+      document.getElementById('top-language-name').textContent = d.data[0];
+    })
+    .on('mouseout', function(event, d) {
+      d3.select(this)
+        .transition()
+        .duration(200)
+        .attr('d', arc);
 
-    const fileTypeColors = d3.scaleOrdinal(d3.schemeTableau10);
-
-    const filesContainer = d3.select(".files");
-    filesContainer.selectAll("div").remove();
-
-    const fileDivs = filesContainer.selectAll("div")
-        .data(files)
-        .enter().append("div");
-
-    fileDivs.append("dt")
-        .html(d => `<code>${d.name}</code><small>${d.lines.length} lines</small>`);
-
-    fileDivs.append("dd")
-        .selectAll("div")
-        .data(d => d.lines)
-        .enter().append("div")
-        .attr("class", "line")
-        .style("background", d => fileTypeColors(d.type));
-}
-
-// Step 3: Scrollytelling Part 1 (commits over time)
-function setupScrollytelling() {
-    const NUM_ITEMS = commits.length;
-    const ITEM_HEIGHT = 100; // Adjust based on your design
-    const VISIBLE_COUNT = 10;
-
-    const scrollContainer = d3.select("#scroll-container");
-    const spacer = d3.select("#spacer").style("height", `${(NUM_ITEMS - 1) * ITEM_HEIGHT}px`);
-    const itemsContainer = d3.select("#items-container");
-
-    scrollContainer.on("scroll", () => {
-        const scrollTop = scrollContainer.property("scrollTop");
-        let startIndex = Math.floor(scrollTop / ITEM_HEIGHT);
-        startIndex = Math.max(0, Math.min(startIndex, commits.length - VISIBLE_COUNT));
-        renderItems(startIndex);
+      document.getElementById('top-language-pct').textContent = `${topPct}%`;
+      document.getElementById('top-language-name').textContent = topLang[0];
     });
 
-    function renderItems(startIndex) {
-        itemsContainer.selectAll("div").remove();
-        const endIndex = Math.min(startIndex + VISIBLE_COUNT, commits.length);
-        const newCommitSlice = commits.slice(startIndex, endIndex);
+  // Render language bars
+  const barsContainer = document.getElementById('language-bars');
+  barsContainer.innerHTML = '';
 
-        itemsContainer.selectAll("div")
-            .data(newCommitSlice)
-            .enter().append("div")
-            .html(d => `
-                <p>
-                    On ${d.datetime.toLocaleString("en", { dateStyle: "full", timeStyle: "short" })}, I made
-                    <a href="${d.url}" target="_blank">
-                        ${startIndex > 0 ? 'another glorious commit' : 'my first commit, and it was glorious'}
-                    </a>.
-                    I edited ${d.totalLines} lines across ${d3.rollups(d.lines, D => D.length, d => d.file).length} files.
-                    Then I looked over all I had made, and I saw that it was very good.
-                </p>
-            `)
-            .style("position", "absolute")
-            .style("top", (_, idx) => `${idx * ITEM_HEIGHT}px`);
+  langStats.slice(0, 6).forEach(([lang, count], i) => {
+    const pct = (count / total) * 100;
+    const color = languageColors[lang] || '#52B788';
 
-        updateScatterplot(newCommitSlice);
+    const item = document.createElement('div');
+    item.className = 'lang-bar-item';
+    item.innerHTML = `
+      <span class="lang-bar-name">${lang}</span>
+      <div class="lang-bar-track">
+        <div class="lang-bar-fill" style="width: 0%; background: ${color}; --bar-color: ${color}"></div>
+      </div>
+      <span class="lang-bar-count">${count}</span>
+    `;
+    barsContainer.appendChild(item);
+
+    // Animate bar
+    setTimeout(() => {
+      item.querySelector('.lang-bar-fill').style.width = `${pct}%`;
+    }, 100 + i * 100);
+  });
+}
+
+// Render activity heatmap
+function renderHeatmap() {
+  const svg = d3.select('#activity-heatmap');
+  const cellSize = 10;
+  const cellGap = 2;
+
+  // Group repos by month
+  const monthlyActivity = {};
+  repositories.forEach(repo => {
+    const date = new Date(repo.pushed_at || repo.updated_at);
+    const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+    monthlyActivity[monthKey] = (monthlyActivity[monthKey] || 0) + 1;
+  });
+
+  // Generate last 52 weeks of cells
+  const cells = [];
+  const today = new Date();
+  for (let week = 0; week < 52; week++) {
+    for (let day = 0; day < 7; day++) {
+      const date = new Date(today);
+      date.setDate(date.getDate() - ((51 - week) * 7 + (6 - day)));
+      const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+      const activity = monthlyActivity[monthKey] || 0;
+      cells.push({ week, day, activity, date });
+    }
+  }
+
+  const maxActivity = Math.max(...Object.values(monthlyActivity), 1);
+
+  svg.selectAll('.heatmap-cell')
+    .data(cells)
+    .enter()
+    .append('rect')
+    .attr('class', 'heatmap-cell')
+    .attr('x', d => d.week * (cellSize + cellGap) + 10)
+    .attr('y', d => d.day * (cellSize + cellGap) + 10)
+    .attr('width', cellSize)
+    .attr('height', cellSize)
+    .attr('rx', 2)
+    .attr('fill', d => {
+      const level = Math.ceil((d.activity / maxActivity) * 4);
+      const lightness = 20 + level * 15;
+      return `hsl(152, 50%, ${lightness}%)`;
+    })
+    .append('title')
+    .text(d => `${d.date.toDateString()}: ${d.activity} updates`);
+}
+
+// Render timeline
+function renderTimeline() {
+  const joinDate = new Date(userData.created_at);
+  const now = new Date();
+  const years = Math.floor((now - joinDate) / (365.25 * 24 * 60 * 60 * 1000));
+  const reposPerYear = (repositories.length / Math.max(years, 1)).toFixed(1);
+
+  document.getElementById('years-coding').textContent = years;
+  document.getElementById('repos-per-year').textContent = reposPerYear;
+  document.getElementById('join-date').textContent = joinDate.getFullYear();
+
+  // Sparkline
+  const svg = d3.select('#timeline-spark');
+  const width = 400, height = 80;
+  const margin = { top: 10, right: 10, bottom: 10, left: 10 };
+
+  // Group by year
+  const yearCounts = {};
+  repositories.forEach(repo => {
+    const year = new Date(repo.created_at).getFullYear();
+    yearCounts[year] = (yearCounts[year] || 0) + 1;
+  });
+
+  const data = Object.entries(yearCounts).sort((a, b) => a[0] - b[0]);
+
+  const x = d3.scaleLinear()
+    .domain([0, data.length - 1])
+    .range([margin.left, width - margin.right]);
+
+  const y = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d[1])])
+    .range([height - margin.bottom, margin.top]);
+
+  const line = d3.line()
+    .x((d, i) => x(i))
+    .y(d => y(d[1]))
+    .curve(d3.curveMonotoneX);
+
+  const area = d3.area()
+    .x((d, i) => x(i))
+    .y0(height - margin.bottom)
+    .y1(d => y(d[1]))
+    .curve(d3.curveMonotoneX);
+
+  // Gradient
+  const gradient = svg.append('defs')
+    .append('linearGradient')
+    .attr('id', 'area-gradient')
+    .attr('x1', '0%').attr('y1', '0%')
+    .attr('x2', '0%').attr('y2', '100%');
+
+  gradient.append('stop').attr('offset', '0%').attr('stop-color', '#52B788').attr('stop-opacity', 0.5);
+  gradient.append('stop').attr('offset', '100%').attr('stop-color', '#52B788').attr('stop-opacity', 0);
+
+  svg.append('path')
+    .datum(data)
+    .attr('fill', 'url(#area-gradient)')
+    .attr('d', area);
+
+  svg.append('path')
+    .datum(data)
+    .attr('fill', 'none')
+    .attr('stroke', '#52B788')
+    .attr('stroke-width', 2)
+    .attr('d', line);
+
+  // Dots
+  svg.selectAll('.spark-dot')
+    .data(data)
+    .enter()
+    .append('circle')
+    .attr('cx', (d, i) => x(i))
+    .attr('cy', d => y(d[1]))
+    .attr('r', 4)
+    .attr('fill', '#D4AF37')
+    .attr('stroke', '#0D1F17')
+    .attr('stroke-width', 2)
+    .style('cursor', 'pointer')
+    .append('title')
+    .text(d => `${d[0]}: ${d[1]} repos`);
+}
+
+// Render top repo
+function renderTopRepo() {
+  const topRepo = [...repositories].sort((a, b) => b.stargazers_count - a.stargazers_count)[0];
+
+  if (topRepo) {
+    document.getElementById('top-repo-name').textContent = topRepo.name;
+    document.getElementById('top-repo-desc').textContent = topRepo.description || 'No description';
+    document.getElementById('top-repo-stars').textContent = topRepo.stargazers_count;
+    document.getElementById('top-repo-forks').textContent = topRepo.forks_count;
+    document.getElementById('top-repo-lang').textContent = topRepo.language || '—';
+
+    document.getElementById('top-repo-card').onclick = () => window.open(topRepo.html_url, '_blank');
+  }
+}
+
+// Render size bubbles
+function renderSizeBubbles() {
+  const container = document.getElementById('size-bubbles');
+  container.innerHTML = '';
+
+  const topBySise = [...repositories]
+    .filter(r => r.size > 0)
+    .sort((a, b) => b.size - a.size)
+    .slice(0, 12);
+
+  const maxSize = Math.max(...topBySise.map(r => r.size));
+
+  topBySise.forEach(repo => {
+    const size = Math.max(30, Math.min(80, (repo.size / maxSize) * 80));
+    const bubble = document.createElement('div');
+    bubble.className = 'size-bubble';
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    bubble.textContent = repo.name.substring(0, 8);
+    bubble.title = `${repo.name}: ${(repo.size / 1024).toFixed(1)} MB`;
+    bubble.onclick = () => window.open(repo.html_url, '_blank');
+    container.appendChild(bubble);
+  });
+}
+
+// Render recent repos
+function renderRecentRepos() {
+  const container = document.getElementById('recent-repos');
+  container.innerHTML = '';
+
+  const recent = [...repositories]
+    .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+    .slice(0, 10);
+
+  recent.forEach(repo => {
+    const item = document.createElement('div');
+    item.className = 'recent-repo-item';
+    item.innerHTML = `
+      <div class="recent-repo-icon">📁</div>
+      <div class="recent-repo-info">
+        <div class="recent-repo-name">${repo.name}</div>
+        <div class="recent-repo-date">${new Date(repo.updated_at).toLocaleDateString()}</div>
+      </div>
+    `;
+    item.onclick = () => window.open(repo.html_url, '_blank');
+    container.appendChild(item);
+  });
+}
+
+// Render tech radar
+function renderTechRadar() {
+  const langStats = calculateLanguageStats();
+  const svg = d3.select('#tech-radar');
+  const size = 300;
+  const center = size / 2;
+  const maxRadius = size / 2 - 20;
+
+  // Draw rings
+  [0.33, 0.66, 1].forEach(scale => {
+    svg.append('circle')
+      .attr('class', 'radar-ring')
+      .attr('cx', center)
+      .attr('cy', center)
+      .attr('r', maxRadius * scale);
+  });
+
+  // Draw cross lines
+  svg.append('line').attr('x1', center).attr('y1', 20).attr('x2', center).attr('y2', size - 20).attr('stroke', '#52B788').attr('opacity', 0.2);
+  svg.append('line').attr('x1', 20).attr('y1', center).attr('x2', size - 20).attr('y2', center).attr('stroke', '#52B788').attr('opacity', 0.2);
+
+  // Plot languages
+  const total = langStats.reduce((sum, [, c]) => sum + c, 0);
+  langStats.slice(0, 8).forEach(([lang, count], i) => {
+    const angle = (i / 8) * 2 * Math.PI - Math.PI / 2;
+    const distance = (count / total) * maxRadius * 0.8 + maxRadius * 0.2;
+    const x = center + Math.cos(angle) * distance;
+    const y = center + Math.sin(angle) * distance;
+
+    svg.append('circle')
+      .attr('class', 'radar-dot')
+      .attr('cx', x)
+      .attr('cy', y)
+      .attr('r', 6)
+      .attr('fill', languageColors[lang] || '#52B788')
+      .append('title')
+      .text(`${lang}: ${count} repos`);
+
+    svg.append('text')
+      .attr('x', x)
+      .attr('y', y - 12)
+      .attr('text-anchor', 'middle')
+      .attr('fill', '#E8E6E3')
+      .attr('font-size', '8px')
+      .text(lang);
+  });
+}
+
+// Render commit bars (simulated based on repo updates)
+function renderCommitBars() {
+  const container = document.getElementById('commit-bars');
+  container.innerHTML = '';
+
+  // Group by month (last 12 months)
+  const monthlyUpdates = {};
+  const now = new Date();
+
+  for (let i = 0; i < 12; i++) {
+    const d = new Date(now.getFullYear(), now.getMonth() - i, 1);
+    const key = `${d.getFullYear()}-${d.getMonth()}`;
+    monthlyUpdates[key] = 0;
+  }
+
+  repositories.forEach(repo => {
+    const d = new Date(repo.updated_at);
+    const key = `${d.getFullYear()}-${d.getMonth()}`;
+    if (monthlyUpdates.hasOwnProperty(key)) {
+      monthlyUpdates[key]++;
+    }
+  });
+
+  const values = Object.values(monthlyUpdates).reverse();
+  const max = Math.max(...values, 1);
+
+  values.forEach(val => {
+    const bar = document.createElement('div');
+    bar.className = 'commit-bar';
+    bar.style.height = `${(val / max) * 100}%`;
+    bar.title = `${val} updates`;
+    container.appendChild(bar);
+  });
+}
+
+// Profile data
+function renderProfile() {
+  if (userData) {
+    document.getElementById('followers-count').textContent = userData.followers;
+    document.getElementById('following-count').textContent = userData.following;
+  }
+}
+
+// Particle network animation
+function initParticles() {
+  const canvas = document.getElementById('particle-canvas');
+  if (!canvas) return;
+
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+
+  function resize() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+
+  resize();
+  window.addEventListener('resize', resize);
+
+  class Particle {
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.vx = (Math.random() - 0.5) * 0.5;
+      this.vy = (Math.random() - 0.5) * 0.5;
+      this.radius = Math.random() * 2 + 1;
     }
 
-    // Initial render
-    renderItems(0);
+    update() {
+      this.x += this.vx;
+      this.y += this.vy;
+
+      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+      ctx.fillStyle = '#52B788';
+      ctx.fill();
+    }
+  }
+
+  // Create particles
+  for (let i = 0; i < 30; i++) {
+    particles.push(new Particle());
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw connections
+    particles.forEach((p1, i) => {
+      particles.slice(i + 1).forEach(p2 => {
+        const dx = p1.x - p2.x;
+        const dy = p1.y - p2.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 80) {
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(82, 183, 136, ${1 - dist / 80})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      });
+    });
+
+    particles.forEach(p => {
+      p.update();
+      p.draw();
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
 }
+
+// Mouse tracking for stat cards
+function initMouseTracking() {
+  document.querySelectorAll('.meta-stat').forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--mouse-x', `${x}%`);
+      card.style.setProperty('--mouse-y', `${y}%`);
+    });
+  });
+}
+
+// Initialize
+async function init() {
+  try {
+    // Fetch data
+    [userData, repositories] = await Promise.all([
+      fetchUserData(),
+      fetchRepositories()
+    ]);
+
+    // Hide loading
+    document.getElementById('loading-overlay').classList.add('hidden');
+
+    // Render all visualizations
+    renderStats();
+    renderLanguageDonut();
+    renderHeatmap();
+    renderTimeline();
+    renderTopRepo();
+    renderSizeBubbles();
+    renderRecentRepos();
+    renderTechRadar();
+    renderCommitBars();
+    renderProfile();
+    initParticles();
+    initMouseTracking();
+
+  } catch (error) {
+    console.error('Failed to initialize:', error);
+    document.querySelector('.loader').innerHTML = `
+      <p style="color: #FF6B6B;">Failed to load GitHub data</p>
+      <p style="font-size: 0.9rem; opacity: 0.7;">Please try again later</p>
+    `;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);

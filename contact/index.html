@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact - Gino Angelici</title>
+    <meta name="description" content="Get in touch with Gino Angelici for data science opportunities, collaborations, or inquiries.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ginoangelici.com/contact/">
+    <meta property="og:title" content="Contact - Gino Angelici">
+    <meta property="og:description" content="Get in touch for data science opportunities and collaborations.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
     <link href="../style.css" rel="stylesheet">
     <script type="module" src="../global.js"></script>
 </head>
@@ -13,22 +24,36 @@
     </header>
 
     <h2>Get in Touch</h2>
-    <form action="mailto:gangelici@ucsd.edu" method="POST" enctype="text/plain">
+    <form id="contact-form">
+
         <label>
-            Your Email:<input type="email" name="email" required>
+            Subject:<input type="text" id="subject" required>
         </label>
 
         <label>
-            Subject: <input name="subject" required>
+            Message:<textarea id="message" required></textarea>
         </label>
-        
-        <label>
-            Message: <textarea name="body" required></textarea>
-        </label>
-        <button>
+        <button type="submit">
             Send
         </button>
     </form>
-    
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('sender-email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Construct mailto URL with proper formatting
+            const body = `REPLY TO: ${email}\n\n---\n\n${message}`;
+            const mailtoLink = `mailto:gangelici@ucsd.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Open email client
+            window.location.href = mailtoLink;
+        });
+    </script>
+
 </body>
 </html>

@@ -4,29 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gino Angelici: Personal Site and Portfolio</title>
+    <meta name="description" content="Data science professional with 5 years of experience in data analytics, machine learning, and algorithm development. View my portfolio of data-driven projects.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ginoangelici.com/">
+    <meta property="og:title" content="Gino Angelici: Data Science Portfolio">
+    <meta property="og:description" content="Data science professional with 5 years of experience in data analytics, machine learning, and algorithm development.">
+    <meta property="og:image" content="https://ginoangelici.com/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ginoangelici.com/">
+    <meta property="twitter:title" content="Gino Angelici: Data Science Portfolio">
+    <meta property="twitter:description" content="Data science professional with 5 years of experience in data analytics, machine learning, and algorithm development.">
+    <meta property="twitter:image" content="https://ginoangelici.com/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
     <link href="style.css" rel="stylesheet">
     <script src="global.js" type="module"></script>
     <script src="index.js" type="module" defer></script>
 </head>
 <body>
+    <div class="bento-grid">
+        <!-- Hero - Large box spanning 2 columns -->
+        <div class="bento-box bento-hero">
+            <div class="hero-content">
+                <h1>Gino Angelici</h1>
+                <p class="tagline">Data Science Professional</p>
+                <p class="subtitle">Machine Learning | Analytics | Visualization</p>
+            </div>
+            <div class="hero-decoration">
+                <div class="floating-shape shape-1"></div>
+                <div class="floating-shape shape-2"></div>
+                <div class="floating-shape shape-3"></div>
+            </div>
+        </div>
 
-    <h1>Gino Angelici</h1>
-    <p>Hello, this is my website. I like data.</p>
-    <p>
-        Organized and motivated data science professional eager to apply 5 years of data analyst 
-        and software/algorithm development experience. Disciplined team player with a background 
-        in project management seeking opportunities to collaborate with like-minded and passionate 
-        individuals in the data science field. Outstanding interpersonal skills and able to present 
-        and discuss challenging data-driven solutions with teams.
-    </p>
-    <img src="images/9A5D10DE-14C4-42E5-AD90-F1D0B564584A_1_105_c.jpeg" alt="seal flying away"> 
+        <!-- Photo box -->
+        <div class="bento-box bento-photo">
+            <!-- PUT YOUR PHOTO HERE: Save as /images/profile.jpg -->
+            <img src="/images/profile.jpg" alt="Gino Angelici" class="profile-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="photo-placeholder">
+                <span>Your Photo</span>
+                <small>/images/profile.jpg</small>
+            </div>
+        </div>
 
-    <h1>Latest Projects</h1>
-    <div class="projects"></div>
+        <!-- About box -->
+        <div class="bento-box bento-about">
+            <h2>About</h2>
+            <p>
+                Data science professional with 5 years of experience in analytics and ML.
+                UC San Diego graduate passionate about turning data into actionable insights.
+            </p>
+        </div>
 
-    <h2>GitHub Profile Stats</h2>
-    <div id="profile-stats">
-        <!-- GitHub stats will be injected here dynamically -->
+        <!-- Quick Links -->
+        <div class="bento-box bento-links">
+            <h2>Connect</h2>
+            <div class="link-grid">
+                <a href="https://github.com/ancientabacus" target="_blank" class="link-item">
+                    <span class="link-icon">GH</span>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/gino-angelici" target="_blank" class="link-item">
+                    <span class="link-icon">IN</span>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="/resume/" class="link-item">
+                    <span class="link-icon">CV</span>
+                    <span>Resume</span>
+                </a>
+                <a href="/contact/" class="link-item">
+                    <span class="link-icon">@</span>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="bento-box bento-tech">
+            <h2>Tech Stack</h2>
+            <div class="tech-cloud">
+                <span class="tech-tag large">Python</span>
+                <span class="tech-tag">PyTorch</span>
+                <span class="tech-tag">TensorFlow</span>
+                <span class="tech-tag large">SQL</span>
+                <span class="tech-tag">D3.js</span>
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">Spark</span>
+                <span class="tech-tag large">Pandas</span>
+                <span class="tech-tag">Scikit-learn</span>
+                <span class="tech-tag">Docker</span>
+            </div>
+        </div>
+
+        <!-- GitHub Stats - spans full width on mobile -->
+        <div class="bento-box bento-github">
+            <h2>GitHub Stats</h2>
+            <div id="profile-stats">
+                <p>Loading...</p>
+            </div>
+        </div>
+
+        <!-- Featured Project 1 - Large -->
+        <div class="bento-box bento-project bento-project-featured" id="featured-project-1">
+            <div class="project-overlay">
+                <span class="project-label">Featured Project</span>
+                <h3 class="project-title">Loading...</h3>
+            </div>
+        </div>
+
+        <!-- Featured Project 2 -->
+        <div class="bento-box bento-project" id="featured-project-2">
+            <div class="project-overlay">
+                <h3 class="project-title">Loading...</h3>
+            </div>
+        </div>
+
+        <!-- Featured Project 3 -->
+        <div class="bento-box bento-project" id="featured-project-3">
+            <div class="project-overlay">
+                <h3 class="project-title">Loading...</h3>
+            </div>
+        </div>
+
+        <!-- View All Projects CTA -->
+        <div class="bento-box bento-cta">
+            <a href="/projects/" class="cta-link">
+                <span>View All Projects</span>
+                <span class="arrow">→</span>
+            </a>
+        </div>
+
+        <!-- Fun fact / Quote box -->
+        <div class="bento-box bento-quote">
+            <blockquote>
+                "In God we trust. All others must bring data."
+                <cite>— W. Edwards Deming</cite>
+            </blockquote>
+        </div>
+
+        <!-- Current Status -->
+        <div class="bento-box bento-status">
+            <div class="status-indicator"></div>
+            <span>Open to opportunities</span>
+        </div>
     </div>
 </body>
 </html>
