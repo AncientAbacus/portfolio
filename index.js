@@ -1,6 +1,8 @@
 import { fetchJSON, fetchGitHubData } from './global.js';
 
 async function loadFeaturedProjects() {
+    const placeholderPath = 'images/place_holder.jpeg';
+
     try {
         const projects = await fetchJSON('./lib/projects.json');
         const featured = projects.slice(0, 3);
@@ -9,9 +11,18 @@ async function loadFeaturedProjects() {
             const box = document.getElementById(`featured-project-${index + 1}`);
             if (!box) return;
 
-            // Set background image
+            // Set background image with fallback to placeholder
             if (project.image) {
-                box.style.backgroundImage = `url('${project.image}')`;
+                const img = new Image();
+                img.onload = () => {
+                    box.style.backgroundImage = `url('${project.image}')`;
+                };
+                img.onerror = () => {
+                    box.style.backgroundImage = `url('${placeholderPath}')`;
+                };
+                img.src = project.image;
+            } else {
+                box.style.backgroundImage = `url('${placeholderPath}')`;
             }
 
             // Update title

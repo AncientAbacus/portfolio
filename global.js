@@ -87,6 +87,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
   // Check if we're on the home page
   const isHome = document.documentElement.classList.contains('home');
+  const placeholderPath = isHome ? 'images/place_holder.jpeg' : '../images/place_holder.jpeg';
 
   projects.forEach(project => {
       const article = document.createElement('article');
@@ -99,7 +100,7 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
       article.innerHTML = `
           <${headingLevel}>${project.title}</${headingLevel}>
-          <img src="${imageSrc}" class="${project.imageClass}" alt="${project.title}">
+          <img src="${imageSrc}" class="${project.imageClass}" alt="${project.title}" onerror="this.onerror=null; this.src='${placeholderPath}';">
           <p>${project.description}</p>
           <p>c. ${project.year}</p>
       `;
