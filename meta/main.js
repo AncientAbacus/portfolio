@@ -175,7 +175,7 @@ function renderLanguageDonut() {
 // Render activity heatmap
 function renderHeatmap() {
   const svg = d3.select('#activity-heatmap');
-  const cellSize = 10;
+  const cellSize = 8;
   const cellGap = 2;
 
   // Group repos by month
@@ -186,13 +186,13 @@ function renderHeatmap() {
     monthlyActivity[monthKey] = (monthlyActivity[monthKey] || 0) + 1;
   });
 
-  // Generate last 52 weeks of cells
+  // Generate last 40 weeks of cells (fits better)
   const cells = [];
   const today = new Date();
-  for (let week = 0; week < 52; week++) {
+  for (let week = 0; week < 40; week++) {
     for (let day = 0; day < 7; day++) {
       const date = new Date(today);
-      date.setDate(date.getDate() - ((51 - week) * 7 + (6 - day)));
+      date.setDate(date.getDate() - ((39 - week) * 7 + (6 - day)));
       const monthKey = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
       const activity = monthlyActivity[monthKey] || 0;
       cells.push({ week, day, activity, date });
@@ -206,8 +206,8 @@ function renderHeatmap() {
     .enter()
     .append('rect')
     .attr('class', 'heatmap-cell')
-    .attr('x', d => d.week * (cellSize + cellGap) + 10)
-    .attr('y', d => d.day * (cellSize + cellGap) + 10)
+    .attr('x', d => d.week * (cellSize + cellGap) + 20)
+    .attr('y', d => d.day * (cellSize + cellGap) + 15)
     .attr('width', cellSize)
     .attr('height', cellSize)
     .attr('rx', 2)
@@ -322,20 +322,24 @@ function renderSizeBubbles() {
   const container = document.getElementById('size-bubbles');
   container.innerHTML = '';
 
-  const topBySise = [...repositories]
+  const topBySize = [...repositories]
     .filter(r => r.size > 0)
     .sort((a, b) => b.size - a.size)
-    .slice(0, 12);
+    .slice(0, 8);
 
-  const maxSize = Math.max(...topBySise.map(r => r.size));
+  const maxSize = Math.max(...topBySize.map(r => r.size));
 
-  topBySise.forEach(repo => {
-    const size = Math.max(30, Math.min(80, (repo.size / maxSize) * 80));
+  topBySize.forEach(repo => {
+    const sizeRatio = repo.size / maxSize;
+    const bubbleSize = Math.max(50, Math.min(90, sizeRatio * 90));
     const bubble = document.createElement('div');
     bubble.className = 'size-bubble';
-    bubble.style.width = `${size}px`;
-    bubble.style.height = `${size}px`;
-    bubble.textContent = repo.name.substring(0, 8);
+    bubble.style.width = `${bubbleSize}px`;
+    bubble.style.height = `${bubbleSize}px`;
+
+    // Show abbreviated name or initials
+    const name = repo.name.length > 6 ? repo.name.substring(0, 5) + '...' : repo.name;
+    bubble.innerHTML = `<span class="bubble-name">${name}</span><span class="bubble-size">${(repo.size / 1024).toFixed(1)}MB</span>`;
     bubble.title = `${repo.name}: ${(repo.size / 1024).toFixed(1)} MB`;
     bubble.onclick = () => window.open(repo.html_url, '_blank');
     container.appendChild(bubble);
@@ -372,10 +376,16 @@ function renderTechRadar() {
   const svg = d3.select('#tech-radar');
   const size = 300;
   const center = size / 2;
-  const maxRadius = size / 2 - 20;
+  const maxRadius = size / 2 - 30;
 
-  // Draw rings
-  [0.33, 0.66, 1].forEach(scale => {
+  // Draw rings with labels
+  const rings = [
+    { scale: 0.33, label: 'Learning' },
+    { scale: 0.66, label: 'Using' },
+    { scale: 1, label: 'Expert' }
+  ];
+
+  rings.forEach(({ scale, label }) => {
     svg.append('circle')
       .attr('class', 'radar-ring')
       .attr('cx', center)
@@ -384,32 +394,45 @@ function renderTechRadar() {
   });
 
   // Draw cross lines
-  svg.append('line').attr('x1', center).attr('y1', 20).attr('x2', center).attr('y2', size - 20).attr('stroke', '#52B788').attr('opacity', 0.2);
-  svg.append('line').attr('x1', 20).attr('y1', center).attr('x2', size - 20).attr('y2', center).attr('stroke', '#52B788').attr('opacity', 0.2);
+  svg.append('line').attr('x1', center).attr('y1', 30).attr('x2', center).attr('y2', size - 30).attr('stroke', '#52B788').attr('opacity', 0.2);
+  svg.append('line').attr('x1', 30).attr('y1', center).attr('x2', size - 30).attr('y2', center).attr('stroke', '#52B788').attr('opacity', 0.2);
 
-  // Plot languages
+  // Plot languages - distance based on repo count
   const total = langStats.reduce((sum, [, c]) => sum + c, 0);
-  langStats.slice(0, 8).forEach(([lang, count], i) => {
-    const angle = (i / 8) * 2 * Math.PI - Math.PI / 2;
-    const distance = (count / total) * maxRadius * 0.8 + maxRadius * 0.2;
+  const maxCount = langStats.length > 0 ? langStats[0][1] : 1;
+
+  langStats.slice(0, 6).forEach(([lang, count], i) => {
+    const angle = (i / 6) * 2 * Math.PI - Math.PI / 2;
+    // More repos = closer to center (expert), fewer = outer ring
+    const proficiency = count / maxCount;
+    const distance = maxRadius * (1 - proficiency * 0.6) - 10;
     const x = center + Math.cos(angle) * distance;
     const y = center + Math.sin(angle) * distance;
+
+    const dotSize = Math.max(6, Math.min(12, count * 2));
 
     svg.append('circle')
       .attr('class', 'radar-dot')
       .attr('cx', x)
       .attr('cy', y)
-      .attr('r', 6)
+      .attr('r', dotSize)
       .attr('fill', languageColors[lang] || '#52B788')
       .append('title')
       .text(`${lang}: ${count} repos`);
 
+    // Position labels at edge
+    const labelDist = maxRadius + 15;
+    const labelX = center + Math.cos(angle) * labelDist;
+    const labelY = center + Math.sin(angle) * labelDist;
+
     svg.append('text')
-      .attr('x', x)
-      .attr('y', y - 12)
+      .attr('x', labelX)
+      .attr('y', labelY)
       .attr('text-anchor', 'middle')
-      .attr('fill', '#E8E6E3')
-      .attr('font-size', '8px')
+      .attr('dominant-baseline', 'middle')
+      .attr('fill', languageColors[lang] || '#E8E6E3')
+      .attr('font-size', '9px')
+      .attr('font-weight', 'bold')
       .text(lang);
   });
 }
