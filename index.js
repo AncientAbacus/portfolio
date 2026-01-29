@@ -22,7 +22,7 @@ async function loadFeaturedProjects() {
 
             // Make clickable
             box.addEventListener('click', () => {
-                window.location.href = '/projects/';
+                window.location.href = 'projects/';
             });
         });
     } catch (error) {
