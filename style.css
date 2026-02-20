@@ -170,6 +170,28 @@ nav a.current {
   box-shadow: 0 0 20px rgba(82, 183, 136, 0.4);
 }
 
+nav a.external {
+  border: 1.5px solid rgba(82, 183, 136, 0.5);
+  background: transparent;
+  color: var(--forest-accent);
+}
+
+nav a.external::after {
+  content: '\2197';
+  margin-left: 0.35em;
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+nav a.external::before {
+  background: linear-gradient(90deg, var(--forest-accent), var(--gold));
+}
+
+nav a.external:hover {
+  color: var(--dark-grey);
+  border-color: transparent;
+}
+
 /* ===== Hero Section ===== */
 .hero {
   text-align: center;
@@ -863,8 +885,9 @@ a:hover {
 /* Photo Box */
 .bento-photo {
   grid-column: span 1;
-  grid-row: span 2;
+  grid-row: span 1;
   padding: 0;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -898,7 +921,7 @@ a:hover {
 
 /* About Box */
 .bento-about {
-  grid-column: span 1;
+  grid-column: span 2;
   grid-row: span 1;
 }
 
@@ -924,38 +947,47 @@ a:hover {
 .link-item {
   display: flex;
   align-items: center;
-  gap: 0.5em;
-  padding: 0.5em 0.75em;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 12px;
+  gap: 0.6em;
+  padding: 0.65em 0.85em;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 14px;
   color: var(--cream);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   transition: all 0.3s ease;
+  border: 1px solid rgba(82, 183, 136, 0.15);
 }
 
 .link-item:hover {
   background: var(--forest-accent);
   color: var(--dark-grey);
-  transform: scale(1.02);
+  transform: scale(1.05);
   text-decoration: none;
+  border-color: var(--forest-accent);
 }
 
-.link-icon {
-  width: 28px;
-  height: 28px;
-  background: var(--forest-accent);
-  border-radius: 8px;
+.link-glyph {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--forest-accent), var(--gold));
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 0.7rem;
+  flex-shrink: 0;
   color: var(--dark-grey);
+  box-shadow: 0 2px 8px rgba(82, 183, 136, 0.3);
 }
 
-.link-item:hover .link-icon {
-  background: var(--gold);
+.link-glyph svg {
+  width: 18px;
+  height: 18px;
+}
+
+.link-item:hover .link-glyph {
+  background: linear-gradient(135deg, var(--gold), var(--forest-accent));
+  box-shadow: 0 2px 12px rgba(212, 175, 55, 0.4);
 }
 
 /* Tech Stack Box */
@@ -1185,26 +1217,14 @@ a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .bento-hero {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-
   .bento-photo {
     grid-column: span 1;
     grid-row: span 1;
     min-height: 200px;
   }
 
-  .bento-project-featured {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-
-  .bento-tech,
-  .bento-github,
-  .bento-quote {
-    grid-column: span 2;
+  .bento-about {
+    grid-column: span 1;
   }
 }
 
@@ -1214,28 +1234,15 @@ a:hover {
     gap: 1em;
   }
 
-  .bento-hero,
   .bento-photo,
   .bento-about,
-  .bento-links,
-  .bento-tech,
-  .bento-github,
-  .bento-project,
-  .bento-project-featured,
-  .bento-cta,
-  .bento-quote,
-  .bento-status {
+  .bento-links {
     grid-column: span 1;
     grid-row: span 1;
   }
 
   .bento-photo {
     min-height: 250px;
-  }
-
-  .bento-project,
-  .bento-project-featured {
-    min-height: 200px;
   }
 
   .link-grid {
@@ -1256,7 +1263,7 @@ a:hover {
 
 /* Resume Header */
 .resume-header {
-  grid-column: span 3;
+  grid-column: span 4;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1481,10 +1488,16 @@ a:hover {
   border: 2px solid var(--gold);
 }
 
+.exp-badge-bottom {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-top: 1em;
+  padding-top: 0.75em;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+}
+
 .exp-badge {
-  position: absolute;
-  top: 1em;
-  right: 1em;
   padding: 0.3em 0.8em;
   background: var(--gold);
   color: var(--dark-grey);
@@ -1492,6 +1505,18 @@ a:hover {
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 20px;
+}
+
+@keyframes spin3d {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.spinning-trophy {
+  animation: spin3d 3s linear infinite;
+  transform-style: preserve-3d;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5));
 }
 
 .exp-header {

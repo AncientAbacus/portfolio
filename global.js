@@ -5,11 +5,8 @@ function $$(selector, context = document) {
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
-    { url: 'resume/', title: 'Resume' },
-    { url: 'contact/', title: 'Contact' },
-    { url: 'meta/', title: 'Meta' },
-    { url: 'https://github.com/AncientAbacus', title: 'Github' }
-
+    { url: 'https://github.com/AncientAbacus', title: 'GitHub' },
+    { url: 'https://linkedin.com/in/gino-angelici', title: 'LinkedIn' }
 ];
 
 let nav = document.createElement('nav');
@@ -31,6 +28,7 @@ for (let p of pages) {
       }
     if (a.host !== location.host) {
         a.target = "_blank";
+        a.classList.add('external');
       }
     nav.append(a);
 }

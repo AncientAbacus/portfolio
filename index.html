@@ -25,24 +25,9 @@
 
     <link href="style.css" rel="stylesheet">
     <script src="global.js" type="module"></script>
-    <script src="index.js" type="module" defer></script>
 </head>
 <body>
     <div class="bento-grid">
-        <!-- Hero - Large box spanning 2 columns -->
-        <div class="bento-box bento-hero">
-            <div class="hero-content">
-                <h1>Gino Angelici</h1>
-                <p class="tagline">Data Science Professional</p>
-                <p class="subtitle">Machine Learning | Analytics | Visualization</p>
-            </div>
-            <div class="hero-decoration">
-                <div class="floating-shape shape-1"></div>
-                <div class="floating-shape shape-2"></div>
-                <div class="floating-shape shape-3"></div>
-            </div>
-        </div>
-
         <!-- Photo box -->
         <div class="bento-box bento-photo">
             <img src="images/profile.jpg" alt="Gino Angelici" class="profile-photo" onerror="this.onerror=null; this.src='images/place_holder.jpeg';">
@@ -52,101 +37,225 @@
         <div class="bento-box bento-about">
             <h2>About</h2>
             <p>
-                Data science professional with 5 years of experience in analytics and ML.
-                UC San Diego graduate passionate about turning data into actionable insights.
+                Data science professional with 5 years of experience spanning analytics, machine learning, and data visualization.
+                UC San Diego B.S. Data Science graduate with hands-on research experience at Scripps Institution of Oceanography
+                and the Halicioğlu Data Science Institute, plus industry experience at Deloitte. Passionate about turning complex
+                datasets into actionable insights — from analyzing 70+ years of climate data to building award-winning autonomous
+                vehicle systems.
             </p>
         </div>
 
-        <!-- Quick Links -->
+        <!-- Connect Links -->
         <div class="bento-box bento-links">
             <h2>Connect</h2>
             <div class="link-grid">
                 <a href="https://github.com/ancientabacus" target="_blank" class="link-item">
-                    <span class="link-icon">GH</span>
+                    <span class="link-glyph">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </span>
                     <span>GitHub</span>
                 </a>
                 <a href="https://linkedin.com/in/gino-angelici" target="_blank" class="link-item">
-                    <span class="link-icon">IN</span>
+                    <span class="link-glyph">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </span>
                     <span>LinkedIn</span>
                 </a>
-                <a href="resume/" class="link-item">
-                    <span class="link-icon">CV</span>
+                <a href="resume/Gino_Angelici_DSC.pdf" download class="link-item">
+                    <span class="link-glyph">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 2l5 5h-5V4zM8 17v-2h8v2H8zm0-4v-2h8v2H8z"/></svg>
+                    </span>
                     <span>Resume</span>
                 </a>
-                <a href="contact/" class="link-item">
-                    <span class="link-icon">@</span>
-                    <span>Contact</span>
+                <a href="mailto:gino.angelici@gmail.com" class="link-item">
+                    <span class="link-glyph">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </span>
+                    <span>Email</span>
                 </a>
             </div>
         </div>
 
-        <!-- Tech Stack -->
-        <div class="bento-box bento-tech">
-            <h2>Tech Stack</h2>
-            <div class="tech-cloud">
-                <span class="tech-tag large">Python</span>
-                <span class="tech-tag">PyTorch</span>
-                <span class="tech-tag">TensorFlow</span>
-                <span class="tech-tag large">SQL</span>
-                <span class="tech-tag">D3.js</span>
-                <span class="tech-tag">AWS</span>
-                <span class="tech-tag">Spark</span>
-                <span class="tech-tag large">Pandas</span>
-                <span class="tech-tag">Scikit-learn</span>
-                <span class="tech-tag">Docker</span>
+        <!-- Resume Header with Download -->
+        <div class="bento-box resume-header">
+            <div class="resume-header-content">
+                <h1>Gino Angelici</h1>
+                <p class="resume-subtitle">Data Science Professional</p>
             </div>
-        </div>
-
-        <!-- GitHub Stats - spans full width on mobile -->
-        <div class="bento-box bento-github">
-            <h2>GitHub Stats</h2>
-            <div id="profile-stats">
-                <p>Loading...</p>
-            </div>
-        </div>
-
-        <!-- Featured Project 1 - Large -->
-        <div class="bento-box bento-project bento-project-featured" id="featured-project-1">
-            <div class="project-overlay">
-                <span class="project-label">Featured Project</span>
-                <h3 class="project-title">Loading...</h3>
-            </div>
-        </div>
-
-        <!-- Featured Project 2 -->
-        <div class="bento-box bento-project" id="featured-project-2">
-            <div class="project-overlay">
-                <h3 class="project-title">Loading...</h3>
-            </div>
-        </div>
-
-        <!-- Featured Project 3 -->
-        <div class="bento-box bento-project" id="featured-project-3">
-            <div class="project-overlay">
-                <h3 class="project-title">Loading...</h3>
-            </div>
-        </div>
-
-        <!-- View All Projects CTA -->
-        <div class="bento-box bento-cta">
-            <a href="projects/" class="cta-link">
-                <span>View All Projects</span>
-                <span class="arrow">→</span>
+            <a href="resume/Gino_Angelici_DSC.pdf" download class="download-btn">
+                <span class="download-icon">↓</span>
+                <span>Download Resume</span>
             </a>
         </div>
 
-        <!-- Fun fact / Quote box -->
-        <div class="bento-box bento-quote">
-            <blockquote>
-                "In God we trust. All others must bring data."
-                <cite>— W. Edwards Deming</cite>
-            </blockquote>
+        <!-- Education -->
+        <div class="bento-box resume-education">
+            <h2>Education</h2>
+            <div class="edu-content">
+                <div class="edu-header">
+                    <h3>UC San Diego</h3>
+                    <span class="edu-date">Spring 2025</span>
+                </div>
+                <p class="edu-degree">B.S. Data Science</p>
+                <p class="edu-location">San Diego, CA</p>
+            </div>
         </div>
 
-        <!-- Current Status -->
-        <div class="bento-box bento-status">
-            <div class="status-indicator"></div>
-            <span>Open to opportunities</span>
+        <!-- Coursework -->
+        <div class="bento-box resume-coursework">
+            <h2>Coursework</h2>
+            <div class="course-tags">
+                <span class="course-tag">Machine Learning</span>
+                <span class="course-tag">AI</span>
+                <span class="course-tag">Computer Vision</span>
+                <span class="course-tag">Data Structures</span>
+                <span class="course-tag">Algorithms</span>
+                <span class="course-tag">Probability</span>
+                <span class="course-tag">Statistics</span>
+                <span class="course-tag">Linear Algebra</span>
+                <span class="course-tag">Recommender Sys</span>
+                <span class="course-tag">Web Mining</span>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="bento-box resume-skills resume-languages">
+            <h2>Languages</h2>
+            <div class="skill-list">
+                <span class="skill-item primary">Python</span>
+                <span class="skill-item primary">SQL</span>
+                <span class="skill-item">Java</span>
+                <span class="skill-item">C/C++</span>
+                <span class="skill-item">R</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">TypeScript</span>
+                <span class="skill-item">HTML/CSS</span>
+                <span class="skill-item">ROS2</span>
+                <span class="skill-item">Linux</span>
+            </div>
+        </div>
+
+        <!-- Libraries/Frameworks -->
+        <div class="bento-box resume-skills resume-frameworks">
+            <h2>Libraries & Frameworks</h2>
+            <div class="skill-list">
+                <span class="skill-item primary">PyTorch</span>
+                <span class="skill-item primary">TensorFlow</span>
+                <span class="skill-item primary">Pandas</span>
+                <span class="skill-item">Keras</span>
+                <span class="skill-item">Scikit-learn</span>
+                <span class="skill-item">XGBoost</span>
+                <span class="skill-item">NumPy</span>
+                <span class="skill-item">PySpark</span>
+                <span class="skill-item">D3.js</span>
+                <span class="skill-item">React</span>
+                <span class="skill-item">Hugging Face</span>
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="bento-box resume-skills resume-tools">
+            <h2>Tools & Platforms</h2>
+            <div class="skill-list">
+                <span class="skill-item primary">AWS</span>
+                <span class="skill-item primary">Docker</span>
+                <span class="skill-item">Git/GitHub</span>
+                <span class="skill-item">Spark</span>
+                <span class="skill-item">Kafka</span>
+                <span class="skill-item">Airflow</span>
+                <span class="skill-item">Snowflake</span>
+                <span class="skill-item">BigQuery</span>
+                <span class="skill-item">Tableau</span>
+                <span class="skill-item">MongoDB</span>
+            </div>
+        </div>
+
+        <!-- Experience Header -->
+        <div class="bento-box resume-exp-header">
+            <h2>Experience</h2>
+            <div class="exp-timeline">
+                <span class="timeline-dot active"></span>
+                <span class="timeline-line"></span>
+            </div>
+        </div>
+
+        <!-- Experience 1 - HDSI -->
+        <div class="bento-box resume-experience exp-featured">
+            <div class="exp-header">
+                <h3>Data Research Assistant</h3>
+                <span class="exp-date">Sep 2024 – Jun 2025</span>
+            </div>
+            <p class="exp-company">Halicioğlu Data Science Institute</p>
+            <p class="exp-subtitle">Autonomous Vehicle Development</p>
+            <ul class="exp-bullets">
+                <li>Optimized gradient descent steering algorithms for figure-8 track cornering with Docker environments for GPS/IMU integration</li>
+                <li>Won 1st place at Purdue's collegiate go kart race — 30 mph with autonomous emergency braking</li>
+            </ul>
+            <div class="exp-badge-bottom">
+                <svg class="spinning-trophy" viewBox="0 0 64 64" width="32" height="32">
+                    <path d="M20 8h24v4c0 8-4 16-12 20-8-4-12-12-12-20V8z" fill="#D4AF37"/>
+                    <path d="M20 12h-6c0 6 2 10 6 12v-4c-2-2-4-4-4-8h4z" fill="#B8960C"/>
+                    <path d="M44 12h6c0 6-2 10-6 12v-4c2-2 4-4 4-8h-4z" fill="#B8960C"/>
+                    <rect x="28" y="32" width="8" height="6" rx="1" fill="#D4AF37"/>
+                    <rect x="22" y="38" width="20" height="5" rx="2" fill="#D4AF37"/>
+                    <ellipse cx="32" cy="18" rx="5" ry="4" fill="#FFF3C4" opacity="0.3"/>
+                </svg>
+                <span class="exp-badge">1st Place Winner</span>
+            </div>
+        </div>
+
+        <!-- Experience 2 - Scripps -->
+        <div class="bento-box resume-experience">
+            <div class="exp-header">
+                <h3>Data Research Assistant</h3>
+                <span class="exp-date">Sep 2022 – Sep 2024</span>
+            </div>
+            <p class="exp-company">Scripps Institution of Oceanography</p>
+            <ul class="exp-bullets">
+                <li>Developed Python pipelines analyzing 70+ years of climate data from 60 coastal airports</li>
+                <li>Applied PCA, polynomial & ridge regression for cloud cover/temperature correlations</li>
+                <li>Co-authored published research linking urbanization to local temperature changes</li>
+            </ul>
+        </div>
+
+        <!-- Experience 3 - Deloitte -->
+        <div class="bento-box resume-experience">
+            <div class="exp-header">
+                <h3>Data Science Intern</h3>
+                <span class="exp-date">Mar 2023 – Jun 2023</span>
+            </div>
+            <p class="exp-company">Deloitte</p>
+            <ul class="exp-bullets">
+                <li>Analyzed USDHHS data to identify traits leading to drug abuse using XGBoost & regression models</li>
+                <li>Presented findings to senior management with Seaborn & Plotly visualizations</li>
+            </ul>
+        </div>
+
+        <!-- Highlights -->
+        <div class="bento-box resume-highlights">
+            <h2>Highlights</h2>
+            <div class="highlight-items">
+                <div class="highlight-item">
+                    <span class="highlight-number">70+</span>
+                    <span class="highlight-label">Years of Data Analyzed</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">16M+</span>
+                    <span class="highlight-label">Rows Processed</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">1st</span>
+                    <span class="highlight-label">Place at Purdue</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- View Projects CTA -->
+        <div class="bento-box resume-cta">
+            <a href="projects/" class="cta-link">
+                <span>View My Projects</span>
+                <span class="arrow">→</span>
+            </a>
         </div>
     </div>
 </body>
