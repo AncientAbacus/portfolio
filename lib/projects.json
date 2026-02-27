@@ -1,107 +1,58 @@
 [
     {
-        "title": "\"Organ\" Trail: Personalized Predictive Health Platform",
+        "title": "Organ Trail — Personalized Predictive Health Platform",
         "year": 2025,
-        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Organ+Trail",
+        "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Developed scrollable experience to effectively display unique types of surgeries based on hospital database. Built website using D3.js and HTML to facilitate smooth user interaction with personalized histograms and ridgeline plots."
+        "description": "Built an interactive scrollable data experience using D3.js and HTML to surface personalized surgery statistics from a hospital database, featuring dynamic histograms and ridgeline plots."
     },
     {
-        "title": "Autonomous Vehicle Development - 1st Place at Purdue",
+        "title": "Autonomous Vehicle Development — 1st Place at Purdue",
         "year": 2025,
-        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Autonomous+Vehicle",
+        "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Optimized gradient descent-based steering algorithms for figure-8 track cornering. Maintained Docker environments for GPS and IMU integration across scaled car prototypes. Won 1st place at Purdue's collegiate go kart race achieving 30 mph with autonomous emergency braking."
+        "description": "Optimized gradient descent–based steering algorithms for a scale autonomous go-kart, integrated GPS/IMU sensors in Docker environments, and won 1st place at Purdue's collegiate full-size go-kart race at 30 mph with autonomous emergency braking."
     },
     {
-        "title": "Recurrent Neural Network Research Paper",
-        "year": 2025,
-        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=RNN+Research",
+        "title": "Character-Level RNN for Reddit Sentiment Analysis",
+        "year": 2024,
+        "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Engineered custom character-level Recurrent Neural Network in TensorFlow to perform word sentiment analysis on Reddit comments from its top 200 communities using different batch sizes and sequence lengths. Wrote academic paper about how a uniquely genuine and personal tone is reflected in novel generated comments."
-    },
-    {
-        "title": "Sun-Lovers Special",
-        "year": 2025,
-        "image": "images/Project1.png",
-        "imageClass": "project-image",
-        "description": "An analytical deep dive into how solar energy adoption correlates with regional climate, income levels, and policy incentives. This project uses geospatial data and machine learning to predict solar panel viability across different states."
-    },
-    {
-        "title": "Bad Graphs, Worse Intentions",
-        "year": 2025,
-        "image": "images/thoracic.png",
-        "imageClass": "project-image",
-        "description": "An exploration of misleading data visualizations used in media and research. This project categorizes deceptive graphing techniques and evaluates their impact using sentiment analysis and survey-based experiments."
+        "description": "Engineered a custom character-level RNN in TensorFlow for sentiment analysis on Reddit comments from the top 200 subreddits, experimenting with batch size and sequence length hyperparameters and authoring an academic paper on tone in model-generated text."
     },
     {
         "title": "Seal Health Prediction Model",
         "year": 2024,
-        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Seal+Health",
+        "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Analyzed environmental and economic datasets to assess human impact on Alaskan seal populations. Performed ridge regression, PCA, and correlation heat map analysis to identify statistically significant factors affecting seal weight, notably human ocean traffic and development."
+        "description": "Analyzed environmental and economic datasets to assess human impact on Alaskan seal populations using ridge regression, PCA, and correlation heatmaps, identifying ocean traffic and coastal development as statistically significant predictors of seal weight."
     },
     {
         "title": "Amazon Purchase Dataset Analysis",
         "year": 2024,
-        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Amazon+Analysis",
+        "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Utilized AWS Lambda and Apache Spark to data engineer over 16 million rows of Amazon purchases. Practiced optimized batch calculations of root mean square error, one-hot encoding, PCA, all within AWS API and EC2."
+        "description": "Processed 16M+ rows of Amazon transaction data using AWS Lambda, Apache Spark, and EC2, implementing optimized batch computations of RMSE, one-hot encoding, and PCA within the AWS ecosystem."
     },
     {
         "title": "San Diego Parking Analysis",
         "year": 2024,
-        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=SD+Parking",
+        "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Developed dynamic D3.js-based website to help San Diego drivers find the best time and place to park. Created intuitive daily frequency histograms and a geospatial parking meter heat map."
+        "description": "Designed a dynamic D3.js web app to help San Diego drivers identify optimal parking times and locations via daily frequency histograms and an interactive geospatial parking meter heatmap."
     },
     {
         "title": "Scripps Climate Research",
         "year": 2024,
-        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Climate+Research",
+        "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Developed Python pipelines to analyze 70+ years of climate data from 60 coastal airports, including sliding-window PCA, polynomial and ridge regression to model correlations between low cloud cover and temperature trends. Results linked urbanization to reduced cloud thickness."
-    },
-    {
-        "title": "Pokémon: Parsed",
-        "year": 2024,
-        "image": "images/dancinglitwicks.gif",
-        "imageClass": "project-image",
-        "description": "A natural language processing (NLP) and computer vision approach to analyzing Pokémon game mechanics, player behavior, and competitive metagame trends using battle logs and forum discussions."
+        "description": "Built Python pipelines to analyze 70+ years of climate data from 60 coastal airports using sliding-window PCA, polynomial regression, and ridge regression, with findings published in a paper linking urbanization to reduced cloud thickness and elevated local temperatures."
     },
     {
         "title": "Deloitte Drug Abuse Analysis",
         "year": 2023,
-        "image": "images/delot.webp",
+        "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Determined traits that lead to drug abuse in young adults by analyzing USDHHS data using XGBoost, ridge, and linear regression models. Presented findings to senior Deloitte management with intuitive visual graphics using Seaborn and plotly."
-    },
-    {
-        "title": "Every City is a Walkable City if You're Strong Enough",
-        "year": 2023,
-        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Walkability",
-        "imageClass": "project-image",
-        "description": "A study on urban walkability and its correlation with health outcomes, measuring pedestrian accessibility and infrastructure quality across major U.S. cities."
-    },
-    {
-        "title": "Electrical Grid Americana",
-        "year": 2022,
-        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Electrical+Grid",
-        "imageClass": "project-image",
-        "description": "An infrastructure-focused data visualization project mapping the aging U.S. electrical grid, identifying outage-prone regions, and forecasting future failures using time-series analysis."
-    },
-    {
-        "title": "Viewpoint Obstruction: Clouds or Fog?",
-        "year": 2022,
-        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Cloud+Detection",
-        "imageClass": "project-image",
-        "description": "A machine learning model trained on weather satellite data to classify obstructions in aerial imagery, distinguishing between cloud cover and fog to improve flight navigation predictions."
-    },
-    {
-        "title": "Hit Me. BLACKJACK",
-        "year": 2021,
-        "image": "https://via.placeholder.com/400x200/1B4332/52B788?text=Blackjack+AI",
-        "imageClass": "project-image",
-        "description": "A reinforcement learning project that trains AI agents to optimize Blackjack strategy, comparing different counting systems and probability-based decision-making techniques."
+        "description": "Analyzed USDHHS data using XGBoost, ridge regression, and linear regression to identify behavioral traits predictive of substance abuse in young adults, presenting actionable insights to senior Deloitte management via Seaborn and Plotly visualizations."
     }
 ]

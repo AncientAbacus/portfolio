@@ -940,8 +940,8 @@ a:hover {
 
 .link-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.5em;
+  grid-template-columns: 1fr;
+  gap: 0.4em;
 }
 
 .link-item {
@@ -1245,10 +1245,8 @@ a:hover {
     min-height: 250px;
   }
 
-  .link-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
+
 
 /* ===== BENTO BOX RESUME PAGE ===== */
 .resume-page .resume-bento-grid {
