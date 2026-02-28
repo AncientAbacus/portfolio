@@ -80,7 +80,7 @@ function renderPieChart(projectsGiven) {
     let newArcs = newArcData.map((d) => newArcGenerator(d));
     let newColors = d3.scaleOrdinal(d3.schemeTableau10);
     // TODO: clear up paths and legends
-    let newSVG = d3.select('svg'); 
+    let newSVG = d3.select('#projects-pie-chart');
     newSVG.selectAll('path').remove();
 
     let newLegend = d3.select('.legend'); 

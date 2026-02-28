@@ -29,6 +29,7 @@ for (let p of pages) {
     if (a.host !== location.host) {
         a.target = "_blank";
         a.classList.add('external');
+        a.innerHTML = `${title}<svg class="ext-arrow" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8L8 2"/><path d="M4 2h4v4"/></svg>`;
       }
     nav.append(a);
 }

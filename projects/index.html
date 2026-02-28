@@ -15,20 +15,256 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
+    <!-- Dark Fantasy Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
     <link href="../style.css" rel="stylesheet">
     <script src="../global.js" type="module"></script>
     <script src="./projects.js" type="module"></script>
 </head>
 <body>
-  <header> 
-    <h1>Projects</h1>
-    <input
-      class="searchBar"
-      type="search"
-      aria-label="Search projects"
-      placeholder="🔍 Search projects…"
-    />
-    <div class="projects"></div>
-  </header>
+    <main class="projects-main">
+        <div class="projects-page-header">
+            <h1>✦ Projects ✦</h1>
+            <p class="projects-subtitle">data science · machine learning · algorithms</p>
+            <input
+                class="searchBar"
+                type="search"
+                aria-label="Search projects"
+                placeholder="SEARCH_PROJECTS..."
+            />
+        </div>
+        <div class="projects"></div>
+        <!-- Dedicated D3 pie chart target (not displayed) -->
+        <svg id="projects-pie-chart" aria-hidden="true" style="display:none"></svg>
+    </main>
+
+    <!-- Star field canvas -->
+    <canvas id="star-canvas"></canvas>
+
+    <!-- Spinning magic ring (top-right) -->
+    <div class="magic-ring">
+        <div class="ring-inner"></div>
+    </div>
+
+    <!-- Floating magic orb (left side) -->
+    <div class="magic-orb"></div>
+
+    <!-- Spinning gold diamond (top-left) -->
+    <div class="magic-diamond"><div class="magic-diamond-inner"></div></div>
+
+    <!-- Floating rose star (mid-right) -->
+    <div class="magic-star"><div class="magic-star-inner"></div></div>
+
+    <!-- Spinning gold ring (bottom-left) -->
+    <div class="magic-ring-gold"><div class="ring-gold-inner"></div></div>
+
+    <!-- Edge sparkles -->
+    <div class="edge-sparkles">
+        <div class="edge-sparkle">✦</div>
+        <div class="edge-sparkle">✧</div>
+        <div class="edge-sparkle">◆</div>
+        <div class="edge-sparkle">✦</div>
+        <div class="edge-sparkle">✧</div>
+        <div class="edge-sparkle">✦</div>
+        <div class="edge-sparkle">◆</div>
+        <div class="edge-sparkle">✧</div>
+        <div class="edge-sparkle">✦</div>
+        <div class="edge-sparkle">✧</div>
+        <div class="edge-sparkle">◆</div>
+        <div class="edge-sparkle">✦</div>
+    </div>
+
+    <!-- Crystal cluster (bottom-right) -->
+    <div class="crystal crystal-br">
+        <div class="crystal-shape"></div>
+        <div class="crystal-shape"></div>
+        <div class="crystal-shape"></div>
+    </div>
+
+    <!-- Crystal cluster (bottom-left) -->
+    <div class="crystal crystal-bl">
+        <div class="crystal-shape"></div>
+        <div class="crystal-shape"></div>
+        <div class="crystal-shape"></div>
+    </div>
+
+    <script>
+    (function () {
+        const canvas = document.getElementById('star-canvas');
+        const ctx    = canvas.getContext('2d');
+        let stars    = [];
+        const palette = [
+            [74,  222, 128], // green
+            [74,  222, 128], // green (double weight)
+            [134, 239, 172], // light green
+            [251, 191, 36 ], // gold
+            [251, 113, 133], // rose
+        ];
+
+        function resize() {
+            canvas.width  = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function init() {
+            resize();
+            stars = Array.from({ length: 150 }, () => {
+                const c = palette[Math.floor(Math.random() * palette.length)];
+                return {
+                    x:     Math.random() * canvas.width,
+                    y:     Math.random() * canvas.height,
+                    r:     Math.random() * 1.1 + 0.25,
+                    speed: Math.random() * 0.010 + 0.003,
+                    phase: Math.random() * Math.PI * 2,
+                    color: c,
+                };
+            });
+        }
+
+        function draw(t) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (const s of stars) {
+                const alpha = 0.22 + 0.78 * (0.5 + 0.5 * Math.sin(t * s.speed + s.phase));
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${s.color[0]}, ${s.color[1]}, ${s.color[2]}, ${alpha.toFixed(3)})`;
+                ctx.fill();
+            }
+            requestAnimationFrame(draw);
+        }
+
+        window.addEventListener('resize', init);
+        init();
+        requestAnimationFrame(draw);
+    })();
+    </script>
+
+    <script>
+    /* ===== CAST ENCHANTMENT — fires on any project card or header click ===== */
+    (function () {
+        const RUNES = ['ᚠ','ᚢ','ᚦ','ᚨ','ᚱ','ᚲ','ᚷ','ᚹ','ᚺ','ᚾ','ᛁ','ᛊ','ᛏ','ᛒ','ᛖ','ᛗ','ᛚ','ᛞ','ᛟ','✦','✧','◆','♦','⟡'];
+        const runeColors = ['#4ade80','#86efac','#fbbf24','#fb7185','#a3e635','#34d399'];
+        let _cooldown = false;
+
+        function spawnParticles(ox, oy) {
+            const c2 = document.createElement('canvas');
+            c2.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:9999';
+            document.body.appendChild(c2);
+            const ctx2 = c2.getContext('2d');
+            c2.width  = window.innerWidth;
+            c2.height = window.innerHeight;
+
+            const colors = ['#4ade80','#86efac','#fbbf24','#fb7185','#a3e635','#22c55e','#d4f8a0'];
+            const particles = Array.from({ length: 110 }, () => ({
+                x: ox, y: oy,
+                vx: (Math.random() - 0.5) * 17,
+                vy: (Math.random() - 0.5) * 17 - 4,
+                r:  Math.random() * 5 + 1.5,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                life: 1,
+                decay: Math.random() * 0.016 + 0.008,
+                star: Math.random() > 0.40,
+            }));
+
+            function drawStar(ctx, x, y, r, color, alpha) {
+                ctx.save();
+                ctx.globalAlpha = alpha;
+                ctx.fillStyle   = color;
+                ctx.shadowColor = color;
+                ctx.shadowBlur  = 14;
+                ctx.beginPath();
+                for (let i = 0; i < 8; i++) {
+                    const angle  = i * Math.PI / 4;
+                    const radius = i % 2 === 0 ? r : r * 0.38;
+                    const px = x + Math.cos(angle) * radius;
+                    const py = y + Math.sin(angle) * radius;
+                    i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+                }
+                ctx.closePath();
+                ctx.fill();
+                ctx.restore();
+            }
+
+            function animate() {
+                ctx2.clearRect(0, 0, c2.width, c2.height);
+                let alive = false;
+                for (const p of particles) {
+                    p.x  += p.vx;
+                    p.y  += p.vy;
+                    p.vy += 0.22;
+                    p.life -= p.decay;
+                    if (p.life > 0) {
+                        alive = true;
+                        if (p.star) {
+                            drawStar(ctx2, p.x, p.y, p.r * p.life, p.color, p.life * 0.9);
+                        } else {
+                            ctx2.globalAlpha = p.life * 0.88;
+                            ctx2.fillStyle   = p.color;
+                            ctx2.shadowColor = p.color;
+                            ctx2.shadowBlur  = 16;
+                            ctx2.beginPath();
+                            ctx2.arc(p.x, p.y, p.r * p.life, 0, Math.PI * 2);
+                            ctx2.fill();
+                            ctx2.globalAlpha = 1;
+                            ctx2.shadowBlur  = 0;
+                        }
+                    }
+                }
+                alive ? requestAnimationFrame(animate) : c2.remove();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        function castSpell(e) {
+            const ox = e.clientX;
+            const oy = e.clientY;
+
+            const flash = document.createElement('div');
+            flash.className = 'spell-flash';
+            document.body.appendChild(flash);
+            setTimeout(() => flash.remove(), 1900);
+
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    const ring = document.createElement('div');
+                    ring.className = 'spell-ripple';
+                    ring.style.left = ox + 'px';
+                    ring.style.top  = oy + 'px';
+                    if (i === 1) ring.style.borderColor = 'rgba(251, 191, 36, 0.65)';
+                    document.body.appendChild(ring);
+                    setTimeout(() => ring.remove(), 1100);
+                }, i * 220);
+            }
+
+            spawnParticles(ox, oy);
+
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    const rune = document.createElement('div');
+                    rune.className = 'spell-rune';
+                    rune.textContent = RUNES[Math.floor(Math.random() * RUNES.length)];
+                    rune.style.left     = (Math.random() * 85 + 5) + 'vw';
+                    rune.style.top      = (Math.random() * 80 + 5) + 'vh';
+                    rune.style.fontSize = (Math.random() * 26 + 12) + 'px';
+                    rune.style.color    = runeColors[Math.floor(Math.random() * runeColors.length)];
+                    document.body.appendChild(rune);
+                    setTimeout(() => rune.remove(), 3000);
+                }, i * 55);
+            }
+        }
+
+        document.addEventListener('click', function(e) {
+            if (_cooldown) return;
+            const hit = e.target.closest('article, .projects-page-header');
+            if (!hit) return;
+            _cooldown = true;
+            setTimeout(() => { _cooldown = false; }, 900);
+            castSpell(e);
+        });
+    })();
+    </script>
 </body>
 </html>
