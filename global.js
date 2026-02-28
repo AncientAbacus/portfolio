@@ -1,7 +1,3 @@
-function $$(selector, context = document) {
-  return Array.from(context.querySelectorAll(selector));
-}
-
 let pages = [
     { url: '', title: 'Home' },
     { url: 'projects/', title: 'Projects' },
@@ -84,22 +80,11 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
   containerElement.innerHTML = ''; // Clear existing content
 
-  // Check if we're on the home page
-  const isHome = document.documentElement.classList.contains('home');
-  const placeholderPath = isHome ? 'images/place_holder.jpeg' : '../images/place_holder.jpeg';
-
   projects.forEach(project => {
       const article = document.createElement('article');
 
-      // Adjust image path for non-home pages (add ../ prefix for relative local paths)
-      let imageSrc = project.image;
-      if (!isHome && imageSrc && !imageSrc.startsWith('http') && !imageSrc.startsWith('../')) {
-          imageSrc = '../' + imageSrc;
-      }
-
       article.innerHTML = `
           <${headingLevel}>${project.title}</${headingLevel}>
-          <img src="${imageSrc}" class="${project.imageClass}" alt="${project.title}" onerror="this.onerror=null; this.src='${placeholderPath}';">
           <p>${project.description}</p>
           <p>c. ${project.year}</p>
       `;
