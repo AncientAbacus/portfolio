@@ -86,7 +86,6 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
       article.innerHTML = `
           <${headingLevel}>${project.title}</${headingLevel}>
           <p>${project.description}</p>
-          <p>c. ${project.year}</p>
       `;
       containerElement.appendChild(article);
   });
