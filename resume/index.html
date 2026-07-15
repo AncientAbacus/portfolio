@@ -15,210 +15,91 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
+    <!-- Studio fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <link href="../style.css" rel="stylesheet">
     <script src="../global.js" type="module"></script>
 </head>
 <body>
-    <div class="resume-bento-grid">
-        <!-- Header with name and download -->
-        <div class="bento-box resume-header">
-            <div class="resume-header-content">
-                <h1>Gino Angelici</h1>
-                <p class="resume-subtitle">Data Science Professional</p>
+    <main>
+        <article class="prose">
+            <span class="eyebrow">Résumé</span>
+            <h1>Gino Angelici</h1>
+            <p class="lede">Data Science Professional. <a href="https://github.com/ancientabacus" target="_blank">GitHub</a> · <a href="https://linkedin.com/in/gino-angelici" target="_blank">LinkedIn</a> · <a href="mailto:gino.angelici@gmail.com">Email</a> · <a href="Gino_Angelici_DSC.pdf" download class="cta">Download PDF →</a></p>
+
+            <div class="stat-row">
+                <div class="stat">
+                    <span class="stat__num">70+</span>
+                    <span class="stat__label">Years of climate data analyzed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__num">16M+</span>
+                    <span class="stat__label">Rows processed</span>
+                </div>
+                <div class="stat">
+                    <span class="stat__num">1st</span>
+                    <span class="stat__label">Place at Purdue AV competition</span>
+                </div>
             </div>
-            <a href="Gino_Angelici_DSC.pdf" download class="download-btn">
-                <span class="download-icon">↓</span>
-                <span>Download PDF</span>
-            </a>
-        </div>
 
-        <!-- Quick Links -->
-        <div class="bento-box resume-links">
-            <a href="https://github.com/ancientabacus" target="_blank" class="resume-link-item">
-                <span class="link-icon">GH</span>
-            </a>
-            <a href="https://linkedin.com/in/gino-angelici" target="_blank" class="resume-link-item">
-                <span class="link-icon">IN</span>
-            </a>
-            <a href="mailto:gino.angelici@gmail.com" class="resume-link-item">
-                <span class="link-icon">@</span>
-            </a>
-        </div>
-
-        <!-- Education -->
-        <div class="bento-box resume-education">
             <h2>Education</h2>
-            <div class="edu-content">
-                <div class="edu-header">
-                    <h3>UC San Diego</h3>
-                    <span class="edu-date">Sep 2021 – Jun 2025</span>
-                </div>
-                <p class="edu-degree">B.S. Data Science</p>
-                <p class="edu-location">San Diego, CA</p>
-            </div>
-        </div>
+            <p>B.S. Data Science, UC San Diego — Sep 2021 to Jun 2025. Coursework in machine learning, computer vision, algorithms, probability and statistics, linear algebra, recommender systems, and web mining.</p>
 
-        <!-- Coursework -->
-        <div class="bento-box resume-coursework">
-            <h2>Coursework</h2>
-            <div class="course-tags">
-                <span class="course-tag">Machine Learning</span>
-                <span class="course-tag">AI</span>
-                <span class="course-tag">Computer Vision</span>
-                <span class="course-tag">Data Structures</span>
-                <span class="course-tag">Algorithms</span>
-                <span class="course-tag">Probability</span>
-                <span class="course-tag">Statistics</span>
-                <span class="course-tag">Linear Algebra</span>
-                <span class="course-tag">Recommender Sys</span>
-                <span class="course-tag">Web Mining</span>
-            </div>
-        </div>
-
-        <!-- Languages -->
-        <div class="bento-box resume-skills resume-languages">
-            <h2>Languages</h2>
-            <div class="skill-list">
-                <span class="skill-item primary">Python</span>
-                <span class="skill-item primary">SQL (PostgreSQL, BigQuery, Snowflake)</span>
-                <span class="skill-item">R</span>
-                <span class="skill-item">JavaScript/TypeScript</span>
-                <span class="skill-item">HTML/CSS</span>
-                <span class="skill-item">Linux</span>
-            </div>
-        </div>
-
-        <!-- ML & AI -->
-        <div class="bento-box resume-skills resume-frameworks">
-            <h2>ML & AI</h2>
-            <div class="skill-list">
-                <span class="skill-item primary">PyTorch</span>
-                <span class="skill-item primary">TensorFlow</span>
-                <span class="skill-item primary">Pandas</span>
-                <span class="skill-item">Scikit-learn</span>
-                <span class="skill-item">XGBoost</span>
-                <span class="skill-item">Hugging Face Transformers</span>
-                <span class="skill-item">LangChain/LangGraph</span>
-                <span class="skill-item">NumPy</span>
-                <span class="skill-item">Statsmodels</span>
-                <span class="skill-item">SciPy</span>
-                <span class="skill-item">PySpark</span>
-                <span class="skill-item">Seaborn</span>
-                <span class="skill-item">Matplotlib</span>
-                <span class="skill-item">Plotly</span>
-                <span class="skill-item">D3.js</span>
-            </div>
-        </div>
-
-        <!-- Tools -->
-        <div class="bento-box resume-skills resume-tools">
-            <h2>Tools & Platforms</h2>
-            <div class="skill-list">
-                <span class="skill-item primary">AWS (Lambda, EC2)</span>
-                <span class="skill-item primary">Docker</span>
-                <span class="skill-item">Apache Spark</span>
-                <span class="skill-item">Airflow</span>
-                <span class="skill-item">Databricks</span>
-                <span class="skill-item">Snowflake</span>
-                <span class="skill-item">FastAPI</span>
-                <span class="skill-item">Git/GitHub</span>
-                <span class="skill-item">Weights & Biases</span>
-                <span class="skill-item">Tableau</span>
-                <span class="skill-item">Power BI</span>
-                <span class="skill-item">MongoDB</span>
-            </div>
-        </div>
-
-        <!-- Experience Header -->
-        <div class="bento-box resume-exp-header">
             <h2>Experience</h2>
-            <div class="exp-timeline">
-                <span class="timeline-dot active"></span>
-                <span class="timeline-line"></span>
-            </div>
-        </div>
-
-        <!-- Experience 1 - Exponential Intelligence -->
-        <div class="bento-box resume-experience exp-featured">
-            <div class="exp-header">
-                <h3>Machine Learning Intern</h3>
-                <span class="exp-date">Sep 2025 – Present</span>
-            </div>
-            <p class="exp-company">Exponential Intelligence</p>
-            <p class="exp-subtitle">Irvine, CA</p>
-            <ul class="exp-bullets">
-                <li>Built an end-to-end LLM pipeline with prompt engineering and fine-tuned classification models to generate AI digital twins simulating survey responses across political subgroups</li>
-                <li>Developed a statistical validation framework using Jensen-Shannon Divergence and chi-square tests of homogeneity to measure alignment between LLM outputs and real survey respondents</li>
-            </ul>
-        </div>
-
-        <!-- Experience 2 - HDSI -->
-        <div class="bento-box resume-experience">
-            <div class="exp-badge">1st Place Winner</div>
-            <div class="exp-header">
-                <h3>ML Research Assistant</h3>
-                <span class="exp-date">Sep 2024 – Aug 2025</span>
-            </div>
-            <p class="exp-company">Halicioğlu Data Science Institute</p>
-            <p class="exp-subtitle">Autonomous Vehicle Development</p>
-            <ul class="exp-bullets">
-                <li>Designed CNN-based perception and control models for autonomous vehicle navigation on low-power embedded hardware, integrating stereo and RGB-D cameras for real-time 3D scene understanding</li>
-                <li>Benchmarked custom CNN models against LLMs/LVMs; led team to 1st place at Purdue's national autonomous vehicle competition</li>
-            </ul>
-        </div>
-
-        <!-- Experience 3 - Scripps -->
-        <div class="bento-box resume-experience">
-            <div class="exp-header">
-                <h3>Data Research Assistant</h3>
-                <span class="exp-date">Sep 2022 – Sep 2024</span>
-            </div>
-            <p class="exp-company">Scripps Institution of Oceanography</p>
-            <ul class="exp-bullets">
-                <li>Built Python ETL pipelines to ingest, clean, and analyze 70+ years of climate records across 60 coastal airports</li>
-                <li>Applied sliding-window PCA, polynomial & ridge regression; contributed findings to a peer-reviewed publication update linking urbanization to local temperature changes</li>
-            </ul>
-        </div>
-
-        <!-- Experience 4 - Deloitte -->
-        <div class="bento-box resume-experience">
-            <div class="exp-header">
-                <h3>Data Science Intern</h3>
-                <span class="exp-date">Mar 2023 – Aug 2023</span>
-            </div>
-            <p class="exp-company">Deloitte</p>
-            <ul class="exp-bullets">
-                <li>Trained and evaluated XGBoost & regularized regression models on 50,000+ HHS records to surface behavioral predictors of substance abuse risk</li>
-                <li>Communicated findings to senior leadership with Seaborn & Plotly visualizations</li>
-            </ul>
-        </div>
-
-        <!-- Highlights box -->
-        <div class="bento-box resume-highlights">
-            <h2>Highlights</h2>
-            <div class="highlight-items">
-                <div class="highlight-item">
-                    <span class="highlight-number">70+</span>
-                    <span class="highlight-label">Years of Data Analyzed</span>
+            <div class="roles">
+                <div class="role">
+                    <div class="role__head">
+                        <h3 class="role__title">Machine Learning Intern, Exponential Intelligence</h3>
+                        <span class="role__meta">Sep 2025 – Present</span>
+                    </div>
+                    <p class="role__sub">Irvine, CA</p>
+                    <p>Built an end-to-end LLM pipeline with prompt engineering and fine-tuned classification models to generate AI digital twins simulating survey responses; validated with Jensen-Shannon divergence and chi-square tests against real respondents.</p>
                 </div>
-                <div class="highlight-item">
-                    <span class="highlight-number">16M+</span>
-                    <span class="highlight-label">Rows Processed</span>
+                <div class="role">
+                    <div class="role__head">
+                        <h3 class="role__title">ML Research Assistant, Halicioğlu Data Science Institute</h3>
+                        <span class="role__meta">Sep 2024 – Aug 2025 <span class="role__badge">1st place</span></span>
+                    </div>
+                    <p class="role__sub">Autonomous vehicle development</p>
+                    <p>Designed CNN-based perception and control models for autonomous vehicle navigation on low-power embedded hardware, integrating stereo and RGB-D cameras; benchmarked against LLMs/LVMs and led the team to 1st place at Purdue's national AV competition.</p>
                 </div>
-                <div class="highlight-item">
-                    <span class="highlight-number">1st</span>
-                    <span class="highlight-label">Place at Purdue</span>
+                <div class="role">
+                    <div class="role__head">
+                        <h3 class="role__title">Data Research Assistant, Scripps Institution of Oceanography</h3>
+                        <span class="role__meta">Sep 2022 – Sep 2024</span>
+                    </div>
+                    <p>Built Python ETL pipelines to analyze 70+ years of climate records across 60 coastal airports using sliding-window PCA and regression; contributed to a peer-reviewed publication update linking urbanization to local temperature change.</p>
+                </div>
+                <div class="role">
+                    <div class="role__head">
+                        <h3 class="role__title">Data Science Intern, Deloitte</h3>
+                        <span class="role__meta">Mar 2023 – Aug 2023</span>
+                    </div>
+                    <p>Trained and evaluated XGBoost and regularized regression models on 50,000+ HHS records to surface predictors of substance-abuse risk, presented via Seaborn and Plotly dashboards.</p>
                 </div>
             </div>
-        </div>
 
-        <!-- View Projects CTA -->
-        <div class="bento-box resume-cta">
-            <a href="../projects/" class="cta-link">
-                <span>View My Projects</span>
-                <span class="arrow">→</span>
-            </a>
-        </div>
-    </div>
+            <h2>Skills</h2>
+            <dl class="plain">
+                <div>
+                    <dt>Languages</dt>
+                    <dd>Python, SQL (Postgres, BigQuery, Snowflake), R, JavaScript/TypeScript, Linux</dd>
+                </div>
+                <div>
+                    <dt>ML &amp; AI</dt>
+                    <dd>PyTorch, TensorFlow, Pandas, scikit-learn, XGBoost, Hugging Face, LangChain, NumPy, PySpark, Seaborn, Plotly, D3.js</dd>
+                </div>
+                <div>
+                    <dt>Tools</dt>
+                    <dd>AWS, Docker, Spark, Airflow, Databricks, Snowflake, FastAPI, Git, Weights &amp; Biases, Tableau, Power BI, MongoDB</dd>
+                </div>
+            </dl>
+
+            <p><a href="../projects/" class="cta">View my projects →</a></p>
+        </article>
+    </main>
 </body>
 </html>

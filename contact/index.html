@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="contact-page">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,28 +15,37 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 
+    <!-- Studio fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@400;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <link href="../style.css" rel="stylesheet">
     <script type="module" src="../global.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Contact</h1>
-    </header>
-
-    <h2>Get in Touch</h2>
-    <form id="contact-form">
-
-        <label>
-            Subject:<input type="text" id="subject" required>
-        </label>
-
-        <label>
-            Message:<textarea id="message" required></textarea>
-        </label>
-        <button type="submit">
-            Send
-        </button>
-    </form>
+    <main>
+        <article class="prose">
+            <span class="eyebrow">Get in touch</span>
+            <h1>Contact</h1>
+            <p class="lede">Have a role, a dataset, or a project worth comparing notes on? Send a note — I read every message myself.</p>
+            <form id="contact-form">
+                <label>
+                    Your email
+                    <input type="email" id="sender-email" required>
+                </label>
+                <label>
+                    Subject
+                    <input type="text" id="subject" required>
+                </label>
+                <label>
+                    Message
+                    <textarea id="message" required></textarea>
+                </label>
+                <button type="submit" class="cta">Send →</button>
+            </form>
+        </article>
+    </main>
 
     <script>
         document.getElementById('contact-form').addEventListener('submit', function(e) {
@@ -46,14 +55,11 @@
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
 
-            // Construct mailto URL with proper formatting
             const body = `REPLY TO: ${email}\n\n---\n\n${message}`;
             const mailtoLink = `mailto:gangelici@ucsd.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
-            // Open email client
             window.location.href = mailtoLink;
         });
     </script>
-
 </body>
 </html>

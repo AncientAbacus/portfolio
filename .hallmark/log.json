@@ -1,0 +1,30 @@
+[
+  {
+    "date": "2026-07-15",
+    "scope": "app",
+    "macrostructure": "Long Document (home) / Index-First (projects) / trimmed document-flow (resume) / plain (contact, meta)",
+    "theme": "Studio",
+    "theme_axes": "light / high-contrast-serif / chromatic-green",
+    "enrichment": "none (typography only)",
+    "brief": "Full structural rebuild after user feedback that the modern-minimal Cobalt/Cold Snap build still read as generic AI-portfolio slop. Genre switched to editorial. Cut: home terminal-card gimmick, home featured-projects widget, home GitHub-stats widget, the D3 year-filter donut on Projects, and on Meta — the language donut, activity heatmap, coding-journey sparkline, tech radar, repo-size bubbles, commit bars, and particle-network canvas (meta no longer depends on D3 at all). Copy trimmed across every page."
+  },
+  {
+    "date": "2026-07-15",
+    "scope": "app",
+    "macrostructure": "Workbench (home) / Portfolio Grid (projects) / Map-Diagram (meta) / Stat-Led (resume) / utility (contact)",
+    "theme": "custom",
+    "theme_axes": "light (icy) / grotesk-sans / cool-green",
+    "vibe": "Cold Snap — frost on pine",
+    "enrichment": "E-CSS Tier-A terminal/JSON identity card (home)",
+    "brief": "Retheme from custom Cobalt (electric-blue) to custom Cold Snap (icy paper, cold-evergreen green accent) — palette-only, structure unchanged"
+  },
+  {
+    "date": "2026-07-15",
+    "scope": "app",
+    "macrostructure": "Workbench (home) / Portfolio Grid (projects) / Map-Diagram (meta) / Stat-Led (resume) / utility (contact)",
+    "theme": "Cobalt",
+    "theme_axes": "cool light / grotesk-sans / electric-cobalt",
+    "enrichment": "E-CSS Tier-A terminal/JSON identity card (home)",
+    "brief": "Gino Angelici portfolio — full multi-page redesign for technical peers, austere tone, browse-projects use case"
+  }
+]
