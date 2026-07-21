@@ -178,11 +178,20 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
   containerElement.innerHTML = '';
 
   projects.forEach((project) => {
+    const url = project.link || project.repo;
+    const titleHTML = url
+      ? `<a href="${url}" target="_blank" rel="noopener">${project.title}<span class="link-mark" aria-hidden="true" title="Has a live link">↗</span></a>`
+      : project.title;
+    const tagsHTML = project.tags?.length
+      ? `<p class="tags">${project.tags.join(' · ')}</p>`
+      : '';
+
     const article = document.createElement('article');
     article.innerHTML = `
       <span class="eyebrow">${project.year}</span>
-      <${headingLevel}>${project.title}</${headingLevel}>
+      <${headingLevel}>${titleHTML}</${headingLevel}>
       <p>${project.description}</p>
+      ${tagsHTML}
     `;
     containerElement.appendChild(article);
   });

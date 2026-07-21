@@ -4,69 +4,86 @@
         "year": 2026,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Cleaned and analyzed 1.9M January 2024 Citi Bike trips to compare member vs. casual ridership; built an interactive hour-by-day ride-volume heatmap and a Leaflet geospatial map overlaying station ridership on NYC's bike lane network, scrubbable by hour, revealing a sharp weekday commute pattern and heavy Manhattan concentration despite citywide lane coverage."
+        "description": "Cleaned and analyzed 1.9M January 2024 Citi Bike trips to compare member vs. casual ridership; built an interactive hour-by-day ride-volume heatmap and a Leaflet geospatial map overlaying station ridership on NYC's bike lane network, scrubbable by hour, revealing a sharp weekday commute pattern and heavy Manhattan concentration despite citywide lane coverage.",
+        "tags": ["Python", "Pandas", "Leaflet.js", "Geospatial Analysis", "Random Forest", "scikit-learn"],
+        "link": "https://ancientabacus.github.io/NYC-CitiBike-Analysis/",
+        "repo": "https://github.com/AncientAbacus/NYC-CitiBike-Analysis"
     },
     {
         "title": "Pokemon RAG AI Agent — LLM Knowledge Retrieval System",
         "year": 2026,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Built a RAG-powered conversational AI agent over a structured Pokémon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering."
+        "description": "Built a RAG-powered conversational AI agent over a structured Pokémon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering.",
+        "tags": ["Python", "LangChain", "ChromaDB", "RAG", "Vector Embeddings", "LLM Prompt Engineering"],
+        "repo": "https://github.com/AncientAbacus/pokeagent"
     },
     {
         "title": "Reddit NLP Pipeline — Deep Learning Text Generation",
         "year": 2026,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Trained and evaluated a character-level deep learning model in TensorFlow on unstructured corpora from Reddit's top 200 communities; designed a benchmarking framework comparing architectural configurations against perplexity metrics; authored a paper on domain-specific language pattern capture."
+        "description": "Trained and evaluated a character-level deep learning model in TensorFlow on unstructured corpora from Reddit's top 200 communities; designed a benchmarking framework comparing architectural configurations against perplexity metrics; authored a paper on domain-specific language pattern capture.",
+        "tags": ["Python", "TensorFlow", "LSTM/RNN", "NLP", "Model Benchmarking"]
     },
     {
         "title": "Organ Trail — Personalized Predictive Health Platform",
         "year": 2025,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Built an interactive scrollable data experience using D3.js and HTML to surface personalized surgery statistics from a hospital database, featuring dynamic histograms and ridgeline plots."
+        "description": "Built an interactive scrollable data experience using D3.js and HTML to surface personalized surgery statistics from a hospital database, featuring dynamic histograms and ridgeline plots.",
+        "tags": ["D3.js", "JavaScript", "Data Visualization", "Scrollytelling", "Statistical Analysis"],
+        "link": "https://ancientabacus.github.io/Project-4/",
+        "repo": "https://github.com/AncientAbacus/Project-4"
     },
     {
         "title": "Amazon Purchase Dataset — Large-Scale ML Pipeline",
         "year": 2025,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Engineered end-to-end ML pipelines using AWS Lambda and Apache Spark to process and cleanse 16M+ rows of purchase data; implemented distributed PCA and feature engineering within BigQuery for scalable downstream model evaluation."
+        "description": "Engineered end-to-end ML pipelines using AWS Lambda and Apache Spark to process and cleanse 16M+ rows of purchase data; implemented distributed PCA and feature engineering within BigQuery for scalable downstream model evaluation.",
+        "tags": ["AWS Lambda", "Apache Spark", "BigQuery", "PCA", "Distributed Computing", "Feature Engineering"]
     },
     {
         "title": "Autonomous Vehicle Development — 1st Place at Purdue",
         "year": 2025,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Designed and deployed CNN-based perception and control models for autonomous vehicle navigation on low-power embedded hardware, integrating stereo and RGB-D cameras for real-time 3D scene understanding; benchmarked against LLMs and LVMs and won 1st place at Purdue's national autonomous vehicle competition."
+        "description": "Designed and deployed CNN-based perception and control models for autonomous vehicle navigation on low-power embedded hardware, integrating stereo and RGB-D cameras for real-time 3D scene understanding; benchmarked against LLMs and LVMs and won 1st place at Purdue's national autonomous vehicle competition.",
+        "tags": ["PyTorch", "Computer Vision", "CNNs", "Embedded Systems", "Sensor Fusion", "Robotics"]
     },
     {
         "title": "Seal Health Prediction Model",
         "year": 2024,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Analyzed environmental and economic datasets to assess human impact on Alaskan seal populations using ridge regression, PCA, and correlation heatmaps, identifying ocean traffic and coastal development as statistically significant predictors of seal weight."
+        "description": "Analyzed environmental and economic datasets to assess human impact on Alaskan seal populations using ridge regression, PCA, and correlation heatmaps, identifying ocean traffic and coastal development as statistically significant predictors of seal weight.",
+        "tags": ["R", "Ridge Regression", "PCA", "Correlation Analysis", "Environmental Data"],
+        "link": "https://ancientabacus.github.io/Seal_Health_Modeling/"
     },
     {
         "title": "San Diego Parking Analysis",
         "year": 2024,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Designed a dynamic D3.js web app to help San Diego drivers identify optimal parking times and locations via daily frequency histograms and an interactive geospatial parking meter heatmap."
+        "description": "Designed a dynamic D3.js web app to help San Diego drivers identify optimal parking times and locations via daily frequency histograms and an interactive geospatial parking meter heatmap.",
+        "tags": ["D3.js", "JavaScript", "Geospatial Heatmaps", "Data Visualization"]
     },
     {
         "title": "Scripps Climate Research",
         "year": 2024,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Built Python pipelines to analyze 70+ years of climate data from 60 coastal airports using sliding-window PCA, polynomial regression, and ridge regression, with findings published in a paper linking urbanization to reduced cloud thickness and elevated local temperatures."
+        "description": "Built Python pipelines to analyze 70+ years of climate data from 60 coastal airports using sliding-window PCA, polynomial regression, and ridge regression, with findings published in a paper linking urbanization to reduced cloud thickness and elevated local temperatures.",
+        "tags": ["Python", "Ridge Regression", "PCA", "Polynomial Regression", "Time Series Analysis"],
+        "repo": "https://github.com/AncientAbacus/Coastal-Low-Cloudiness"
     },
     {
         "title": "Deloitte Substance Abuse Risk Analysis",
         "year": 2023,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Trained and evaluated XGBoost and regularized regression models on 50,000+ HHS records; conducted feature importance analysis to surface behavioral and demographic predictors of substance abuse risk; communicated findings to senior leadership via interactive Seaborn and Plotly dashboards."
+        "description": "Trained and evaluated XGBoost and regularized regression models on 50,000+ HHS records; conducted feature importance analysis to surface behavioral and demographic predictors of substance abuse risk; communicated findings to senior leadership via interactive Seaborn and Plotly dashboards.",
+        "tags": ["XGBoost", "Regularized Regression", "Feature Importance", "Seaborn", "Plotly"]
     }
 ]

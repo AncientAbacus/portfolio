@@ -150,6 +150,7 @@ dl.plain dd { margin: 0; }
 .role__badge { color: var(--color-accent); margin-left: var(--space-2xs); }
 .role__sub { font-size: var(--text-sm); color: var(--color-ink-3); margin: var(--space-3xs) 0 var(--space-2xs); }
 .role p { margin: 0; font-size: var(--text-sm); }
+.role__tags { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-3); margin-top: var(--space-2xs) !important; }
 
 /* ===== Stat numbers (mono outlier) ===== */
 .stat-row { display: flex; gap: var(--space-lg); flex-wrap: wrap; margin: var(--space-lg) 0 var(--space-xl); }
@@ -260,21 +261,18 @@ dl.plain dd { margin: 0; }
   padding: var(--space-2xs) 0;
 }
 .searchBar:focus { outline: none; border-bottom-color: var(--color-accent); }
-.year-filter { display: flex; flex-wrap: wrap; gap: var(--space-sm); font-family: var(--font-mono); font-size: var(--text-xs); }
-.year-filter button {
-  background: none; border: none; cursor: pointer;
-  color: var(--color-ink-3); padding: 0; font-family: inherit; font-size: inherit;
-  border-bottom: 1px solid transparent;
-}
-.year-filter button:hover { color: var(--color-ink); }
-.year-filter button.active { color: var(--color-ink); border-bottom-color: var(--color-accent); }
 
 .projects { display: flex; flex-direction: column; }
 .projects article { padding: var(--space-md) 0; border-top: 1px solid var(--color-rule); }
 .projects article:first-child { border-top: none; padding-top: 0; }
 .projects article .eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-3); }
 .projects article h2 { font-family: var(--font-display); font-size: var(--text-lg); text-transform: none; letter-spacing: 0; border: none; margin: var(--space-3xs) 0 var(--space-2xs); padding: 0; font-weight: 600; color: var(--color-ink); }
+.projects article h2 a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-rule); text-underline-offset: 3px; }
+.projects article h2 a:hover { text-decoration-color: var(--color-accent); }
 .projects article p { font-size: var(--text-sm); margin: 0; color: var(--color-ink-2); }
+.projects article .tags { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-3); margin-top: var(--space-xs); }
+
+.link-mark { display: inline-block; color: var(--color-accent); font-weight: 600; margin-left: var(--space-2xs); text-decoration: none; }
 
 /* ===== Contact ===== */
 .contact-page main { padding-top: var(--space-xl); padding-bottom: var(--space-3xl); }
