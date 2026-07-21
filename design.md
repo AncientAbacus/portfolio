@@ -17,14 +17,12 @@ dashboard — this system treats it that way: prose, hairlines, restraint.
   section heads, no card grid, no icons, no hero image. Reads like a real
   page someone wrote, not a template someone filled in.
 - **Browse** (`projects/index.html`): **Index-First** — the page IS a list.
-  Hairline dividers between rows, no bordered cards. Search + a plain-text
-  year filter (no chart).
+  Hairline dividers between rows, no bordered cards. Search only (no year
+  filter — dropped, see Provenance).
 - **Document** (`resume/index.html`): a trimmed, document-flow CV. Three
   real numbers lead as plain large display type (no filled stat box),
   then flowing sections divided by hairlines.
-- **Utility** (`contact/index.html`, `meta/index.html`): plain pages,
-  no card chrome. `meta/` was cut from a ten-widget dashboard down to five
-  honest facts — see Provenance.
+- **Utility** (`contact/index.html`): a plain page, no card chrome.
 
 ## Theme — Studio (catalog)
 
@@ -62,9 +60,8 @@ Same 4-point scale as before, reused: `--space-3xs` … `--space-3xl`.
 
 ## Motion
 
-Quiet. No scroll-reveals, no card hovers, no bounce. One thing moves: the
-stat numbers count up once on the résumé and meta pages. Everything else
-is just there, per Long Document's own rule.
+Quiet. No scroll-reveals, no card hovers, no bounce, no counting-up
+numbers. Everything is just there, per Long Document's own rule.
 
 ## Nav + footer (shared, built in `global.js`)
 
@@ -85,7 +82,7 @@ is just there, per Long Document's own rule.
 ## What pages MAY differ on
 
 - Macrostructure within their family
-- Density (Meta is now five facts; Contact is one short page)
+- Density (Contact is one short page)
 
 ## Provenance
 
@@ -103,3 +100,20 @@ sparkline, tech radar, repo-size bubbles, commit bars, and the particle-
 network canvas. `meta/` no longer depends on D3 at all. Copy was cut
 across every page — shorter ledes, one bullet per role instead of two,
 skills as plain lines instead of tag clouds.
+
+2026-07-20: added a **Favorite Projects** duo to the home page — two real
+screenshots (Citi Bike, Seal Health Modeling), hairline-bordered, no
+rounded corners or shadow, linking out to the live sites. This is a
+deliberate, requested exception to Long Document's "no featured-projects
+strip" rule from the rebuild above — kept to exactly two images, captioned
+in body type (not card chrome), so it reads as an illustrated aside in the
+prose rather than a reintroduced dashboard widget. Also added recruiter-
+facing skill tags (mono, muted) under every project description and every
+`index.html` experience role, and a small accent `↗` mark on project
+titles/roles that link to a live site or repo. Dropped the projects-page
+year filter — search-only now.
+
+2026-07-20 (later): removed `meta/` entirely — the GitHub-activity page
+(and its nav-cmdk entry) is gone, not just trimmed. `meta-page` styles and
+the GitHub REST API dependency (`meta/main.js`) are deleted. Macrostructure
+families and shared-rules sections above updated accordingly.

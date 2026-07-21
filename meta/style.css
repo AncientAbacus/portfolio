@@ -1,9 +1,0 @@
-/* Hallmark · component: meta-activity · genre: editorial · theme: Studio · macrostructure: plain (part of design.md system) */
-
-.loading-overlay {
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  color: var(--color-ink-3);
-  margin-bottom: var(--space-md);
-}
-.loading-overlay.hidden { display: none; }

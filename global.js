@@ -44,7 +44,6 @@ const cmdkItems = [
   { group: 'Pages', title: 'Projects', url: resolve('projects/') },
   { group: 'Pages', title: 'Résumé', url: resolve('resume/') },
   { group: 'Pages', title: 'Contact', url: resolve('contact/') },
-  { group: 'Pages', title: 'GitHub Activity', url: resolve('meta/') },
   { group: 'Elsewhere', title: 'GitHub ↗', url: 'https://github.com/AncientAbacus' },
   { group: 'Elsewhere', title: 'LinkedIn ↗', url: 'https://linkedin.com/in/gino-angelici' },
   { group: 'Elsewhere', title: 'Email ↗', url: 'mailto:gino.angelici@gmail.com' },

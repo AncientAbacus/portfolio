@@ -1,4 +1,4 @@
-/* Hallmark · genre: editorial · macrostructure: Long Document (home) / Index-First (projects) / document-flow (resume) / plain (contact, meta) · theme: Studio · enrichment: none (typography only) · nav: N6 · footer: Ft1 · design-system: design.md · designed-as-app */
+/* Hallmark · genre: editorial · macrostructure: Long Document (home) / Index-First (projects) / document-flow (resume) / plain (contact) · theme: Studio · enrichment: none (typography only) · nav: N6 · footer: Ft1 · design-system: design.md · designed-as-app */
 
 /* ===== Tokens — Studio (light · high-contrast-serif · chromatic-green) ===== */
 :root {
@@ -131,6 +131,13 @@ p a:hover, li a:hover, dd a:hover { text-decoration-thickness: 2px; }
   margin-bottom: var(--space-md);
 }
 .prose h2:first-of-type { border-top: none; margin-top: var(--space-xl); }
+
+.favorites { display: flex; flex-wrap: wrap; gap: var(--space-md); margin: var(--space-md) 0 var(--space-xl); }
+.favorite { flex: 1 1 240px; text-decoration: none; color: inherit; }
+.favorite img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border: 1px solid var(--color-rule); }
+.favorite:hover img { border-color: var(--color-ink-3); }
+.favorite__cap { display: inline-block; margin-top: var(--space-2xs); font-size: var(--text-sm); color: var(--color-ink); border-bottom: 1px solid transparent; }
+.favorite:hover .favorite__cap { border-bottom-color: var(--color-accent); }
 
 dl.plain { margin: 0; }
 dl.plain > div { display: flex; gap: var(--space-sm); padding: var(--space-2xs) 0; border-bottom: 1px solid var(--color-rule); }
@@ -286,20 +293,6 @@ input, textarea {
 input:focus, textarea:focus { outline: none; border-bottom-color: var(--color-accent); }
 textarea { min-height: 120px; resize: vertical; }
 button.cta { background: none; border: none; border-bottom: 1px solid var(--color-accent); cursor: pointer; font-size: var(--text-md); }
-
-/* ===== Meta (plain facts) ===== */
-.meta-page main { padding-top: var(--space-xl); padding-bottom: var(--space-3xl); }
-.lang-bars { display: flex; flex-direction: column; gap: var(--space-2xs); margin: var(--space-md) 0; }
-.lang-bar-item { display: flex; align-items: center; gap: var(--space-sm); }
-.lang-bar-name { width: 100px; font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-2); }
-.lang-bar-track { flex: 1; height: 4px; background: var(--color-rule); }
-.lang-bar-fill { height: 100%; background: var(--color-accent); }
-.lang-bar-count { width: 24px; font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-3); text-align: right; }
-.recent-list { list-style: none; margin: 0; padding: 0; }
-.recent-list li { padding: var(--space-2xs) 0; border-bottom: 1px solid var(--color-rule); display: flex; justify-content: space-between; gap: var(--space-md); font-size: var(--text-sm); }
-.recent-list li:last-child { border-bottom: none; }
-.recent-list a { color: var(--color-ink); }
-.recent-list time { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-3); white-space: nowrap; }
 
 /* ===== Responsive ===== */
 @media (max-width: 640px) {

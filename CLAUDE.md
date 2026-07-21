@@ -14,15 +14,14 @@ There is no build/lint/test tooling. Serve the directory with any static server 
 python3 -m http.server 5501
 ```
 
-Pages are plain files under their own directories (`projects/index.html`, `resume/index.html`, `contact/index.html`, `meta/index.html`) plus the root `index.html`. There's no router — verify changes by opening the actual page.
+Pages are plain files under their own directories (`projects/index.html`, `resume/index.html`, `contact/index.html`) plus the root `index.html`. There's no router — verify changes by opening the actual page.
 
 ## Architecture
 
 - **`global.js`** — the shared shell, imported as an ES module (`type="module"`) on every page. On load it injects the nav masthead and footer into `document.body` via DOM APIs (not templated server-side), builds the ⌘K command palette, and exports two shared helpers: `fetchJSON(url)` and `renderProjects(projects, containerElement, headingLevel)`. Any page that lists projects imports these from `global.js` rather than duplicating fetch/render logic.
   - Path resolution is home-relative: `document.documentElement` gets a `home` class only on the root `index.html`; `global.js` checks for that class to decide whether asset/page links need a `../` prefix. If you add a new top-level page, follow the existing directory-per-page pattern (`newpage/index.html`) so this relative-path logic keeps working.
 - **`lib/projects.json`** — single source of truth for project data (title, year, image, description). `projects/projects.js` fetches this, and both the year-filter buttons and the free-text search box filter client-side over the parsed array (`Object.values(project).join('\n')` substring match). Adding a project means adding an object here; no other file needs to change.
-- **`meta/main.js`** — standalone GitHub-activity page that calls the public GitHub REST API directly from the browser (`api.github.com/users/...`) for the account `AncientAbacus`. No auth token, no backend — rate-limited by GitHub's unauthenticated quota.
-- **`style.css`** (root) is the main stylesheet shared across pages; `meta/style.css` holds only meta-page-specific overrides.
+- **`style.css`** (root) is the main stylesheet shared across all pages.
 
 ## Design system — read `design.md` before touching HTML/CSS
 
