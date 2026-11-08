@@ -1,15 +1,15 @@
-/* Hallmark · genre: editorial · macrostructure: Long Document (home) / Index-First (projects) / document-flow (resume) / plain (contact) · theme: Studio · enrichment: none (typography only) · nav: N6 · footer: Ft1 · design-system: design.md · designed-as-app */
+/* Hallmark · genre: editorial · macrostructure: Long Document (home) / Index-First (projects) / document-flow (resume) / plain (contact) · theme: Lavender Night · enrichment: none (typography only) · nav: N6 · footer: Ft1 · design-system: design.md · designed-as-app */
 
-/* ===== Tokens — Studio (light · high-contrast-serif · chromatic-green) ===== */
+/* ===== Tokens — Lavender Night (dark · high-contrast-serif · lavender) ===== */
 :root {
-  --color-paper:   oklch(97%   0.010 110);
-  --color-paper-2: oklch(94%   0.012 108);
-  --color-ink:     oklch(20%   0.02  130);
-  --color-ink-2:   oklch(32%   0.018 128);
-  --color-ink-3:   oklch(52%   0.014 120);
-  --color-rule:    oklch(85%   0.014 110);
-  --color-accent:  oklch(46%   0.14  145);
-  --color-focus:   oklch(50%   0.14  145);
+  --color-paper:   oklch(17%   0.028 300);
+  --color-paper-2: oklch(21%   0.034 300);
+  --color-ink:     oklch(95%   0.016 300);
+  --color-ink-2:   oklch(85%   0.022 300);
+  --color-ink-3:   oklch(68%   0.030 300);
+  --color-rule:    oklch(32%   0.036 300);
+  --color-accent:  oklch(79%   0.105 300);
+  --color-focus:   oklch(83%   0.115 300);
 
   --font-display: "Newsreader", ui-serif, Georgia, serif;
   --font-body:    "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
@@ -27,7 +27,7 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-short: 200ms;
 
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 /* ===== Reset ===== */
@@ -243,9 +243,9 @@ dl.plain dd { margin: 0; }
 .foot-mast .links a:hover { color: var(--color-ink); border-bottom-color: var(--color-ink-3); }
 
 /* ===== Command palette (kept — a real feature, not decoration) ===== */
-.cmdk-overlay { position: fixed; inset: 0; background: oklch(20% 0.02 130 / 0.35); display: flex; align-items: flex-start; justify-content: center; padding-top: min(18vh, 160px); z-index: 100; }
+.cmdk-overlay { position: fixed; inset: 0; background: oklch(8% 0.02 300 / 0.6); display: flex; align-items: flex-start; justify-content: center; padding-top: min(18vh, 160px); z-index: 100; }
 .cmdk-overlay[hidden] { display: none; }
-.cmdk-palette { width: min(560px, calc(100vw - 2rem)); max-height: 60vh; background: var(--color-paper); border: 1px solid var(--color-rule); box-shadow: 0 8px 30px oklch(20% 0.02 130 / 0.18); overflow: hidden; display: flex; flex-direction: column; }
+.cmdk-palette { width: min(560px, calc(100vw - 2rem)); max-height: 60vh; background: var(--color-paper); border: 1px solid var(--color-rule); box-shadow: 0 8px 30px oklch(5% 0.02 300 / 0.55); overflow: hidden; display: flex; flex-direction: column; }
 .cmdk-palette__search { display: flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); border-bottom: 1px solid var(--color-rule); }
 .cmdk-palette__icon { font-family: var(--font-mono); color: var(--color-accent); }
 .cmdk-palette__input { flex: 1; border: none; outline: none; background: transparent; font-family: var(--font-body); font-size: var(--text-md); color: var(--color-ink); }

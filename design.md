@@ -24,20 +24,21 @@ dashboard — this system treats it that way: prose, hairlines, restraint.
   then flowing sections divided by hairlines.
 - **Utility** (`contact/index.html`): a plain page, no card chrome.
 
-## Theme — Studio (catalog)
+## Theme — Lavender Night
 
-Light, high-contrast-serif, chromatic-green. A deep forest-green signal on
-warm ivory paper — a print-studio register, not a screen-glow one.
+Dark, high-contrast-serif, lavender. Pale lavender-white type on a deep
+violet-charcoal page, with a soft lavender accent. Replaced Studio
+(ivory + forest green) on request; see Provenance.
 
 ```
---color-paper:   oklch(97%   0.010 110)   /* warm ivory, sage-tinted */
---color-paper-2: oklch(94%   0.012 108)
---color-ink:     oklch(20%   0.02  130)   /* deep forest-charcoal */
---color-ink-2:   oklch(32%   0.018 128)
---color-ink-3:   oklch(52%   0.014 120)
---color-rule:    oklch(85%   0.014 110)
---color-accent:  oklch(46%   0.14  145)   /* deep forest/pine green */
---color-focus:   oklch(50%   0.14  145)
+--color-paper:   oklch(17%   0.028 300)   /* deep violet-charcoal */
+--color-paper-2: oklch(21%   0.034 300)
+--color-ink:     oklch(95%   0.016 300)   /* lavender-white */
+--color-ink-2:   oklch(85%   0.022 300)
+--color-ink-3:   oklch(68%   0.030 300)
+--color-rule:    oklch(32%   0.036 300)
+--color-accent:  oklch(79%   0.105 300)   /* lavender */
+--color-focus:   oklch(83%   0.115 300)
 ```
 
 Accent use is a highlighter, not a fill: underlines, focus rings, one small
@@ -117,3 +118,10 @@ year filter — search-only now.
 (and its nav-cmdk entry) is gone, not just trimmed. `meta-page` styles and
 the GitHub REST API dependency (`meta/main.js`) are deleted. Macrostructure
 families and shared-rules sections above updated accordingly.
+
+2026-11-08: switched theme from Studio (light ivory, forest green) to
+**Lavender Night** (dark, hue 300) at Gino's request. Tokens only; layout,
+type, and accent discipline unchanged. `color-scheme: dark`; command-palette
+overlay and shadow retinted. Synced `resume/source/resume.tex` with the master
+resume (all projects, end-date order) and corrected project years in
+`lib/projects.json` (Organ Trail 2026, Seal Health 2025, SD Parking 2025).
