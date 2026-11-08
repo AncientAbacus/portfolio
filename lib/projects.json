@@ -1,6 +1,6 @@
 [
     {
-        "title": "NYC Citi Bike Analysis — Ridership & Bike Lane Geospatial Study",
+        "title": "NYC Citi Bike Analysis: Ridership & Bike Lane Geospatial Study",
         "year": 2026,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
@@ -10,7 +10,7 @@
         "repo": "https://github.com/AncientAbacus/NYC-CitiBike-Analysis"
     },
     {
-        "title": "Pokemon RAG AI Agent — LLM Knowledge Retrieval System",
+        "title": "Pokemon RAG AI Agent: LLM Knowledge Retrieval System",
         "year": 2026,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
@@ -19,7 +19,7 @@
         "repo": "https://github.com/AncientAbacus/pokeagent"
     },
     {
-        "title": "Reddit NLP Pipeline — Deep Learning Text Generation",
+        "title": "Reddit NLP Pipeline: Deep Learning Text Generation",
         "year": 2026,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
@@ -27,7 +27,7 @@
         "tags": ["Python", "TensorFlow", "LSTM/RNN", "NLP", "Model Benchmarking"]
     },
     {
-        "title": "Organ Trail — Personalized Predictive Health Platform",
+        "title": "Organ Trail: Personalized Predictive Health Platform",
         "year": 2025,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
@@ -37,15 +37,15 @@
         "repo": "https://github.com/AncientAbacus/Project-4"
     },
     {
-        "title": "Amazon Purchase Dataset — Large-Scale ML Pipeline",
+        "title": "Amazon Purchase Dataset: Large-Scale ML Pipeline",
         "year": 2025,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Engineered end-to-end ML pipelines using AWS Lambda and Apache Spark to process and cleanse 16M+ rows of purchase data; implemented distributed PCA and feature engineering within BigQuery for scalable downstream model evaluation.",
-        "tags": ["AWS Lambda", "Apache Spark", "BigQuery", "PCA", "Distributed Computing", "Feature Engineering"]
+        "description": "Engineered distributed ML pipelines with AWS Lambda, EC2, and Apache Spark to ingest and clean 16M+ rows of Amazon purchase data. Implemented one-hot encoding, distributed PCA, and feature engineering in BigQuery to reduce dimensionality for downstream models, and optimized batch RMSE calculation to evaluate models at scale.",
+        "tags": ["AWS Lambda", "AWS EC2", "Apache Spark", "BigQuery", "PCA", "Distributed Computing", "Feature Engineering"]
     },
     {
-        "title": "Autonomous Vehicle Development — 1st Place at Purdue",
+        "title": "Autonomous Vehicle Development: 1st Place at Purdue",
         "year": 2025,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
@@ -74,7 +74,7 @@
         "year": 2024,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Built Python pipelines to analyze 70+ years of climate data from 60 coastal airports using sliding-window PCA, polynomial regression, and ridge regression, with findings published in a paper linking urbanization to reduced cloud thickness and elevated local temperatures.",
+        "description": "Built Python ETL pipelines to analyze 70+ years of climate data from 60 coastal airports. Used sliding-window PCA, polynomial regression, and ridge regression to link urbanization to reduced cloud cover and higher local temperatures, contributing to a peer-reviewed publication update.",
         "tags": ["Python", "Ridge Regression", "PCA", "Polynomial Regression", "Time Series Analysis"],
         "repo": "https://github.com/AncientAbacus/Coastal-Low-Cloudiness"
     },
@@ -83,7 +83,7 @@
         "year": 2023,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Trained and evaluated XGBoost and regularized regression models on 50,000+ HHS records; conducted feature importance analysis to surface behavioral and demographic predictors of substance abuse risk; communicated findings to senior leadership via interactive Seaborn and Plotly dashboards.",
+        "description": "Trained XGBoost and regularized regression models on 50,000+ HHS records, identifying proximity to low-income neighborhoods and gambling advertisements as top predictors of substance abuse risk. Turned model results into strategic recommendations and presented them to senior Deloitte leadership through interactive Seaborn and Plotly dashboards.",
         "tags": ["XGBoost", "Regularized Regression", "Feature Importance", "Seaborn", "Plotly"]
     }
 ]

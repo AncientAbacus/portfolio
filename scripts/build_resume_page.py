@@ -1,4 +1,4 @@
-"""Sync resume/index.html with resume/source/resume.tex.
+"""Sync resume/index.html and index.html with resume/source/resume.tex.
 
 Rewrites the Experience and Skills blocks between the
 <!-- RESUME:*:START --> / <!-- RESUME:*:END --> markers. Each role keeps
@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 TEX = ROOT / "resume" / "source" / "resume.tex"
 PAGE = ROOT / "resume" / "index.html"
+HOME = ROOT / "index.html"
 
 
 def braced(s, i):
@@ -149,7 +150,10 @@ def main():
     page = replace_block(page, "EXPERIENCE", render_roles(parse_roles(tex), existing_tags(page)))
     page = replace_block(page, "SKILLS", render_skills(parse_skills(tex)))
     PAGE.write_text(page)
-    print("resume/index.html synced from resume.tex")
+    home = HOME.read_text()
+    home = replace_block(home, "EXPERIENCE", render_roles(parse_roles(tex), existing_tags(home)))
+    HOME.write_text(home)
+    print("resume/index.html and index.html synced from resume.tex")
 
 
 if __name__ == "__main__":
