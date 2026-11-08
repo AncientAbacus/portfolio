@@ -1,0 +1,171 @@
+%-------------------------
+% Resume in Latex
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.6in}
+\addtolength{\textheight}{1.2in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{%
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+    \end{tabular*}\vspace{-7pt}%
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-7pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Gino Angelici} \\ \vspace{1pt}
+    \small 714-421-0820 $|$ \href{mailto:gino.angelici@gmail.com}{\underline{gino.angelici@gmail.com}} $|$
+    \href{https://www.linkedin.com/in/gino-angelici/}{\underline{linkedin.com/in/gino-angelici}} $|$
+    \href{https://github.com/ancientabacus}{\underline{github.com/ancientabacus}} $|$
+    \href{https://ginoangelici.com}{\underline{ginoangelici.com}}
+\end{center}
+
+%-----------SUMMARY-----------
+\section{Summary}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{UCSD data scientist with extensive experience in machine learning, LLM pipelines, and statistical modeling. Led a team to 1st place at Purdue's national autonomous vehicle competition, built LLM digital twins piloted by 5 companies, and presented risk models to Deloitte leadership.}}
+\end{itemize}
+\vspace{-14pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of California, San Diego}{Sep 2021 -- Jun 2025}
+      {Bachelor of Science in Data Science}{San Diego, CA}
+    \item \small{\textbf{Coursework:} Machine Learning, Deep Learning, Probabilistic Modeling, Statistics, Recommender Systems, Big Data}\vspace{-4pt}
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, SQL (PostgreSQL, BigQuery, Snowflake), R, Java, JavaScript/TypeScript} \\
+     \textbf{Python Data Stack}{: NumPy, SciPy, pandas, scikit-learn, Statsmodels, XGBoost, PySpark, matplotlib, Seaborn, Plotly} \\
+     \textbf{ML \& AI}{: PyTorch, TensorFlow, Hugging Face Transformers, LangChain/LangGraph, ChromaDB} \\
+     \textbf{Tools \& Platforms}{: AWS (Lambda, EC2), Apache Spark, Databricks, Airflow, Docker, FastAPI, Git, W\&B, Tableau} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading{Walt Disney World, Disney College Program}{Aug 2026 -- Present}{Attractions Cast Member, TRON Lightcycle / Run}{Orlando, FL}
+      \resumeItemListStart
+        \resumeItem{Manage safety-critical ride operation across every crew position, including track safety and security.}
+      \resumeItemListEnd
+
+    \resumeSubheading{Exponential Intelligence}{Sep 2025 -- Sep 2026}{Machine Learning Intern}{Irvine, CA}
+      \resumeItemListStart
+        \resumeItem{Built an end-to-end LLM pipeline generating AI digital twins that simulate survey respondents, used to assist 5 businesses with survey administration and decision making.}
+        \resumeItem{Work led to a pilot program in which 5 companies adopted the statistical survey pipeline.}
+        \resumeItem{Measured alignment between twins and real respondents with Jensen-Shannon Divergence and chi-square tests, and designed re-prompting strategies to correct biases like social desirability and extreme responses.}
+      \resumeItemListEnd
+
+    \resumeSubheading{Halicio\u{g}lu Data Science Institute}{Sep 2024 -- Aug 2025}{ML Research Assistant, Autonomous Vehicle Development}{San Diego, CA}
+    \resumeItemListStart
+        \resumeItem{Designed, trained, and deployed CNN-based perception and control models on low-power embedded hardware with stereo and RGB-D cameras, fine-tuned on UCSD's Supercomputer Center.}
+        \resumeItem{Benchmarked CNNs against LLMs and LVMs across local and cloud deployments.}
+        \resumeItem{\textbf{Led team to 1st place at Purdue's national autonomous vehicle competition.}}
+    \resumeItemListEnd
+
+    \resumeSubheading{Deloitte}{Mar 2023 -- Aug 2023}{Data Science Intern}{San Diego, CA}
+      \resumeItemListStart
+        \resumeItem{Trained XGBoost and regularized regression models on 50,000+ HHS records, identifying proximity to low-income neighborhoods and gambling advertisements as top predictors of substance abuse risk.}
+        \resumeItem{Turned model results into strategic recommendations and presented them to senior leadership through interactive Plotly dashboards.}
+      \resumeItemListEnd
+
+    \resumeSubheading{Scripps Institution of Oceanography}{Sep 2022 -- Sep 2024}{Data Research Assistant}{San Diego, CA}
+      \resumeItemListStart
+        \resumeItem{Built Python ETL pipelines to clean and analyze 70+ years of climate records across 60 coastal airports.}
+        \resumeItem{Used sliding-window PCA and ridge regression to link urbanization to reduced cloud cover and higher local temperatures, contributing to a peer-reviewed publication update.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading{Amazon Purchase Dataset -- Large-Scale ML Pipeline}{Oct 2025 -- Dec 2025}
+      \resumeItemListStart
+        \resumeItem{Engineered distributed ML pipelines with AWS Lambda, EC2, and Apache Spark to ingest and clean 16M+ rows of Amazon purchase data.}
+        \resumeItem{Implemented one-hot encoding, distributed PCA, and feature engineering in BigQuery to reduce dimensionality for downstream models.}
+        \resumeItem{Optimized batch calculation of RMSE across the full dataset to evaluate models at scale.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\end{document}
