@@ -19,9 +19,9 @@ dashboard — this system treats it that way: prose, hairlines, restraint.
 - **Browse** (`projects/index.html`): **Index-First** — the page IS a list.
   Hairline dividers between rows, no bordered cards. Search only (no year
   filter — dropped, see Provenance).
-- **Document** (`resume/index.html`): a trimmed, document-flow CV. Three
-  real numbers lead as plain large display type (no filled stat box),
-  then flowing sections divided by hairlines.
+- **Document** (`resume/index.html`): a trimmed, document-flow CV. A
+  plain "Résumé" heading and contact links, then flowing sections divided
+  by hairlines. No stat row and no PDF download link.
 - **Utility** (`contact/index.html`): a plain page, no card chrome.
 
 ## Theme — Lavender Night
@@ -125,3 +125,7 @@ type, and accent discipline unchanged. `color-scheme: dark`; command-palette
 overlay and shadow retinted. Synced `resume/source/resume.tex` with the master
 resume (all projects, end-date order) and corrected project years in
 `lib/projects.json` (Organ Trail 2026, Seal Health 2025, SD Parking 2025).
+
+2026-11-08 (later): résumé page simplified. Removed the three-number stat
+row, the repeated name heading (the masthead already shows it), and the
+Download PDF link; home page no longer mentions a downloadable PDF.

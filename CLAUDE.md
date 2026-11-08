@@ -28,7 +28,7 @@ Pages are plain files under their own directories (`projects/index.html`, `resum
 `design.md` is a locked design system produced by the **Hallmark** skill (`.agents/skills/hallmark/`) and is the authority for anything visual. Key constraints future edits must respect:
 
 - Genre is **editorial** (Long Document home, Index-First projects list, trimmed-CV résumé, plain utility pages) — explicitly *not* card grids, icon tiles, or dashboard widgets. The design.md provenance notes a prior "AI-portfolio slop" build (card grids, JSON-terminal gimmick, D3 donuts/heatmaps/particle networks) that was deliberately ripped out; don't reintroduce that pattern.
-- Theme "Studio": warm-ivory paper, deep forest-green accent, defined as CSS custom properties (`--color-paper`, `--color-ink`, `--color-accent`, etc.) in `oklch()`. Reuse these variables rather than hardcoding new colors.
+- Theme "Lavender Night": dark violet-charcoal paper, lavender accent, defined as CSS custom properties (`--color-paper`, `--color-ink`, `--color-accent`, etc.) in `oklch()`. Reuse these variables rather than hardcoding new colors.
 - Typography: Newsreader (display), IBM Plex Sans (body), JetBrains Mono (small-caps meta line and standalone numbers only) — no other fonts.
 - The accent color is used only as underline/mark/focus-ring, never as a filled button background.
 - Nav and footer markup live in `global.js`, not in per-page HTML — edit there, not by copy-pasting header markup into a page.
