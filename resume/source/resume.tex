@@ -93,7 +93,7 @@
 %-----------SUMMARY-----------
 \section{Summary}
 \begin{itemize}[leftmargin=0.15in, label={}]
-  \small{\item{UCSD data scientist with extensive experience in machine learning, LLM pipelines, and statistical modeling. Led a team to 1st place at Purdue's national autonomous vehicle competition, built LLM digital twins piloted by 5 companies, and presented risk models to Deloitte leadership.}}
+  \small{\item{Data scientist (B.S. Data Science, UC San Diego) focused on statistical modeling, forecasting, and LLM pipelines. Built a day-ahead demand forecast for 2,296 Citi Bike stations, LLM digital twins piloted by 5 companies, and risk models presented to Deloitte leadership; led a team to 1st place at Purdue's national autonomous vehicle competition.}}
 \end{itemize}
 \vspace{-14pt}
 
@@ -113,9 +113,10 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python, SQL (PostgreSQL, BigQuery, Snowflake), R, JavaScript/TypeScript, HTML/CSS, Linux} \\
-     \textbf{ML \& AI}{: PyTorch, TensorFlow, Scikit-learn, XGBoost, Hugging Face Transformers, LangChain/LangGraph, pandas, NumPy, Statsmodels, SciPy, PySpark, Seaborn, matplotlib, Plotly, D3.js} \\
-     \textbf{Tools \& Platforms}{: AWS (Lambda, EC2), Apache Spark, Airflow, Databricks, Snowflake, Docker, FastAPI, Git/GitHub, Weights \& Biases, Tableau, Power BI, MongoDB} \\
+     \textbf{Languages}{: Python, SQL (PostgreSQL, BigQuery, Snowflake), R, Java, JavaScript/TypeScript, HTML/CSS, Linux} \\
+     \textbf{Statistics \& ML}{: Hypothesis testing, bootstrap confidence intervals, regularized regression, gradient boosting, PCA, time-series forecasting, conformal prediction, CNNs} \\
+     \textbf{Libraries}{: pandas, NumPy, SciPy, scikit-learn, Statsmodels, XGBoost, PySpark, PyTorch, TensorFlow, Hugging Face Transformers, LangChain/LangGraph, ChromaDB, Seaborn, matplotlib, Plotly, D3.js} \\
+     \textbf{Tools \& Platforms}{: AWS (Lambda, EC2), Apache Spark, Airflow, Databricks, Snowflake, Docker, FastAPI, Git/GitHub, Weights \& Biases, Tableau, Power BI, MongoDB, Leaflet, pytest, GitHub Actions} \\
     }}
  \end{itemize}
  \vspace{-16pt}
@@ -131,8 +132,7 @@
 
     \resumeSubheading{Exponential Intelligence}{Sep 2025 -- Sep 2026}{Machine Learning Intern}{Irvine, CA}
       \resumeItemListStart
-        \resumeItem{Built an end-to-end LLM pipeline generating AI digital twins that simulate survey respondents across political subgroups, used to assist 5 businesses with survey administration and decision making.}
-        \resumeItem{Work led to a pilot program in which 5 companies adopted the statistical survey pipeline.}
+        \resumeItem{Built an end-to-end LLM pipeline generating AI digital twins that simulate survey respondents across political subgroups; 5 companies adopted it in a pilot program for survey administration and decision making.}
         \resumeItem{Measured alignment between twins and real respondents with Jensen-Shannon Divergence and chi-square tests of homogeneity, using a Python pipeline (pandas, NumPy, SciPy, Seaborn).}
         \resumeItem{Designed re-prompting strategies to correct LLM failure modes, including social desirability bias, extreme response tendency, and prototype reasoning.}
         \resumeItem{Trained classification models to categorize survey domains and applied supervised and unsupervised techniques to surface where twins diverged from real respondents.}
@@ -182,14 +182,18 @@
         \resumeItem{Built a RAG-powered conversational AI agent over a structured Pokemon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering.}
       \resumeItemListEnd
 
-    \resumeProjectHeading{\href{https://ancientabacus.github.io/NYC-CitiBike-Analysis/}{NYC Citi Bike Analysis -- Ridership \& Bike Lane Geospatial Study}}{Jun 2026}
+    \resumeProjectHeading{\href{https://ancientabacus.github.io/NYC-CitiBike-Analysis/}{NYC Citi Bike Analysis -- Demand Forecasting \& Rebalancing}}{Nov 2025 -- Nov 2026}
       \resumeItemListStart
-        \resumeItem{Cleaned and analyzed 1.9M Citi Bike trips to compare member and casual ridership; built an hour-by-day ride-volume heatmap and a Leaflet geospatial map overlaying station ridership on NYC's bike lane network, revealing a sharp weekday commute pattern and heavy Manhattan concentration.}
+        \resumeItem{Built a tested Python pipeline (pandas, PyArrow, Shapely) that cleans 44M+ 2024 Citi Bike trips and joins NOAA weather and NYC bike lane data to answer where bikes run out, and when.}
+        \resumeItem{Forecast next-day hourly demand at 2,296 stations with Poisson gradient boosting (scikit-learn): 86--94\% citywide daily accuracy, station-hour error 11--17\% below the best baseline, and 3 of 3 monthly backtests won.}
+        \resumeItem{Sized the rebalancing problem at 5,927+ bikes stranded each weekday morning across 676 draining and 409 filling stations; found commute-hour rain cuts rides 29\% (95\% CI 22--32\%) vs.\ 7\% for off-peak rain.}
+        \resumeItem{Published an interactive site with Leaflet maps, SVG charts, and 80\% conformal prediction bands; CI runs leak tests and checks every reported number against the data.}
+        \resumeItem{Added a member vs.\ casual rider classifier on leak-free features (ROC-AUC 0.77) and regression with 14-day block-bootstrap intervals for weather effects.}
       \resumeItemListEnd
 
-    \resumeProjectHeading{\href{https://ancientabacus.github.io/Project-4/}{Organ Trail -- Interactive Health Analytics Platform}}{Jan 2026 -- Feb 2026}
+    \resumeProjectHeading{\href{https://ancientabacus.github.io/Project-4/}{Organ Trail -- Interactive Surgery Data Explorer}}{Jan 2026 -- Feb 2026}
     \resumeItemListStart
-        \resumeItem{Built an end-to-end analytics platform over hospital surgery databases featuring dynamic D3.js visualizations that surface predictive insights from structured medical data in real time; designed for non-technical users to explore trends without writing code.}
+        \resumeItem{Built a D3.js scrollytelling site with a team of 3 over 6,000+ hospital surgery cases, showing how patient age and surgical position relate to operation type and duration; added an interactive duration estimator from filtered case averages so non-technical users can explore trends without writing code.}
     \resumeItemListEnd
 
     \resumeProjectHeading{Reddit NLP Pipeline -- Deep Learning Text Generation}{Nov 2025 -- Jan 2026}
@@ -204,9 +208,9 @@
         \resumeItem{Optimized batch calculation of RMSE across the full dataset to evaluate models at scale.}
       \resumeItemListEnd
 
-    \resumeProjectHeading{\href{https://ancientabacus.github.io/Seal_Health_Modeling/}{Seal Population Health Prediction Model}}{Sep 2025 -- Nov 2025}
+    \resumeProjectHeading{\href{https://ancientabacus.github.io/Seal_Health_Modeling/}{Seal Health Modeling -- Human Impact on Alaskan Seals}}{Sep 2025 -- Nov 2025}
       \resumeItemListStart
-        \resumeItem{Integrated multi-source environmental and economic datasets to model human impact on Alaskan seal populations; applied ridge regression, PCA, and correlation analysis to identify ocean traffic and coastal development as statistically significant predictors of population health; emphasized feature selection and model interpretability.}
+        \resumeItem{Merged four NOAA and Alaska Fish \& Game datasets to test whether ocean-economy activity predicts Alaskan seal health; re-validated the original ridge model (R\textsuperscript{2} 0.91 on a 3-row test split) with leave-one-out cross-validation across 5 models and permutation importance, showing the fit did not generalize on 13 yearly observations and reporting that openly.}
       \resumeItemListEnd
 
     \resumeProjectHeading{San Diego Parking Meter Analytics Dashboard}{Sep 2025 -- Oct 2025}
