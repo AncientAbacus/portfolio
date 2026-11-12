@@ -4,26 +4,26 @@
         "year": 2026,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Built a RAG-powered conversational AI agent over a structured Pokémon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering.",
+        "description": "Built a RAG-powered conversational AI agent over a structured Pokemon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering.",
         "tags": ["Python", "LangChain", "ChromaDB", "RAG", "Vector Embeddings", "LLM Prompt Engineering"],
         "repo": "https://github.com/AncientAbacus/pokeagent"
     },
     {
-        "title": "NYC Citi Bike Analysis: Ridership & Bike Lane Geospatial Study",
+        "title": "NYC Citi Bike Analysis: Demand Forecasting &amp; Rebalancing",
         "year": 2026,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Cleaned and analyzed 1.9M January 2024 Citi Bike trips to compare member vs. casual ridership; built an interactive hour-by-day ride-volume heatmap and a Leaflet geospatial map overlaying station ridership on NYC's bike lane network, scrubbable by hour, revealing a sharp weekday commute pattern and heavy Manhattan concentration despite citywide lane coverage.",
-        "tags": ["Python", "Pandas", "Leaflet.js", "Geospatial Analysis", "Random Forest", "scikit-learn"],
+        "description": "Built a tested Python pipeline (pandas, PyArrow, Shapely) that cleans 44M+ 2024 Citi Bike trips and joins NOAA weather and NYC bike lane data to answer where bikes run out, and when. Forecast next-day hourly demand at 2,296 stations with Poisson gradient boosting (scikit-learn): 86–94% citywide daily accuracy, station-hour error 11–17% below the best baseline, and 3 of 3 monthly backtests won. Sized the rebalancing problem at 5,927+ bikes stranded each weekday morning across 676 draining and 409 filling stations; found commute-hour rain cuts rides 29% (95% CI 22–32%) vs. 7% for off-peak rain. Published an interactive site with Leaflet maps, SVG charts, and 80% conformal prediction bands; CI runs leak tests and checks every reported number against the data. Added a member vs. casual rider classifier on leak-free features (ROC-AUC 0.77) and regression with 14-day block-bootstrap intervals for weather effects.",
+        "tags": ["Python", "pandas", "scikit-learn", "Gradient Boosting", "Forecasting", "Conformal Prediction", "Leaflet.js", "Geospatial Analysis"],
         "link": "https://ancientabacus.github.io/NYC-CitiBike-Analysis/",
         "repo": "https://github.com/AncientAbacus/NYC-CitiBike-Analysis"
     },
     {
-        "title": "Organ Trail: Personalized Predictive Health Platform",
+        "title": "Organ Trail: Interactive Surgery Data Explorer",
         "year": 2026,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Built an interactive scrollable data experience using D3.js and HTML to surface personalized surgery statistics from a hospital database, featuring dynamic histograms and ridgeline plots.",
+        "description": "Built a D3.js scrollytelling site with a team of 3 over 6,000+ hospital surgery cases, showing how patient age and surgical position relate to operation type and duration; added an interactive duration estimator from filtered case averages so non-technical users can explore trends without writing code.",
         "tags": ["D3.js", "JavaScript", "Data Visualization", "Scrollytelling", "Statistical Analysis"],
         "link": "https://ancientabacus.github.io/Project-4/",
         "repo": "https://github.com/AncientAbacus/Project-4"
@@ -33,7 +33,7 @@
         "year": 2026,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Trained and evaluated a character-level deep learning model in TensorFlow on unstructured corpora from Reddit's top 200 communities; designed a benchmarking framework comparing architectural configurations against perplexity metrics; authored a paper on domain-specific language pattern capture.",
+        "description": "Trained and evaluated a character-level deep learning model in TensorFlow on unstructured corpora from Reddit’s top 200 communities; designed a benchmarking framework comparing architectural configurations against perplexity metrics; authored paper analyzing domain-specific language pattern capture.",
         "tags": ["Python", "TensorFlow", "LSTM/RNN", "NLP", "Model Benchmarking"]
     },
     {
@@ -41,24 +41,24 @@
         "year": 2025,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Engineered distributed ML pipelines with AWS Lambda, EC2, and Apache Spark to ingest and clean 16M+ rows of Amazon purchase data. Implemented one-hot encoding, distributed PCA, and feature engineering in BigQuery to reduce dimensionality for downstream models, and optimized batch RMSE calculation to evaluate models at scale.",
+        "description": "Engineered distributed ML pipelines with AWS Lambda, EC2, and Apache Spark to ingest and clean 16M+ rows of Amazon purchase data. Implemented one-hot encoding, distributed PCA, and feature engineering in BigQuery to reduce dimensionality for downstream models. Optimized batch calculation of RMSE across the full dataset to evaluate models at scale.",
         "tags": ["AWS Lambda", "AWS EC2", "Apache Spark", "BigQuery", "PCA", "Distributed Computing", "Feature Engineering"]
     },
     {
-        "title": "Seal Health Prediction Model",
+        "title": "Seal Health Modeling: Human Impact on Alaskan Seals",
         "year": 2025,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Analyzed environmental and economic datasets to assess human impact on Alaskan seal populations using ridge regression, PCA, and correlation heatmaps, identifying ocean traffic and coastal development as statistically significant predictors of seal weight.",
-        "tags": ["R", "Ridge Regression", "PCA", "Correlation Analysis", "Environmental Data"],
+        "description": "Merged four NOAA and Alaska Fish &amp; Game datasets to test whether ocean-economy activity predicts Alaskan seal health; re-validated the original ridge model (R² 0.91 on a 3-row test split) with leave-one-out cross-validation across 5 models and permutation importance, showing the fit did not generalize on 13 yearly observations and reporting that openly.",
+        "tags": ["Python", "Ridge Regression", "Leave-One-Out CV", "Permutation Importance", "Environmental Data"],
         "link": "https://ancientabacus.github.io/Seal_Health_Modeling/"
     },
     {
-        "title": "San Diego Parking Analysis",
+        "title": "San Diego Parking Meter Analytics Dashboard",
         "year": 2025,
         "image": "images/place_holder.jpeg",
         "imageClass": "project-image",
-        "description": "Designed a dynamic D3.js web app to help San Diego drivers identify optimal parking times and locations via daily frequency histograms and an interactive geospatial parking meter heatmap.",
+        "description": "Developed a geospatial analytics dashboard using D3.js to visualize 100,000+ parking meter citations across San Diego; created interactive daily frequency histograms and a geospatial heat map enabling drivers to identify optimal parking times and locations.",
         "tags": ["D3.js", "JavaScript", "Geospatial Heatmaps", "Data Visualization"]
     },
     {

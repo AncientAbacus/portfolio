@@ -129,3 +129,9 @@ resume (all projects, end-date order) and corrected project years in
 2026-11-08 (later): résumé page simplified. Removed the three-number stat
 row, the repeated name heading (the masthead already shows it), and the
 Download PDF link; home page no longer mentions a downloadable PDF.
+
+2026-11-11: résumé page and home page now carry the same content as the
+master résumé. `scripts/build_resume_page.py` also syncs the summary,
+education, a Projects list on the résumé page (reusing the `.role` markup,
+no new components), home-page skills, and title-matched descriptions in
+`lib/projects.json`. No token, type, or layout changes.

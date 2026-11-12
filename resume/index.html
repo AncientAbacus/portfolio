@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume - Gino Angelici</title>
-    <meta name="description" content="UC San Diego data scientist with experience in machine learning, LLM pipelines, and statistical modeling at Exponential Intelligence, HDSI, Deloitte, and Scripps Institution of Oceanography.">
+    <meta name="description" content="Data scientist (B.S. Data Science, UC San Diego) focused on statistical modeling, forecasting, and LLM pipelines, with experience at Exponential Intelligence, HDSI, Deloitte, and Scripps Institution of Oceanography.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ginoangelici.com/resume/">
     <meta property="og:title" content="Resume - Gino Angelici">
-    <meta property="og:description" content="UC San Diego data scientist with experience in machine learning, LLM pipelines, and statistical modeling.">
+    <meta property="og:description" content="Data scientist (B.S. Data Science, UC San Diego) focused on statistical modeling, forecasting, and LLM pipelines.">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -29,8 +29,14 @@
             <h1>Résumé</h1>
             <p class="lede">Data Science Professional. <a href="https://github.com/ancientabacus" target="_blank">GitHub</a> · <a href="https://linkedin.com/in/gino-angelici" target="_blank">LinkedIn</a> · <a href="mailto:gino.angelici@gmail.com">Email</a></p>
 
+            <!-- RESUME:SUMMARY:START -->
+            <p>Data scientist (B.S. Data Science, UC San Diego) focused on statistical modeling, forecasting, and LLM pipelines. Built a day-ahead demand forecast for 2,296 Citi Bike stations, LLM digital twins piloted by 5 companies, and risk models presented to Deloitte leadership; led a team to 1st place at Purdue’s national autonomous vehicle competition.</p>
+            <!-- RESUME:SUMMARY:END -->
+
             <h2>Education</h2>
-            <p>B.S. Data Science, UC San Diego, Sep 2021 to Jun 2025. Coursework in machine learning, deep learning, probabilistic modeling, statistics, recommender systems, and big data.</p>
+            <!-- RESUME:EDUCATION:START -->
+            <p>Bachelor of Science in Data Science, University of California, San Diego, Sep 2021 – Jun 2025. Coursework: Machine Learning, Deep Learning, Probabilistic Modeling &amp; ML, Statistical Methods, Recommender Systems, Scalable Analytics, Data Management, Data Structures &amp; Algorithms, Data Visualization, Optimization.</p>
+            <!-- RESUME:EDUCATION:END -->
 
             <h2>Experience</h2>
             <div class="roles">
@@ -49,7 +55,7 @@
                         <span class="role__meta">Sep 2025 – Sep 2026</span>
                     </div>
                     <p class="role__sub">Irvine, CA</p>
-                    <p>Built an end-to-end LLM pipeline generating AI digital twins that simulate survey respondents across political subgroups, used to assist 5 businesses with survey administration and decision making. Work led to a pilot program in which 5 companies adopted the statistical survey pipeline. Measured alignment between twins and real respondents with Jensen-Shannon Divergence and chi-square tests of homogeneity, using a Python pipeline (pandas, NumPy, SciPy, Seaborn). Designed re-prompting strategies to correct LLM failure modes, including social desirability bias, extreme response tendency, and prototype reasoning. Trained classification models to categorize survey domains and applied supervised and unsupervised techniques to surface where twins diverged from real respondents.</p>
+                    <p>Built an end-to-end LLM pipeline generating AI digital twins that simulate survey respondents across political subgroups; 5 companies adopted it in a pilot program for survey administration and decision making. Measured alignment between twins and real respondents with Jensen-Shannon Divergence and chi-square tests of homogeneity, using a Python pipeline (pandas, NumPy, SciPy, Seaborn). Designed re-prompting strategies to correct LLM failure modes, including social desirability bias, extreme response tendency, and prototype reasoning. Trained classification models to categorize survey domains and applied supervised and unsupervised techniques to surface where twins diverged from real respondents.</p>
                     <p class="role__tags">Python · LLM Prompt Engineering · Fine-Tuned Classification Models · Statistical Validation</p>
                 </div>
                 <div class="role">
@@ -87,20 +93,79 @@
             <!-- RESUME:SKILLS:START -->
                 <div>
                     <dt>Languages</dt>
-                    <dd>Python, SQL (PostgreSQL, BigQuery, Snowflake), R, JavaScript/TypeScript, HTML/CSS, Linux</dd>
+                    <dd>Python, SQL (PostgreSQL, BigQuery, Snowflake), R, Java, JavaScript/TypeScript, HTML/CSS, Linux</dd>
                 </div>
                 <div>
-                    <dt>ML &amp; AI</dt>
-                    <dd>PyTorch, TensorFlow, Scikit-learn, XGBoost, Hugging Face Transformers, LangChain/LangGraph, pandas, NumPy, Statsmodels, SciPy, PySpark, Seaborn, matplotlib, Plotly, D3.js</dd>
+                    <dt>Statistics &amp; ML</dt>
+                    <dd>Hypothesis testing, bootstrap confidence intervals, regularized regression, gradient boosting, PCA, time-series forecasting, conformal prediction, CNNs</dd>
+                </div>
+                <div>
+                    <dt>Libraries</dt>
+                    <dd>pandas, NumPy, SciPy, scikit-learn, Statsmodels, XGBoost, PySpark, PyTorch, TensorFlow, Hugging Face Transformers, LangChain/LangGraph, ChromaDB, Seaborn, matplotlib, Plotly, D3.js</dd>
                 </div>
                 <div>
                     <dt>Tools &amp; Platforms</dt>
-                    <dd>AWS (Lambda, EC2), Apache Spark, Airflow, Databricks, Snowflake, Docker, FastAPI, Git/GitHub, Weights &amp; Biases, Tableau, Power BI, MongoDB</dd>
+                    <dd>AWS (Lambda, EC2), Apache Spark, Airflow, Databricks, Snowflake, Docker, FastAPI, Git/GitHub, Weights &amp; Biases, Tableau, Power BI, MongoDB, Leaflet, pytest, GitHub Actions</dd>
                 </div>
             <!-- RESUME:SKILLS:END -->
             </dl>
 
-            <p><a href="../projects/" class="cta">View my projects →</a></p>
+            <h2>Projects</h2>
+            <div class="roles">
+            <!-- RESUME:PROJECTS:START -->
+                <div class="role">
+                    <div class="role__head">
+                        <h3 class="role__title">Pokemon RAG AI Agent – LLM Knowledge Retrieval System</h3>
+                        <span class="role__meta">Mar 2026 – Present</span>
+                    </div>
+                    <p>Built a RAG-powered conversational AI agent over a structured Pokemon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering.</p>
+                </div>
+                <div class="role">
+                    <div class="role__head">
+                        <h3 class="role__title"><a href="https://ancientabacus.github.io/NYC-CitiBike-Analysis/" target="_blank" rel="noopener">NYC Citi Bike Analysis – Demand Forecasting &amp; Rebalancing<span class="link-mark" aria-hidden="true">↗</span></a></h3>
+                        <span class="role__meta">Nov 2025 – Nov 2026</span>
+                    </div>
+                    <p>Built a tested Python pipeline (pandas, PyArrow, Shapely) that cleans 44M+ 2024 Citi Bike trips and joins NOAA weather and NYC bike lane data to answer where bikes run out, and when. Forecast next-day hourly demand at 2,296 stations with Poisson gradient boosting (scikit-learn): 86–94% citywide daily accuracy, station-hour error 11–17% below the best baseline, and 3 of 3 monthly backtests won. Sized the rebalancing problem at 5,927+ bikes stranded each weekday morning across 676 draining and 409 filling stations; found commute-hour rain cuts rides 29% (95% CI 22–32%) vs. 7% for off-peak rain. Published an interactive site with Leaflet maps, SVG charts, and 80% conformal prediction bands; CI runs leak tests and checks every reported number against the data. Added a member vs. casual rider classifier on leak-free features (ROC-AUC 0.77) and regression with 14-day block-bootstrap intervals for weather effects.</p>
+                </div>
+                <div class="role">
+                    <div class="role__head">
+                        <h3 class="role__title"><a href="https://ancientabacus.github.io/Project-4/" target="_blank" rel="noopener">Organ Trail – Interactive Surgery Data Explorer<span class="link-mark" aria-hidden="true">↗</span></a></h3>
+                        <span class="role__meta">Jan 2026 – Feb 2026</span>
+                    </div>
+                    <p>Built a D3.js scrollytelling site with a team of 3 over 6,000+ hospital surgery cases, showing how patient age and surgical position relate to operation type and duration; added an interactive duration estimator from filtered case averages so non-technical users can explore trends without writing code.</p>
+                </div>
+                <div class="role">
+                    <div class="role__head">
+                        <h3 class="role__title">Reddit NLP Pipeline – Deep Learning Text Generation</h3>
+                        <span class="role__meta">Nov 2025 – Jan 2026</span>
+                    </div>
+                    <p>Trained and evaluated a character-level deep learning model in TensorFlow on unstructured corpora from Reddit’s top 200 communities; designed a benchmarking framework comparing architectural configurations against perplexity metrics; authored paper analyzing domain-specific language pattern capture.</p>
+                </div>
+                <div class="role">
+                    <div class="role__head">
+                        <h3 class="role__title">Amazon Purchase Dataset – Large-Scale ML Pipeline</h3>
+                        <span class="role__meta">Oct 2025 – Dec 2025</span>
+                    </div>
+                    <p>Engineered distributed ML pipelines with AWS Lambda, EC2, and Apache Spark to ingest and clean 16M+ rows of Amazon purchase data. Implemented one-hot encoding, distributed PCA, and feature engineering in BigQuery to reduce dimensionality for downstream models. Optimized batch calculation of RMSE across the full dataset to evaluate models at scale.</p>
+                </div>
+                <div class="role">
+                    <div class="role__head">
+                        <h3 class="role__title"><a href="https://ancientabacus.github.io/Seal_Health_Modeling/" target="_blank" rel="noopener">Seal Health Modeling – Human Impact on Alaskan Seals<span class="link-mark" aria-hidden="true">↗</span></a></h3>
+                        <span class="role__meta">Sep 2025 – Nov 2025</span>
+                    </div>
+                    <p>Merged four NOAA and Alaska Fish &amp; Game datasets to test whether ocean-economy activity predicts Alaskan seal health; re-validated the original ridge model (R² 0.91 on a 3-row test split) with leave-one-out cross-validation across 5 models and permutation importance, showing the fit did not generalize on 13 yearly observations and reporting that openly.</p>
+                </div>
+                <div class="role">
+                    <div class="role__head">
+                        <h3 class="role__title">San Diego Parking Meter Analytics Dashboard</h3>
+                        <span class="role__meta">Sep 2025 – Oct 2025</span>
+                    </div>
+                    <p>Developed a geospatial analytics dashboard using D3.js to visualize 100,000+ parking meter citations across San Diego; created interactive daily frequency histograms and a geospatial heat map enabling drivers to identify optimal parking times and locations.</p>
+                </div>
+            <!-- RESUME:PROJECTS:END -->
+            </div>
+
+            <p><a href="../projects/" class="cta">Browse projects with tags and repos →</a></p>
         </article>
     </main>
 </body>
