@@ -44,11 +44,6 @@ const footer = document.createElement('footer');
 footer.className = 'foot-mast';
 footer.innerHTML = `
   <p class="wordmark">Gino Angelici</p>
-  <p class="links">
-    <a href="https://github.com/AncientAbacus" target="_blank">GitHub</a> ·
-    <a href="https://linkedin.com/in/gino-angelici" target="_blank">LinkedIn</a> ·
-    <a href="mailto:gino.angelici@gmail.com">Email</a>
-  </p>
 `;
 document.body.append(footer);
 

@@ -156,3 +156,15 @@ Education, Skills, in that order. Removed its summary (the home lede covers
 it), its GitHub/LinkedIn/Email line (in the nav) and its Projects list (the
 Projects page owns that). Rule: apart from the home page, each fact lives on
 one page only. Home closes with "Want a copy of my résumé? Get in touch".
+
+2026-11-22 (audit pass): content column widened to 820px, prose capped at
+72ch and centred under the masthead. `--text-xs` raised to 13px for
+legibility. Footer is the wordmark only (links live in the nav). Contact
+page drops the mailto form for a plain email link plus LinkedIn. Projects
+page drops its "Browse" eyebrow and subtitle and gets top spacing; the three
+projects that duplicated Experience roles (HDSI, Scripps, Deloitte) are gone,
+and the rest are ordered by strength (Citi Bike, Seal Health, Organ Trail
+first). Home adds an "Open to …" eyebrow above the lede and a Seal Health
+mention; non-data roles render last under an "Other experience" label
+(`OTHER_EXPERIENCE` in the sync script). Share image is a 1200×630
+portrait card (`images/og-image.jpg`) on every page.

@@ -11,6 +11,7 @@
     <meta property="og:url" content="https://ginoangelici.com/contact/">
     <meta property="og:title" content="Contact - Gino Angelici">
     <meta property="og:description" content="Get in touch for data science opportunities and collaborations.">
+    <meta property="og:image" content="https://ginoangelici.com/images/og-image.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -28,38 +29,11 @@
         <article class="prose">
             <span class="eyebrow">Get in touch</span>
             <h1>Contact</h1>
-            <p class="lede">Have a role, a dataset, or a project worth comparing notes on? Send a note — I read every message myself.</p>
-            <form id="contact-form">
-                <label>
-                    Your email
-                    <input type="email" id="sender-email" required>
-                </label>
-                <label>
-                    Subject
-                    <input type="text" id="subject" required>
-                </label>
-                <label>
-                    Message
-                    <textarea id="message" required></textarea>
-                </label>
-                <button type="submit" class="cta">Send →</button>
-            </form>
+            <p class="lede">Have a role, a dataset, or a project worth comparing notes on? Send a note. I read every message myself.</p>
+            <p><a href="mailto:gino.angelici@gmail.com" class="cta">gino.angelici@gmail.com</a></p>
+            <p>Or message me on <a href="https://linkedin.com/in/gino-angelici" target="_blank" rel="noopener">LinkedIn</a>.</p>
         </article>
     </main>
 
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const email = document.getElementById('sender-email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-
-            const body = `REPLY TO: ${email}\n\n---\n\n${message}`;
-            const mailtoLink = `mailto:gino.angelici@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            window.location.href = mailtoLink;
-        });
-    </script>
 </body>
 </html>

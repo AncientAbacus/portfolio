@@ -113,10 +113,10 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: Python, SQL (PostgreSQL, BigQuery, Snowflake), R, Java, JavaScript/TypeScript, HTML/CSS, Linux} \\
-     \textbf{Statistics \& ML}{: Hypothesis testing, bootstrap confidence intervals, regularized regression, gradient boosting, PCA, time-series forecasting, conformal prediction, CNNs} \\
-     \textbf{Libraries}{: pandas, NumPy, SciPy, scikit-learn, Statsmodels, XGBoost, PySpark, PyTorch, TensorFlow, Hugging Face Transformers, LangChain/LangGraph, ChromaDB, Seaborn, matplotlib, Plotly, D3.js} \\
-     \textbf{Tools \& Platforms}{: AWS (Lambda, EC2), Apache Spark, Airflow, Databricks, Snowflake, Docker, FastAPI, Git/GitHub, Weights \& Biases, Excel, Tableau, Power BI, MongoDB, Leaflet, pytest, GitHub Actions} \\
+     \textbf{Languages}{: Python, SQL, R, JavaScript} \\
+     \textbf{Statistics \& ML}{: Hypothesis testing, bootstrap confidence intervals, regularized regression, gradient boosting, time-series forecasting, conformal prediction, CNNs} \\
+     \textbf{Libraries}{: pandas, NumPy, scikit-learn, Statsmodels, XGBoost, PyTorch, Hugging Face Transformers, LangChain, D3.js} \\
+     \textbf{Tools \& Platforms}{: AWS, Apache Spark, Docker, Git, GitHub Actions, pytest} \\
     }}
  \end{itemize}
  \vspace{-16pt}
@@ -177,18 +177,16 @@
 \section{Projects}
   \resumeSubHeadingListStart
 
-    \resumeProjectHeading{Pokemon RAG AI Agent -- LLM Knowledge Retrieval System}{Mar 2026 -- Present}
+    \resumeProjectHeading{Pokémon RAG AI Agent -- LLM Knowledge Retrieval System}{Mar 2026 -- Present}
       \resumeItemListStart
-        \resumeItem{Built a RAG-powered conversational AI agent over a structured Pokemon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering.}
+        \resumeItem{Built a RAG-powered conversational AI agent over a structured Pokémon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering.}
       \resumeItemListEnd
 
     \resumeProjectHeading{\href{https://ancientabacus.github.io/NYC-CitiBike-Analysis/}{NYC Citi Bike Analysis -- Demand Forecasting \& Rebalancing}}{Nov 2025 -- Nov 2026}
       \resumeItemListStart
-        \resumeItem{Built a tested Python pipeline (pandas, PyArrow, Shapely) that cleans 44M+ 2024 Citi Bike trips and joins NOAA weather and NYC bike lane data to answer where bikes run out, and when.}
-        \resumeItem{Forecast next-day hourly demand at 2,296 stations with Poisson gradient boosting (scikit-learn): 86--94\% citywide daily accuracy, station-hour error 11--17\% below the best baseline, and 3 of 3 monthly backtests won.}
-        \resumeItem{Sized the rebalancing problem at 5,927+ bikes stranded each weekday morning across 676 draining and 409 filling stations; found commute-hour rain cuts rides 29\% (95\% CI 22--32\%) vs.\ 7\% for off-peak rain.}
-        \resumeItem{Published an interactive site with Leaflet maps, SVG charts, and 80\% conformal prediction bands; CI runs leak tests and checks every reported number against the data.}
-        \resumeItem{Added a member vs.\ casual rider classifier on leak-free features (ROC-AUC 0.77) and regression with 14-day block-bootstrap intervals for weather effects.}
+        \resumeItem{Forecast next-day hourly demand at 2,296 stations with Poisson gradient boosting: station-hour error 11--17\% below the best baseline, 86--94\% citywide daily accuracy, and 3 of 3 monthly backtests won.}
+        \resumeItem{Sized the rebalancing problem at 5,927+ bikes stranded each weekday morning; found commute-hour rain cuts rides 29\% (95\% CI 22--32\%) vs.\ 7\% off-peak.}
+        \resumeItem{Built a tested pipeline over 44M+ 2024 trips joined with NOAA weather and bike-lane data, and published an interactive site with Leaflet maps and 80\% conformal prediction bands; CI checks every reported number against the data.}
       \resumeItemListEnd
 
     \resumeProjectHeading{\href{https://ancientabacus.github.io/Project-4/}{Organ Trail -- Interactive Surgery Data Explorer}}{Jan 2026 -- Feb 2026}
@@ -210,7 +208,8 @@
 
     \resumeProjectHeading{\href{https://ancientabacus.github.io/Seal_Health_Modeling/}{Seal Health Modeling -- Human Impact on Alaskan Seals}}{Sep 2025 -- Nov 2025}
       \resumeItemListStart
-        \resumeItem{Merged four NOAA and Alaska Fish \& Game datasets to test whether ocean-economy activity predicts Alaskan seal health; re-validated the original ridge model (R\textsuperscript{2} 0.91 on a 3-row test split) with leave-one-out cross-validation across 5 models and permutation importance, showing the fit did not generalize on 13 yearly observations and reporting that openly.}
+        \resumeItem{Showed that the original ridge model (R\textsuperscript{2} 0.91 on a 3-row test split) did not generalize: re-validated it with leave-one-out cross-validation across 5 models and permutation importance on 13 yearly observations, and reported the negative result openly.}
+        \resumeItem{Merged four NOAA and Alaska Fish \& Game datasets to test whether ocean-economy activity predicts Alaskan seal health.}
       \resumeItemListEnd
 
     \resumeProjectHeading{San Diego Parking Meter Analytics Dashboard}{Sep 2025 -- Oct 2025}

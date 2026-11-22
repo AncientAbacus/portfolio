@@ -18,6 +18,8 @@ TEX = ROOT / "resume" / "source" / "resume.tex"
 PAGE = ROOT / "experience" / "index.html"
 HOME = ROOT / "index.html"
 PROJECTS = ROOT / "lib" / "projects.json"
+# Non-data roles shown last, under an "Other experience" label.
+OTHER_EXPERIENCE = ("Walt Disney World",)
 
 
 def braced(s, i):
@@ -167,8 +169,12 @@ def find_tags(tags, company, title):
 
 
 def render_roles(roles, tags):
+    is_other = lambda r: any(k in r["company"] for k in OTHER_EXPERIENCE)
+    roles = [r for r in roles if not is_other(r)] + [r for r in roles if is_other(r)]
     out = []
-    for r in roles:
+    for n, r in enumerate(roles):
+        if is_other(r) and (n == 0 or not is_other(roles[n - 1])):
+            out.append('                <p class="eyebrow roles__other">Other experience</p>')
         company = clean(r["company"])
         pos_main, _, pos_rest = clean(r["position"]).partition(", ")
         title = f"{pos_main}, {company}"

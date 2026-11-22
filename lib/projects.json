@@ -1,18 +1,18 @@
 [
     {
-        "title": "Pokemon RAG AI Agent: LLM Knowledge Retrieval System",
-        "year": 2026,
-        "description": "Built a RAG-powered conversational AI agent over a structured Pokemon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering.",
-        "tags": ["Python", "LangChain", "ChromaDB", "RAG", "Vector Embeddings", "LLM Prompt Engineering"],
-        "repo": "https://github.com/AncientAbacus/pokeagent"
-    },
-    {
         "title": "NYC Citi Bike Analysis: Demand Forecasting &amp; Rebalancing",
         "year": 2026,
-        "description": "Built a tested Python pipeline (pandas, PyArrow, Shapely) that cleans 44M+ 2024 Citi Bike trips and joins NOAA weather and NYC bike lane data to answer where bikes run out, and when. Forecast next-day hourly demand at 2,296 stations with Poisson gradient boosting (scikit-learn): 86–94% citywide daily accuracy, station-hour error 11–17% below the best baseline, and 3 of 3 monthly backtests won. Sized the rebalancing problem at 5,927+ bikes stranded each weekday morning across 676 draining and 409 filling stations; found commute-hour rain cuts rides 29% (95% CI 22–32%) vs. 7% for off-peak rain. Published an interactive site with Leaflet maps, SVG charts, and 80% conformal prediction bands; CI runs leak tests and checks every reported number against the data. Added a member vs. casual rider classifier on leak-free features (ROC-AUC 0.77) and regression with 14-day block-bootstrap intervals for weather effects.",
+        "description": "Forecast next-day hourly demand at 2,296 stations with Poisson gradient boosting: station-hour error 11–17% below the best baseline, 86–94% citywide daily accuracy, and 3 of 3 monthly backtests won. Sized the rebalancing problem at 5,927+ bikes stranded each weekday morning; found commute-hour rain cuts rides 29% (95% CI 22–32%) vs. 7% off-peak. Built a tested pipeline over 44M+ 2024 trips joined with NOAA weather and bike-lane data, and published an interactive site with Leaflet maps and 80% conformal prediction bands; CI checks every reported number against the data.",
         "tags": ["Python", "pandas", "scikit-learn", "Gradient Boosting", "Forecasting", "Conformal Prediction", "Leaflet.js", "Geospatial Analysis"],
         "link": "https://ancientabacus.github.io/NYC-CitiBike-Analysis/",
         "repo": "https://github.com/AncientAbacus/NYC-CitiBike-Analysis"
+    },
+    {
+        "title": "Seal Health Modeling: Human Impact on Alaskan Seals",
+        "year": 2025,
+        "description": "Showed that the original ridge model (R² 0.91 on a 3-row test split) did not generalize: re-validated it with leave-one-out cross-validation across 5 models and permutation importance on 13 yearly observations, and reported the negative result openly. Merged four NOAA and Alaska Fish &amp; Game datasets to test whether ocean-economy activity predicts Alaskan seal health.",
+        "tags": ["Python", "Ridge Regression", "Leave-One-Out CV", "Permutation Importance", "Environmental Data"],
+        "link": "https://ancientabacus.github.io/Seal_Health_Modeling/"
     },
     {
         "title": "Organ Trail: Interactive Surgery Data Explorer",
@@ -21,6 +21,13 @@
         "tags": ["D3.js", "JavaScript", "Data Visualization", "Scrollytelling", "Statistical Analysis"],
         "link": "https://ancientabacus.github.io/Project-4/",
         "repo": "https://github.com/AncientAbacus/Project-4"
+    },
+    {
+        "title": "Pokémon RAG AI Agent: LLM Knowledge Retrieval System",
+        "year": 2026,
+        "description": "Built a RAG-powered conversational AI agent over a structured Pokémon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering.",
+        "tags": ["Python", "LangChain", "ChromaDB", "RAG", "Vector Embeddings", "LLM Prompt Engineering"],
+        "repo": "https://github.com/AncientAbacus/pokeagent"
     },
     {
         "title": "Reddit NLP Pipeline: Deep Learning Text Generation",
@@ -35,35 +42,9 @@
         "tags": ["AWS Lambda", "AWS EC2", "Apache Spark", "BigQuery", "PCA", "Distributed Computing", "Feature Engineering"]
     },
     {
-        "title": "Seal Health Modeling: Human Impact on Alaskan Seals",
-        "year": 2025,
-        "description": "Merged four NOAA and Alaska Fish &amp; Game datasets to test whether ocean-economy activity predicts Alaskan seal health; re-validated the original ridge model (R² 0.91 on a 3-row test split) with leave-one-out cross-validation across 5 models and permutation importance, showing the fit did not generalize on 13 yearly observations and reporting that openly.",
-        "tags": ["Python", "Ridge Regression", "Leave-One-Out CV", "Permutation Importance", "Environmental Data"],
-        "link": "https://ancientabacus.github.io/Seal_Health_Modeling/"
-    },
-    {
         "title": "San Diego Parking Meter Analytics Dashboard",
         "year": 2025,
         "description": "Developed a geospatial analytics dashboard using D3.js to visualize 100,000+ parking meter citations across San Diego; created interactive daily frequency histograms and a geospatial heat map enabling drivers to identify optimal parking times and locations.",
         "tags": ["D3.js", "JavaScript", "Geospatial Heatmaps", "Data Visualization"]
-    },
-    {
-        "title": "Autonomous Vehicle Development: 1st Place at Purdue",
-        "year": 2025,
-        "description": "Designed and deployed CNN-based perception and control models for autonomous vehicle navigation on low-power embedded hardware, integrating stereo and RGB-D cameras for real-time 3D scene understanding; benchmarked against LLMs and LVMs and won 1st place at Purdue's national autonomous vehicle competition.",
-        "tags": ["PyTorch", "Computer Vision", "CNNs", "Embedded Systems", "Sensor Fusion", "Robotics"]
-    },
-    {
-        "title": "Scripps Climate Research",
-        "year": 2024,
-        "description": "Built Python ETL pipelines to analyze 70+ years of climate data from 60 coastal airports. Used sliding-window PCA, polynomial regression, and ridge regression to link urbanization to reduced cloud cover and higher local temperatures, contributing to a peer-reviewed publication update.",
-        "tags": ["Python", "Ridge Regression", "PCA", "Polynomial Regression", "Time Series Analysis"],
-        "repo": "https://github.com/AncientAbacus/Coastal-Low-Cloudiness"
-    },
-    {
-        "title": "Deloitte Substance Abuse Risk Analysis",
-        "year": 2023,
-        "description": "Trained XGBoost and regularized regression models on 50,000+ HHS records, identifying proximity to low-income neighborhoods and gambling advertisements as top predictors of substance abuse risk. Turned model results into strategic recommendations and presented them to senior Deloitte leadership through interactive Seaborn and Plotly dashboards.",
-        "tags": ["XGBoost", "Regularized Regression", "Feature Importance", "Seaborn", "Plotly"]
     }
 ]
