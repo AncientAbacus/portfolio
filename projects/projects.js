@@ -1,7 +1,13 @@
 import { fetchJSON, renderProjects } from '../global.js';
 
-const projects = await fetchJSON('../lib/projects.json');
 const projectsContainer = document.querySelector('.projects');
+let projects;
+try {
+    projects = await fetchJSON('../lib/projects.json');
+} catch {
+    projectsContainer.innerHTML = '<p>Couldn’t load projects. Try refreshing the page.</p>';
+    throw new Error('projects.json failed to load');
+}
 const searchInput = document.querySelector('.searchBar');
 
 const projectTitle = document.querySelector('.projects-title');

@@ -12,6 +12,9 @@ const navPages = [
   { url: 'projects/', title: 'Projects' },
   { url: 'resume/', title: 'Résumé' },
   { url: 'contact/', title: 'Contact' },
+  { url: 'https://github.com/AncientAbacus', title: 'GitHub ↗' },
+  { url: 'https://linkedin.com/in/gino-angelici', title: 'LinkedIn ↗' },
+  { url: 'mailto:gino.angelici@gmail.com', title: 'Email ↗' },
 ];
 
 const header = document.createElement('header');
@@ -30,119 +33,11 @@ for (const p of navPages) {
   const a = document.createElement('a');
   a.href = resolve(p.url);
   a.textContent = p.title;
+  if (p.url.startsWith('http')) { a.target = '_blank'; a.rel = 'noopener'; }
   if (a.pathname === location.pathname) a.classList.add('current');
   li.append(a);
   mastList.append(li);
 }
-const cmdkLi = document.createElement('li');
-cmdkLi.innerHTML = `<button type="button" class="cmdk-trigger" aria-haspopup="dialog" aria-controls="cmdk-overlay">Jump to <kbd>⌘K</kbd></button>`;
-mastList.append(cmdkLi);
-
-/* ===== Command palette ===== */
-const cmdkItems = [
-  { group: 'Pages', title: 'Home', url: resolve('') },
-  { group: 'Pages', title: 'Projects', url: resolve('projects/') },
-  { group: 'Pages', title: 'Résumé', url: resolve('resume/') },
-  { group: 'Pages', title: 'Contact', url: resolve('contact/') },
-  { group: 'Elsewhere', title: 'GitHub ↗', url: 'https://github.com/AncientAbacus' },
-  { group: 'Elsewhere', title: 'LinkedIn ↗', url: 'https://linkedin.com/in/gino-angelici' },
-  { group: 'Elsewhere', title: 'Email ↗', url: 'mailto:gino.angelici@gmail.com' },
-];
-
-const overlay = document.createElement('div');
-overlay.className = 'cmdk-overlay';
-overlay.id = 'cmdk-overlay';
-overlay.hidden = true;
-overlay.innerHTML = `
-  <div class="cmdk-palette" role="dialog" aria-modal="true" aria-label="Jump to">
-    <div class="cmdk-palette__search">
-      <span class="cmdk-palette__icon" aria-hidden="true">/</span>
-      <input type="text" class="cmdk-palette__input" placeholder="Jump to a page or link…" aria-label="Jump to a page or link">
-    </div>
-    <ul class="cmdk-palette__list"></ul>
-    <p class="cmdk-palette__empty" hidden>No matches.</p>
-  </div>
-`;
-document.body.append(overlay);
-
-const list = overlay.querySelector('.cmdk-palette__list');
-const input = overlay.querySelector('.cmdk-palette__input');
-const empty = overlay.querySelector('.cmdk-palette__empty');
-let activeIndex = -1;
-let lastFocused = null;
-
-function buildList(filter = '') {
-  list.innerHTML = '';
-  const q = filter.trim().toLowerCase();
-  const groups = new Map();
-  cmdkItems
-    .filter((item) => item.title.toLowerCase().includes(q))
-    .forEach((item) => {
-      if (!groups.has(item.group)) groups.set(item.group, []);
-      groups.get(item.group).push(item);
-    });
-
-  let flatIndex = 0;
-  for (const [group, items] of groups) {
-    const groupEl = document.createElement('li');
-    groupEl.className = 'cmdk-palette__group';
-    groupEl.textContent = group;
-    list.append(groupEl);
-    for (const item of items) {
-      const li = document.createElement('li');
-      li.className = 'cmdk-palette__item';
-      li.dataset.url = item.url;
-      li.dataset.index = flatIndex++;
-      li.innerHTML = `<span>${item.title}</span><kbd>↵</kbd>`;
-      li.addEventListener('mouseenter', () => setActive(Number(li.dataset.index)));
-      li.addEventListener('click', () => go(item.url));
-      list.append(li);
-    }
-  }
-  empty.hidden = groups.size > 0;
-  activeIndex = groups.size > 0 ? 0 : -1;
-  paintActive();
-}
-
-function items() { return [...list.querySelectorAll('.cmdk-palette__item')]; }
-function paintActive() { items().forEach((el) => el.classList.toggle('active', Number(el.dataset.index) === activeIndex)); }
-function setActive(i) { activeIndex = i; paintActive(); }
-function go(url) { closeCmdk(); window.location.href = url; }
-
-function openCmdk() {
-  lastFocused = document.activeElement;
-  overlay.hidden = false;
-  input.value = '';
-  buildList();
-  input.focus();
-}
-function closeCmdk() {
-  overlay.hidden = true;
-  if (lastFocused) lastFocused.focus();
-}
-
-header.querySelector('.cmdk-trigger').addEventListener('click', openCmdk);
-overlay.addEventListener('click', (e) => { if (e.target === overlay) closeCmdk(); });
-input.addEventListener('input', (e) => buildList(e.target.value));
-
-document.addEventListener('keydown', (e) => {
-  const isMod = e.metaKey || e.ctrlKey;
-  if (isMod && e.key.toLowerCase() === 'k') {
-    e.preventDefault();
-    overlay.hidden ? openCmdk() : closeCmdk();
-    return;
-  }
-  if (overlay.hidden) return;
-  const rows = items();
-  if (e.key === 'Escape') { closeCmdk(); }
-  else if (e.key === 'ArrowDown') { e.preventDefault(); setActive(Math.min(activeIndex + 1, rows.length - 1)); }
-  else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(Math.max(activeIndex - 1, 0)); }
-  else if (e.key === 'Enter') {
-    e.preventDefault();
-    const el = rows.find((r) => Number(r.dataset.index) === activeIndex);
-    if (el) go(el.dataset.url);
-  }
-});
 
 /* ===== Footer — Ft1 Mast-headed ===== */
 const footer = document.createElement('footer');

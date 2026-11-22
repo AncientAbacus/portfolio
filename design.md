@@ -67,15 +67,15 @@ numbers. Everything is just there, per Long Document's own rule.
 ## Nav + footer (shared, built in `global.js`)
 
 - **Nav** — N6 Newspaper masthead: centred wordmark, small-caps meta line
-  above, inline link row below (Home / Projects / Résumé / Contact / a
-  plain-text "Jump to ⌘K"), double hairline rule beneath. Not a bordered
+  above, inline link row below (Home / Projects / Résumé / Contact / GitHub ↗ /
+  LinkedIn ↗ / Email ↗), double hairline rule beneath. Not a bordered
   bar, not a floating pill.
 - **Footer** — Ft1 Mast-headed: wordmark, one plain line (no marketing
   tagline), a link row (GitHub · LinkedIn · Email), tiny copyright.
 
 ## What pages MUST share
 
-- The masthead, footer, ⌘K palette (kept — genuinely useful, not slop)
+- The masthead and footer
 - Newsreader + IBM Plex Sans + JetBrains Mono
 - The green accent, used only as underline/mark/focus-ring — never a fill
 - Hairline dividers instead of card borders everywhere
@@ -135,3 +135,8 @@ master résumé. `scripts/build_resume_page.py` also syncs the summary,
 education, a Projects list on the résumé page (reusing the `.role` markup,
 no new components), home-page skills, and title-matched descriptions in
 `lib/projects.json`. No token, type, or layout changes.
+
+2026-11-22: removed the ⌘K "Jump to" palette at Gino's request. Its external
+links (GitHub, LinkedIn, Email) now sit in the masthead link row, so every
+destination is one click away. Résumé page links the CI-built PDF again.
+Contact form now mails the Gmail address. No token or type changes.

@@ -1,0 +1,14 @@
+# Fails a pull request if the résumé HTML or projects.json drift from resume.tex,
+# or if the sync script breaks. Fix by running: python3 scripts/build_resume_page.py
+name: Check resume sync
+
+on:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/build_resume_page.py
+      - run: git diff --exit-code

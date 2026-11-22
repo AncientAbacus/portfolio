@@ -193,17 +193,6 @@ dl.plain dd { margin: 0; }
 }
 .mast-nav a:hover { color: var(--color-ink); }
 .mast-nav a.current { color: var(--color-ink); border-bottom-color: var(--color-accent); }
-.mast-nav button {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  color: var(--color-ink-3);
-  background: none;
-  border: none;
-  border-bottom: 1px solid transparent;
-  padding: 0 0 1px;
-  cursor: pointer;
-}
-.mast-nav button:hover { color: var(--color-ink); }
 .mast-rule {
   border: 0;
   border-top: 1px solid var(--color-rule);
@@ -225,19 +214,6 @@ dl.plain dd { margin: 0; }
 .foot-mast .links a { color: var(--color-ink-3); text-decoration: none; border-bottom: 1px solid var(--color-rule); }
 .foot-mast .links a:hover { color: var(--color-ink); border-bottom-color: var(--color-ink-3); }
 
-/* ===== Command palette (kept — a real feature, not decoration) ===== */
-.cmdk-overlay { position: fixed; inset: 0; background: oklch(8% 0.02 300 / 0.6); display: flex; align-items: flex-start; justify-content: center; padding-top: min(18vh, 160px); z-index: 100; }
-.cmdk-overlay[hidden] { display: none; }
-.cmdk-palette { width: min(560px, calc(100vw - 2rem)); max-height: 60vh; background: var(--color-paper); border: 1px solid var(--color-rule); box-shadow: 0 8px 30px oklch(5% 0.02 300 / 0.55); overflow: hidden; display: flex; flex-direction: column; }
-.cmdk-palette__search { display: flex; align-items: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); border-bottom: 1px solid var(--color-rule); }
-.cmdk-palette__icon { font-family: var(--font-mono); color: var(--color-accent); }
-.cmdk-palette__input { flex: 1; border: none; outline: none; background: transparent; font-family: var(--font-body); font-size: var(--text-md); color: var(--color-ink); }
-.cmdk-palette__list { list-style: none; margin: 0; padding: var(--space-2xs); overflow-y: auto; }
-.cmdk-palette__item { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); padding: var(--space-xs) var(--space-sm); cursor: pointer; font-size: var(--text-sm); color: var(--color-ink-2); }
-.cmdk-palette__item.active, .cmdk-palette__item:hover { background: var(--color-paper-2); color: var(--color-ink); }
-.cmdk-palette__item kbd { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-3); }
-.cmdk-palette__group { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-ink-3); padding: var(--space-xs) var(--space-sm) var(--space-3xs); }
-.cmdk-palette__empty { padding: var(--space-md); color: var(--color-ink-3); font-size: var(--text-sm); }
 
 /* ===== Index-First list (Projects) ===== */
 .index-head { margin-bottom: var(--space-lg); }
