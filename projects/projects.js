@@ -14,7 +14,9 @@ let query = '';
 function update() {
     const q = query.toLowerCase();
     const filtered = projects.filter((project) => {
-        return Object.values(project).join('\n').toLowerCase().includes(q);
+        // search only visible text; JSON titles are HTML-escaped
+        const text = [project.title, project.year, project.description, ...(project.tags || [])].join('\n');
+        return text.replace(/&amp;/g, '&').toLowerCase().includes(q);
     });
     renderProjects(filtered, projectsContainer, 'h2');
 }
