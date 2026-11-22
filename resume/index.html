@@ -35,7 +35,8 @@
 
             <h2>Education</h2>
             <!-- RESUME:EDUCATION:START -->
-            <p>Bachelor of Science in Data Science, University of California, San Diego, Sep 2021 – Jun 2025. Coursework: Machine Learning, Deep Learning, Probabilistic Modeling &amp; ML, Statistical Methods, Recommender Systems, Scalable Analytics, Data Management, Data Structures &amp; Algorithms, Data Visualization, Optimization.</p>
+            <p>Bachelor of Science in Data Science, University of California, San Diego, Sep 2021 – Jun 2025.</p>
+            <p class="role__tags">Coursework: Machine Learning, Deep Learning, Probabilistic Modeling &amp; ML, Statistical Methods, Recommender Systems, Scalable Analytics, Data Management, Data Structures &amp; Algorithms, Data Visualization, Optimization</p>
             <!-- RESUME:EDUCATION:END -->
 
             <h2>Experience</h2>
@@ -47,7 +48,9 @@
                         <span class="role__meta">Aug 2026 – Present</span>
                     </div>
                     <p class="role__sub">TRON Lightcycle / Run · Orlando, FL</p>
-                    <p>Manage safety-critical ride operation across every crew position, including track safety and security.</p>
+                    <ul class="role__points">
+                        <li>Manage safety-critical ride operation across every crew position, including track safety and security.</li>
+                    </ul>
                 </div>
                 <div class="role">
                     <div class="role__head">
@@ -55,7 +58,12 @@
                         <span class="role__meta">Sep 2025 – Sep 2026</span>
                     </div>
                     <p class="role__sub">Irvine, CA</p>
-                    <p>Built an end-to-end LLM pipeline generating AI digital twins that simulate survey respondents across political subgroups; 5 companies adopted it in a pilot program for survey administration and decision making. Measured alignment between twins and real respondents with Jensen-Shannon Divergence and chi-square tests of homogeneity, using a Python pipeline (pandas, NumPy, SciPy, Seaborn). Designed re-prompting strategies to correct LLM failure modes, including social desirability bias, extreme response tendency, and prototype reasoning. Trained classification models to categorize survey domains and applied supervised and unsupervised techniques to surface where twins diverged from real respondents.</p>
+                    <ul class="role__points">
+                        <li>Built an end-to-end LLM pipeline generating AI digital twins that simulate survey respondents across political subgroups; 5 companies adopted it in a pilot program for survey administration and decision making.</li>
+                        <li>Measured alignment between twins and real respondents with Jensen-Shannon Divergence and chi-square tests of homogeneity, using a Python pipeline (pandas, NumPy, SciPy, Seaborn).</li>
+                        <li>Designed re-prompting strategies to correct LLM failure modes, including social desirability bias, extreme response tendency, and prototype reasoning.</li>
+                        <li>Trained classification models to categorize survey domains and applied supervised and unsupervised techniques to surface where twins diverged from real respondents.</li>
+                    </ul>
                     <p class="role__tags">Python · LLM Prompt Engineering · Fine-Tuned Classification Models · Statistical Validation</p>
                 </div>
                 <div class="role">
@@ -64,7 +72,12 @@
                         <span class="role__meta">Sep 2024 – Aug 2025 <span class="role__badge">1st place</span></span>
                     </div>
                     <p class="role__sub">Autonomous Vehicle Development · San Diego, CA</p>
-                    <p>Designed and deployed CNN-based perception and control models on low-power embedded hardware, integrating stereo and RGB-D cameras for real-time 3D scene understanding. Trained and fine-tuned models on UCSD’s Supercomputer Center across 3 prototype configurations. Benchmarked CNNs against LLMs and LVMs across local and cloud deployments, profiling performance on CPUs vs. dedicated AI accelerators. Led team to 1st place at Purdue University’s national autonomous vehicle competition.</p>
+                    <ul class="role__points">
+                        <li>Designed and deployed CNN-based perception and control models on low-power embedded hardware, integrating stereo and RGB-D cameras for real-time 3D scene understanding.</li>
+                        <li>Trained and fine-tuned models on UCSD’s Supercomputer Center across 3 prototype configurations.</li>
+                        <li>Benchmarked CNNs against LLMs and LVMs across local and cloud deployments, profiling performance on CPUs vs. dedicated AI accelerators.</li>
+                        <li>Led team to 1st place at Purdue University’s national autonomous vehicle competition.</li>
+                    </ul>
                     <p class="role__tags">PyTorch · Computer Vision · CNNs · MLOps (Weights &amp; Biases) · Embedded Systems</p>
                 </div>
                 <div class="role">
@@ -73,7 +86,11 @@
                         <span class="role__meta">Sep 2022 – Sep 2024</span>
                     </div>
                     <p class="role__sub">San Diego, CA</p>
-                    <p>Built Python ETL pipelines to ingest and clean 70+ years of climate records across 60 coastal airports, automating previously manual workflows. Used sliding-window PCA, polynomial regression, and ridge regression to link urbanization to reduced cloud cover and higher local temperatures. Validated findings with climate scientists, contributing to a peer-reviewed publication update.</p>
+                    <ul class="role__points">
+                        <li>Built Python ETL pipelines to ingest and clean 70+ years of climate records across 60 coastal airports, automating previously manual workflows.</li>
+                        <li>Used sliding-window PCA, polynomial regression, and ridge regression to link urbanization to reduced cloud cover and higher local temperatures.</li>
+                        <li>Validated findings with climate scientists, contributing to a peer-reviewed publication update.</li>
+                    </ul>
                     <p class="role__tags">Python · ETL Pipelines · PCA · Polynomial &amp; Ridge Regression · Climate Data Analysis</p>
                 </div>
                 <div class="role">
@@ -82,7 +99,10 @@
                         <span class="role__meta">Mar 2023 – Aug 2023</span>
                     </div>
                     <p class="role__sub">San Diego, CA</p>
-                    <p>Trained XGBoost and regularized regression models on 50,000+ U.S. Department of Health and Human Services records, identifying proximity to low-income neighborhoods and gambling advertisements as top predictors of substance abuse risk. Turned model results into strategic recommendations and presented them to senior Deloitte leadership through interactive Seaborn and Plotly dashboards.</p>
+                    <ul class="role__points">
+                        <li>Trained XGBoost and regularized regression models on 50,000+ U.S. Department of Health and Human Services records, identifying proximity to low-income neighborhoods and gambling advertisements as top predictors of substance abuse risk.</li>
+                        <li>Turned model results into strategic recommendations and presented them to senior Deloitte leadership through interactive Seaborn and Plotly dashboards.</li>
+                    </ul>
                     <p class="role__tags">XGBoost · Regularized Regression · Feature Importance · Plotly</p>
                 </div>
             <!-- RESUME:EXPERIENCE:END -->
@@ -118,49 +138,69 @@
                         <h3 class="role__title">Pokemon RAG AI Agent – LLM Knowledge Retrieval System</h3>
                         <span class="role__meta">Mar 2026 – Present</span>
                     </div>
-                    <p>Built a RAG-powered conversational AI agent over a structured Pokemon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering.</p>
+                    <ul class="role__points">
+                        <li>Built a RAG-powered conversational AI agent over a structured Pokemon knowledge base; implemented end-to-end document ingestion, text chunking, and vector embedding pipelines using LangChain and ChromaDB; designed semantic retrieval with dense vector search and prompt-engineered LLM responses for multi-turn question answering.</li>
+                    </ul>
                 </div>
                 <div class="role">
                     <div class="role__head">
                         <h3 class="role__title"><a href="https://ancientabacus.github.io/NYC-CitiBike-Analysis/" target="_blank" rel="noopener">NYC Citi Bike Analysis – Demand Forecasting &amp; Rebalancing<span class="link-mark" aria-hidden="true">↗</span></a></h3>
                         <span class="role__meta">Nov 2025 – Nov 2026</span>
                     </div>
-                    <p>Built a tested Python pipeline (pandas, PyArrow, Shapely) that cleans 44M+ 2024 Citi Bike trips and joins NOAA weather and NYC bike lane data to answer where bikes run out, and when. Forecast next-day hourly demand at 2,296 stations with Poisson gradient boosting (scikit-learn): 86–94% citywide daily accuracy, station-hour error 11–17% below the best baseline, and 3 of 3 monthly backtests won. Sized the rebalancing problem at 5,927+ bikes stranded each weekday morning across 676 draining and 409 filling stations; found commute-hour rain cuts rides 29% (95% CI 22–32%) vs. 7% for off-peak rain. Published an interactive site with Leaflet maps, SVG charts, and 80% conformal prediction bands; CI runs leak tests and checks every reported number against the data. Added a member vs. casual rider classifier on leak-free features (ROC-AUC 0.77) and regression with 14-day block-bootstrap intervals for weather effects.</p>
+                    <ul class="role__points">
+                        <li>Built a tested Python pipeline (pandas, PyArrow, Shapely) that cleans 44M+ 2024 Citi Bike trips and joins NOAA weather and NYC bike lane data to answer where bikes run out, and when.</li>
+                        <li>Forecast next-day hourly demand at 2,296 stations with Poisson gradient boosting (scikit-learn): 86–94% citywide daily accuracy, station-hour error 11–17% below the best baseline, and 3 of 3 monthly backtests won.</li>
+                        <li>Sized the rebalancing problem at 5,927+ bikes stranded each weekday morning across 676 draining and 409 filling stations; found commute-hour rain cuts rides 29% (95% CI 22–32%) vs. 7% for off-peak rain.</li>
+                        <li>Published an interactive site with Leaflet maps, SVG charts, and 80% conformal prediction bands; CI runs leak tests and checks every reported number against the data.</li>
+                        <li>Added a member vs. casual rider classifier on leak-free features (ROC-AUC 0.77) and regression with 14-day block-bootstrap intervals for weather effects.</li>
+                    </ul>
                 </div>
                 <div class="role">
                     <div class="role__head">
                         <h3 class="role__title"><a href="https://ancientabacus.github.io/Project-4/" target="_blank" rel="noopener">Organ Trail – Interactive Surgery Data Explorer<span class="link-mark" aria-hidden="true">↗</span></a></h3>
                         <span class="role__meta">Jan 2026 – Feb 2026</span>
                     </div>
-                    <p>Built a D3.js scrollytelling site with a team of 3 over 6,000+ hospital surgery cases, showing how patient age and surgical position relate to operation type and duration; added an interactive duration estimator from filtered case averages so non-technical users can explore trends without writing code.</p>
+                    <ul class="role__points">
+                        <li>Built a D3.js scrollytelling site with a team of 3 over 6,000+ hospital surgery cases, showing how patient age and surgical position relate to operation type and duration; added an interactive duration estimator from filtered case averages so non-technical users can explore trends without writing code.</li>
+                    </ul>
                 </div>
                 <div class="role">
                     <div class="role__head">
                         <h3 class="role__title">Reddit NLP Pipeline – Deep Learning Text Generation</h3>
                         <span class="role__meta">Nov 2025 – Jan 2026</span>
                     </div>
-                    <p>Trained and evaluated a character-level deep learning model in TensorFlow on unstructured corpora from Reddit’s top 200 communities; designed a benchmarking framework comparing architectural configurations against perplexity metrics; authored paper analyzing domain-specific language pattern capture.</p>
+                    <ul class="role__points">
+                        <li>Trained and evaluated a character-level deep learning model in TensorFlow on unstructured corpora from Reddit’s top 200 communities; designed a benchmarking framework comparing architectural configurations against perplexity metrics; authored paper analyzing domain-specific language pattern capture.</li>
+                    </ul>
                 </div>
                 <div class="role">
                     <div class="role__head">
                         <h3 class="role__title">Amazon Purchase Dataset – Large-Scale ML Pipeline</h3>
                         <span class="role__meta">Oct 2025 – Dec 2025</span>
                     </div>
-                    <p>Engineered distributed ML pipelines with AWS Lambda, EC2, and Apache Spark to ingest and clean 16M+ rows of Amazon purchase data. Implemented one-hot encoding, distributed PCA, and feature engineering in BigQuery to reduce dimensionality for downstream models. Optimized batch calculation of RMSE across the full dataset to evaluate models at scale.</p>
+                    <ul class="role__points">
+                        <li>Engineered distributed ML pipelines with AWS Lambda, EC2, and Apache Spark to ingest and clean 16M+ rows of Amazon purchase data.</li>
+                        <li>Implemented one-hot encoding, distributed PCA, and feature engineering in BigQuery to reduce dimensionality for downstream models.</li>
+                        <li>Optimized batch calculation of RMSE across the full dataset to evaluate models at scale.</li>
+                    </ul>
                 </div>
                 <div class="role">
                     <div class="role__head">
                         <h3 class="role__title"><a href="https://ancientabacus.github.io/Seal_Health_Modeling/" target="_blank" rel="noopener">Seal Health Modeling – Human Impact on Alaskan Seals<span class="link-mark" aria-hidden="true">↗</span></a></h3>
                         <span class="role__meta">Sep 2025 – Nov 2025</span>
                     </div>
-                    <p>Merged four NOAA and Alaska Fish &amp; Game datasets to test whether ocean-economy activity predicts Alaskan seal health; re-validated the original ridge model (R² 0.91 on a 3-row test split) with leave-one-out cross-validation across 5 models and permutation importance, showing the fit did not generalize on 13 yearly observations and reporting that openly.</p>
+                    <ul class="role__points">
+                        <li>Merged four NOAA and Alaska Fish &amp; Game datasets to test whether ocean-economy activity predicts Alaskan seal health; re-validated the original ridge model (R² 0.91 on a 3-row test split) with leave-one-out cross-validation across 5 models and permutation importance, showing the fit did not generalize on 13 yearly observations and reporting that openly.</li>
+                    </ul>
                 </div>
                 <div class="role">
                     <div class="role__head">
                         <h3 class="role__title">San Diego Parking Meter Analytics Dashboard</h3>
                         <span class="role__meta">Sep 2025 – Oct 2025</span>
                     </div>
-                    <p>Developed a geospatial analytics dashboard using D3.js to visualize 100,000+ parking meter citations across San Diego; created interactive daily frequency histograms and a geospatial heat map enabling drivers to identify optimal parking times and locations.</p>
+                    <ul class="role__points">
+                        <li>Developed a geospatial analytics dashboard using D3.js to visualize 100,000+ parking meter citations across San Diego; created interactive daily frequency histograms and a geospatial heat map enabling drivers to identify optimal parking times and locations.</li>
+                    </ul>
                 </div>
             <!-- RESUME:PROJECTS:END -->
             </div>

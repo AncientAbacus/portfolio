@@ -34,7 +34,10 @@
 <body>
     <main>
         <article class="prose">
-            <p class="lede">I'm a data scientist from UC San Diego (B.S. Data Science, 2025) focused on statistical modeling, forecasting, and LLM pipelines. Most recently I built a day-ahead demand forecast for 2,296 Citi Bike stations and LLM digital twins at Exponential Intelligence that 5 companies adopted in a pilot. Before that: autonomous vehicles at HDSI, risk modeling at Deloitte, and climate research at Scripps. Right now I'm a cast member on TRON Lightcycle / Run at Walt Disney World.</p>
+            <div class="intro">
+                <img class="portrait" src="images/gino.jpg" alt="Gino Angelici" width="148" height="148">
+                <p class="lede">I'm a data scientist from UC San Diego (B.S. Data Science, 2025) focused on statistical modeling, forecasting, and LLM pipelines. Most recently I built a day-ahead demand forecast for 2,296 Citi Bike stations and LLM digital twins at Exponential Intelligence that 5 companies adopted in a pilot. Before that: autonomous vehicles at HDSI, risk modeling at Deloitte, and climate research at Scripps. Right now I'm a cast member on TRON Lightcycle / Run at Walt Disney World.</p>
+            </div>
             <p>Most of what I work on sits between messy raw data and a model someone can actually rely on: 44 million bike trips, 70+ years of climate records, autonomous-vehicle perception, LLM survey simulation. <a href="projects/" class="cta">See the projects →</a></p>
 
             <h2>Favorite Projects</h2>
@@ -51,7 +54,8 @@
 
             <h2>Education</h2>
             <!-- RESUME:EDUCATION:START -->
-            <p>Bachelor of Science in Data Science, University of California, San Diego, Sep 2021 – Jun 2025. Coursework: Machine Learning, Deep Learning, Probabilistic Modeling &amp; ML, Statistical Methods, Recommender Systems, Scalable Analytics, Data Management, Data Structures &amp; Algorithms, Data Visualization, Optimization.</p>
+            <p>Bachelor of Science in Data Science, University of California, San Diego, Sep 2021 – Jun 2025.</p>
+            <p class="role__tags">Coursework: Machine Learning, Deep Learning, Probabilistic Modeling &amp; ML, Statistical Methods, Recommender Systems, Scalable Analytics, Data Management, Data Structures &amp; Algorithms, Data Visualization, Optimization</p>
             <!-- RESUME:EDUCATION:END -->
 
             <h2>Experience</h2>
@@ -63,7 +67,9 @@
                         <span class="role__meta">Aug 2026 – Present</span>
                     </div>
                     <p class="role__sub">TRON Lightcycle / Run · Orlando, FL</p>
-                    <p>Manage safety-critical ride operation across every crew position, including track safety and security.</p>
+                    <ul class="role__points">
+                        <li>Manage safety-critical ride operation across every crew position, including track safety and security.</li>
+                    </ul>
                 </div>
                 <div class="role">
                     <div class="role__head">
@@ -71,7 +77,12 @@
                         <span class="role__meta">Sep 2025 – Sep 2026</span>
                     </div>
                     <p class="role__sub">Irvine, CA</p>
-                    <p>Built an end-to-end LLM pipeline generating AI digital twins that simulate survey respondents across political subgroups; 5 companies adopted it in a pilot program for survey administration and decision making. Measured alignment between twins and real respondents with Jensen-Shannon Divergence and chi-square tests of homogeneity, using a Python pipeline (pandas, NumPy, SciPy, Seaborn). Designed re-prompting strategies to correct LLM failure modes, including social desirability bias, extreme response tendency, and prototype reasoning. Trained classification models to categorize survey domains and applied supervised and unsupervised techniques to surface where twins diverged from real respondents.</p>
+                    <ul class="role__points">
+                        <li>Built an end-to-end LLM pipeline generating AI digital twins that simulate survey respondents across political subgroups; 5 companies adopted it in a pilot program for survey administration and decision making.</li>
+                        <li>Measured alignment between twins and real respondents with Jensen-Shannon Divergence and chi-square tests of homogeneity, using a Python pipeline (pandas, NumPy, SciPy, Seaborn).</li>
+                        <li>Designed re-prompting strategies to correct LLM failure modes, including social desirability bias, extreme response tendency, and prototype reasoning.</li>
+                        <li>Trained classification models to categorize survey domains and applied supervised and unsupervised techniques to surface where twins diverged from real respondents.</li>
+                    </ul>
                     <p class="role__tags">Python · LLM Prompt Engineering · Fine-Tuned Classification Models · Statistical Validation</p>
                 </div>
                 <div class="role">
@@ -80,7 +91,12 @@
                         <span class="role__meta">Sep 2024 – Aug 2025 <span class="role__badge">1st place</span></span>
                     </div>
                     <p class="role__sub">Autonomous Vehicle Development · San Diego, CA</p>
-                    <p>Designed and deployed CNN-based perception and control models on low-power embedded hardware, integrating stereo and RGB-D cameras for real-time 3D scene understanding. Trained and fine-tuned models on UCSD’s Supercomputer Center across 3 prototype configurations. Benchmarked CNNs against LLMs and LVMs across local and cloud deployments, profiling performance on CPUs vs. dedicated AI accelerators. Led team to 1st place at Purdue University’s national autonomous vehicle competition.</p>
+                    <ul class="role__points">
+                        <li>Designed and deployed CNN-based perception and control models on low-power embedded hardware, integrating stereo and RGB-D cameras for real-time 3D scene understanding.</li>
+                        <li>Trained and fine-tuned models on UCSD’s Supercomputer Center across 3 prototype configurations.</li>
+                        <li>Benchmarked CNNs against LLMs and LVMs across local and cloud deployments, profiling performance on CPUs vs. dedicated AI accelerators.</li>
+                        <li>Led team to 1st place at Purdue University’s national autonomous vehicle competition.</li>
+                    </ul>
                     <p class="role__tags">PyTorch · Computer Vision · CNNs · MLOps (Weights &amp; Biases) · Embedded Systems</p>
                 </div>
                 <div class="role">
@@ -89,7 +105,11 @@
                         <span class="role__meta">Sep 2022 – Sep 2024</span>
                     </div>
                     <p class="role__sub">San Diego, CA</p>
-                    <p>Built Python ETL pipelines to ingest and clean 70+ years of climate records across 60 coastal airports, automating previously manual workflows. Used sliding-window PCA, polynomial regression, and ridge regression to link urbanization to reduced cloud cover and higher local temperatures. Validated findings with climate scientists, contributing to a peer-reviewed publication update.</p>
+                    <ul class="role__points">
+                        <li>Built Python ETL pipelines to ingest and clean 70+ years of climate records across 60 coastal airports, automating previously manual workflows.</li>
+                        <li>Used sliding-window PCA, polynomial regression, and ridge regression to link urbanization to reduced cloud cover and higher local temperatures.</li>
+                        <li>Validated findings with climate scientists, contributing to a peer-reviewed publication update.</li>
+                    </ul>
                     <p class="role__tags">Python · ETL Pipelines · PCA · Polynomial &amp; Ridge Regression · Climate Data Analysis</p>
                 </div>
                 <div class="role">
@@ -98,7 +118,10 @@
                         <span class="role__meta">Mar 2023 – Aug 2023</span>
                     </div>
                     <p class="role__sub">San Diego, CA</p>
-                    <p>Trained XGBoost and regularized regression models on 50,000+ U.S. Department of Health and Human Services records, identifying proximity to low-income neighborhoods and gambling advertisements as top predictors of substance abuse risk. Turned model results into strategic recommendations and presented them to senior Deloitte leadership through interactive Seaborn and Plotly dashboards.</p>
+                    <ul class="role__points">
+                        <li>Trained XGBoost and regularized regression models on 50,000+ U.S. Department of Health and Human Services records, identifying proximity to low-income neighborhoods and gambling advertisements as top predictors of substance abuse risk.</li>
+                        <li>Turned model results into strategic recommendations and presented them to senior Deloitte leadership through interactive Seaborn and Plotly dashboards.</li>
+                    </ul>
                     <p class="role__tags">XGBoost · Regularized Regression · Feature Importance · Plotly</p>
                 </div>
             <!-- RESUME:EXPERIENCE:END -->

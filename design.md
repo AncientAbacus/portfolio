@@ -24,25 +24,25 @@ dashboard — this system treats it that way: prose, hairlines, restraint.
   by hairlines. No stat row and no PDF download link.
 - **Utility** (`contact/index.html`): a plain page, no card chrome.
 
-## Theme — Lavender Night
+## Theme — Graphite
 
-Dark, high-contrast-serif, lavender. Pale lavender-white type on a deep
-violet-charcoal page, with a soft lavender accent. Replaced Studio
-(ivory + forest green) on request; see Provenance.
+Dark, neutral, low-glare. Soft off-white type on a mid-dark grey page (not
+near-black, so contrast stays comfortable for long reading), with a muted
+lavender accent. Replaced Lavender Night on request; see Provenance.
 
 ```
---color-paper:   oklch(17%   0.028 300)   /* deep violet-charcoal */
---color-paper-2: oklch(21%   0.034 300)
---color-ink:     oklch(95%   0.016 300)   /* lavender-white */
---color-ink-2:   oklch(85%   0.022 300)
---color-ink-3:   oklch(68%   0.030 300)
---color-rule:    oklch(32%   0.036 300)
---color-accent:  oklch(79%   0.105 300)   /* lavender */
---color-focus:   oklch(83%   0.115 300)
+--color-paper:   oklch(23%   0.004 285)   /* neutral dark grey */
+--color-paper-2: oklch(26.5% 0.005 285)
+--color-ink:     oklch(91%   0.004 285)   /* off-white, not pure white */
+--color-ink-2:   oklch(82%   0.005 285)
+--color-ink-3:   oklch(66%   0.006 285)
+--color-rule:    oklch(34%   0.006 285)
+--color-accent:  oklch(78%   0.075 295)   /* muted lavender */
+--color-focus:   oklch(82%   0.085 295)
 ```
 
 Accent use is a highlighter, not a fill: underlines, focus rings, one small
-square mark beside a heading, active nav state. Never a filled button —
+active nav state. Never a filled button —
 primary actions are text links (accent colour + arrow), per Hallmark's
 colour discipline ("do not fill giant buttons with it").
 
@@ -140,3 +140,12 @@ no new components), home-page skills, and title-matched descriptions in
 links (GitHub, LinkedIn, Email) now sit in the masthead link row, so every
 destination is one click away. The résumé page still has no PDF link.
 Contact form now mails the Gmail address. No token or type changes.
+
+2026-11-22 (later): theme switched from Lavender Night to **Graphite**
+(neutral dark grey, off-white ink, muted lavender accent) for easier
+reading. Home page gains a small square portrait (`images/gino.jpg`, 148px,
+hairline rule border, slightly desaturated) beside the lede; it stacks above
+the lede on phones. Résumé and home roles now render bullet points
+(`.role__points`) instead of one paragraph per role, and résumé projects do
+the same; coursework moved to a mono meta line. The CI résumé PDF build and
+the PDF file are removed.

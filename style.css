@@ -1,15 +1,15 @@
-/* Hallmark · genre: editorial · macrostructure: Long Document (home) / Index-First (projects) / document-flow (resume) / plain (contact) · theme: Lavender Night · enrichment: none (typography only) · nav: N6 · footer: Ft1 · design-system: design.md · designed-as-app */
+/* Hallmark · genre: editorial · macrostructure: Long Document (home) / Index-First (projects) / document-flow (resume) / plain (contact) · theme: Graphite · enrichment: none (typography only) · nav: N6 · footer: Ft1 · design-system: design.md · designed-as-app */
 
-/* ===== Tokens — Lavender Night (dark · high-contrast-serif · lavender) ===== */
+/* ===== Tokens — Graphite (neutral dark grey · soft off-white ink · muted lavender) ===== */
 :root {
-  --color-paper:   oklch(17%   0.028 300);
-  --color-paper-2: oklch(21%   0.034 300);
-  --color-ink:     oklch(95%   0.016 300);
-  --color-ink-2:   oklch(85%   0.022 300);
-  --color-ink-3:   oklch(68%   0.030 300);
-  --color-rule:    oklch(32%   0.036 300);
-  --color-accent:  oklch(79%   0.105 300);
-  --color-focus:   oklch(83%   0.115 300);
+  --color-paper:   oklch(23%   0.004 285);
+  --color-paper-2: oklch(26.5% 0.005 285);
+  --color-ink:     oklch(91%   0.004 285);
+  --color-ink-2:   oklch(82%   0.005 285);
+  --color-ink-3:   oklch(66%   0.006 285);
+  --color-rule:    oklch(34%   0.006 285);
+  --color-accent:  oklch(78%   0.075 295);
+  --color-focus:   oklch(82%   0.085 295);
 
   --font-display: "Newsreader", ui-serif, Georgia, serif;
   --font-body:    "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
@@ -108,6 +108,10 @@ p a:hover, li a:hover, dd a:hover { text-decoration-thickness: 2px; }
 /* ===== Prose (Long Document) ===== */
 .prose { max-width: 65ch; }
 .prose .lede { font-size: var(--text-md); color: var(--color-ink); }
+
+.intro { display: flex; align-items: flex-start; gap: var(--space-md); margin: var(--space-lg) 0 var(--space-md); }
+.intro .lede { margin: 0; }
+.portrait { flex: 0 0 auto; width: 148px; height: auto; aspect-ratio: 1; object-fit: cover; border: 1px solid var(--color-rule); filter: saturate(0.85); }
 .prose h2 {
   font-size: var(--text-md);
   font-family: var(--font-body);
@@ -147,6 +151,9 @@ dl.plain dd { margin: 0; }
 .role__badge { color: var(--color-accent); margin-left: var(--space-2xs); }
 .role__sub { font-size: var(--text-sm); color: var(--color-ink-3); margin: var(--space-3xs) 0 var(--space-2xs); }
 .role p { margin: 0; font-size: var(--text-sm); }
+.role__points { margin: var(--space-2xs) 0 0; padding-left: 1.1em; font-size: var(--text-sm); line-height: 1.55; }
+.role__points li { margin-bottom: var(--space-3xs); }
+.role__points li::marker { color: var(--color-ink-3); }
 .role__tags { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-3); margin-top: var(--space-2xs) !important; }
 
 /* ===== Nav — N6 Newspaper masthead ===== */
@@ -254,6 +261,8 @@ button.cta { background: none; border: none; border-bottom: 1px solid var(--colo
 
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
+  .intro { flex-direction: column; }
+  .portrait { width: 112px; }
   .role__head { flex-direction: column; }
 }
 @media (max-width: 414px) {

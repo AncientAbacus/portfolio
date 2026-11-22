@@ -98,9 +98,9 @@ def parse_education(tex):
     for m in re.finditer(r"\\resumeSubSubheading", body):
         (line, _), _ = args(body, m.end(), 2)
         courses.append(clean(line))
-    text = f"{clean(degree)}, {clean(school)}, {clean(dates)}."
+    text = f"            <p>{clean(degree)}, {clean(school)}, {clean(dates)}.</p>"
     if courses:
-        text += " Coursework: " + ", ".join(courses) + "."
+        text += f'\n            <p class="role__tags">Coursework: {", ".join(courses)}</p>'
     return text
 
 
@@ -123,6 +123,11 @@ def parse_projects(tex):
     return out
 
 
+def points(items):
+    lis = "\n".join(f"                        <li>{i}</li>" for i in items)
+    return f'                    <ul class="role__points">\n{lis}\n                    </ul>'
+
+
 def render_projects(projects):
     out = []
     for p in projects:
@@ -136,7 +141,7 @@ def render_projects(projects):
             f'                        <h3 class="role__title">{title}</h3>',
             f'                        <span class="role__meta">{p["dates"]}</span>',
             '                    </div>',
-            f'                    <p>{" ".join(p["items"])}</p>',
+            points(p["items"]),
             '                </div>',
         ]))
     return "\n".join(out)
@@ -196,7 +201,6 @@ def render_roles(roles, tags):
         if any("1st place" in i.lower() and "\\textbf" in i for i in r["items"]):
             badge = ' <span class="role__badge">1st place</span>'
         sub = " · ".join(x for x in (pos_rest, clean(r["location"])) if x)
-        text = " ".join(clean(i) for i in r["items"])
         tag = find_tags(tags, company, title)
         lines = [
             '                <div class="role">',
@@ -205,7 +209,7 @@ def render_roles(roles, tags):
             f'                        <span class="role__meta">{clean(r["dates"])}{badge}</span>',
             '                    </div>',
             f'                    <p class="role__sub">{sub}</p>',
-            f'                    <p>{text}</p>',
+            points([clean(i) for i in r["items"]]),
         ]
         if tag:
             lines.append(f'                    <p class="role__tags">{tag}</p>')
@@ -232,7 +236,7 @@ def replace_block(page, name, content):
 def main():
     tex = TEX.read_text()
     roles, skills, projects = parse_roles(tex), parse_skills(tex), parse_projects(tex)
-    education = f"            <p>{parse_education(tex)}</p>"
+    education = parse_education(tex)
 
     page = PAGE.read_text()
     page = replace_block(page, "SUMMARY", f"            <p>{parse_summary(tex)}</p>")
