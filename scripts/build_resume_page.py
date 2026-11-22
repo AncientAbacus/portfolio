@@ -227,7 +227,6 @@ def main():
 
     home = HOME.read_text()
     home = replace_block(home, "EDUCATION", education)
-    home = replace_block(home, "EXPERIENCE", render_roles(roles, existing_tags(home)))
     home = replace_block(home, "SKILLS", render_skills(skills))
     HOME.write_text(home)
 

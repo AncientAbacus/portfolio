@@ -9,6 +9,7 @@
   --color-ink-3:   oklch(66%   0.006 285);
   --color-rule:    oklch(34%   0.006 285);
   --color-accent:  oklch(78%   0.075 295);
+  --color-green:   oklch(80%   0.095 155);   /* sage: labels, dates, section heads */
   --color-focus:   oklch(82%   0.085 295);
 
   --font-display: "Newsreader", ui-serif, Georgia, serif;
@@ -82,7 +83,7 @@ p a:hover, li a:hover, dd a:hover { text-decoration-thickness: 2px; }
   font-size: var(--text-xs);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--color-ink-3);
+  color: var(--color-green);
   margin-bottom: var(--space-2xs);
 }
 
@@ -118,7 +119,7 @@ p a:hover, li a:hover, dd a:hover { text-decoration-thickness: 2px; }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--color-ink-3);
+  color: var(--color-green);
   border-top: 1px solid var(--color-rule);
   padding-top: var(--space-lg);
   margin-top: var(--space-2xl);
@@ -136,7 +137,7 @@ p a:hover, li a:hover, dd a:hover { text-decoration-thickness: 2px; }
 dl.plain { margin: 0 0 var(--space-lg); }
 dl.plain > div { display: flex; gap: var(--space-sm); padding: var(--space-2xs) 0; border-bottom: 1px solid var(--color-rule); }
 dl.plain > div:last-child { border-bottom: none; }
-dl.plain dt { flex: 0 0 auto; width: 9em; color: var(--color-ink-3); font-size: var(--text-sm); }
+dl.plain dt { flex: 0 0 auto; width: 9em; color: var(--color-green); font-size: var(--text-sm); }
 dl.plain dd { margin: 0; }
 
 .roles { display: flex; flex-direction: column; }
@@ -149,13 +150,13 @@ dl.plain dd { margin: 0; }
 .roles__other + .role { border-top: none; padding-top: var(--space-2xs); }
 .role__head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--space-2xs) var(--space-md); }
 .role__title { font-family: var(--font-display); font-size: var(--text-md); font-weight: 600; color: var(--color-ink); margin: 0; }
-.role__meta { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-3); white-space: nowrap; }
+.role__meta { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-green); white-space: nowrap; }
 .role__badge { color: var(--color-accent); margin-left: var(--space-2xs); }
 .role__sub { font-size: var(--text-sm); color: var(--color-ink-3); margin: var(--space-3xs) 0 var(--space-2xs); }
 .role p { margin: 0; font-size: var(--text-sm); }
 .role__points { margin: var(--space-2xs) 0 0; padding-left: 1.1em; font-size: var(--text-sm); line-height: 1.55; }
 .role__points li { margin-bottom: var(--space-3xs); }
-.role__points li::marker { color: var(--color-ink-3); }
+.role__points li::marker { color: var(--color-green); }
 .role__tags { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-3); margin-top: var(--space-2xs) !important; }
 
 /* ===== Nav — N6 Newspaper masthead ===== */
@@ -236,7 +237,7 @@ dl.plain dd { margin: 0; }
 .projects { display: flex; flex-direction: column; }
 .projects article { padding: var(--space-md) 0; border-top: 1px solid var(--color-rule); }
 .projects article:first-child { border-top: none; padding-top: 0; }
-.projects article .eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-ink-3); }
+.projects article .eyebrow { font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-green); }
 .projects article h2 { font-family: var(--font-display); font-size: var(--text-lg); text-transform: none; letter-spacing: 0; border: none; margin: var(--space-3xs) 0 var(--space-2xs); padding: 0; font-weight: 600; color: var(--color-ink); }
 .projects article h2 a { color: inherit; text-decoration: underline; text-decoration-color: var(--color-rule); text-underline-offset: 3px; }
 .projects article h2 a:hover { text-decoration-color: var(--color-accent); }

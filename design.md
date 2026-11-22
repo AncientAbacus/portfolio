@@ -168,3 +168,11 @@ first). Home adds an "Open to …" eyebrow above the lede and a Seal Health
 mention; non-data roles render last under an "Other experience" label
 (`OTHER_EXPERIENCE` in the sync script). Share image is a 1200×630
 portrait card (`images/og-image.jpg`) on every page.
+
+2026-11-22 (green pass): new `--color-green` (sage, oklch 80% 0.095 155) as
+a text colour only, for scanning aids: section heads, eyebrows, dates,
+skill labels, project years and bullet markers. Body text stays neutral;
+lavender stays the underline/link accent. Menu order is now Home /
+Experience / Projects / Contact. Home is intro (one combined summary),
+Education, Favorite Projects, Skills; its Experience section is removed
+(the Experience page owns it).

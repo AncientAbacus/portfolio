@@ -9,8 +9,8 @@ function resolve(url) {
 /* ===== Nav — N6 Newspaper masthead ===== */
 const navPages = [
   { url: '', title: 'Home' },
-  { url: 'projects/', title: 'Projects' },
   { url: 'experience/', title: 'Experience' },
+  { url: 'projects/', title: 'Projects' },
   { url: 'contact/', title: 'Contact' },
   { url: 'https://github.com/AncientAbacus', title: 'GitHub ↗' },
   { url: 'https://linkedin.com/in/gino-angelici', title: 'LinkedIn ↗' },
