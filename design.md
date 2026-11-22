@@ -13,72 +13,74 @@ dashboard — this system treats it that way: prose, hairlines, restraint.
 
 ## Macrostructure families
 
-- **Identity** (`index.html`): **Long Document** — continuous prose, inline
-  section heads, no card grid, no icons, no hero image. Reads like a real
-  page someone wrote, not a template someone filled in.
-- **Browse** (`projects/index.html`): **Index-First** — the page IS a list.
-  Hairline dividers between rows, no bordered cards. Search only (no year
-  filter — dropped, see Provenance).
-- **Document** (`experience/index.html`): a trimmed, document-flow CV. A
-  plain "Résumé" heading and contact links, then flowing sections divided
-  by hairlines. No stat row and no PDF download link.
-- **Utility** (`contact/index.html`): a plain page, no card chrome.
+- **Identity** (`index.html`): **Long Document**. A small square portrait
+  beside one summary paragraph (with an "Open to …" line above it), then
+  Education, Favorite Projects (two screenshot links), Skills, and a closing
+  line inviting a résumé request. No card grid, no icons.
+- **Browse** (`projects/index.html`): **Index-First**. The page IS a list:
+  heading with count, search box, then hairline-divided rows ordered by
+  strength. Descriptions capped at 68ch. No year filter.
+- **Document** (`experience/index.html`): document-flow CV. `h1`
+  Experience, then three `h2` sections: Work, Education, Skills. Non-data
+  roles sit last under an "Other experience" label. No summary, no links
+  line, no projects list, no PDF.
+- **Utility** (`contact/index.html`): plain page, a lede, a visible email
+  link and LinkedIn. No form.
+
+Rule: apart from the home page, each fact lives on one page only.
 
 ## Theme — Graphite
 
 Dark, neutral, low-glare. Soft off-white type on a mid-dark grey page (not
-near-black, so contrast stays comfortable for long reading), with a muted
-lavender accent. Replaced Lavender Night on request; see Provenance.
+near-black, so contrast stays comfortable for long reading), with one sage
+green accent.
 
 ```
---color-paper:   oklch(23%   0.004 285)   /* neutral dark grey */
+--color-paper:   oklch(23%   0.006 285)   /* neutral dark grey */
 --color-paper-2: oklch(26.5% 0.005 285)
---color-ink:     oklch(91%   0.004 285)   /* off-white, not pure white */
+--color-ink:     oklch(91%   0.006 285)   /* off-white, not pure white */
 --color-ink-2:   oklch(82%   0.005 285)
---color-ink-3:   oklch(66%   0.006 285)
+--color-ink-3:   oklch(66%   0.006 285)   /* 5.4:1 on paper */
 --color-rule:    oklch(34%   0.006 285)
---color-accent:  oklch(78%   0.075 295)   /* muted lavender */
---color-focus:   oklch(82%   0.085 295)
+--color-accent:  oklch(80%   0.095 155)   /* sage, 9.4:1 on paper */
+--color-focus:   oklch(84%   0.11  155)
 ```
 
-Accent use is a highlighter, not a fill: underlines, focus rings, one small
-active nav state. Never a filled button —
-primary actions are text links (accent colour + arrow), per Hallmark's
-colour discipline ("do not fill giant buttons with it").
+One accent hue only. Sage is used as a reading aid and a highlighter:
+link underlines, section heads, small labels, dates, bullet markers, the
+current nav item, focus rings. Never a fill, never a filled button.
+Primary actions are underlined text links with an arrow.
 
 ## Typography
 
 - Display: **Newsreader**, weight 600/700, roman only
-- Body: **IBM Plex Sans**, weight 400/500
-- Outlier (≤2 roles, used consistently): **JetBrains Mono** — tags the
-  small-caps masthead meta-line and every stand-alone number (résumé
-  stats, repo counts). Never a third body font.
-- Measure: 65ch. Line-height 1.65 for body, 1.05–1.15 for display.
+- Body: **IBM Plex Sans**, weight 400/600 (labels and tag lines too)
+- Outlier: **JetBrains Mono** 400, for dates and project years only.
+- Measure: 72ch for prose, 68ch for project descriptions. Body 17px,
+  line-height 1.65; display 1.1.
 
 ## Spacing
 
-Same 4-point scale as before, reused: `--space-3xs` … `--space-3xl`.
+4-point scale: `--space-3xs` … `--space-3xl`. No off-scale values.
 
 ## Motion
 
 Quiet. No scroll-reveals, no card hovers, no bounce, no counting-up
-numbers. Everything is just there, per Long Document's own rule.
+numbers. Hover changes colour or underline thickness only, never layout.
 
 ## Nav + footer (shared, built in `global.js`)
 
-- **Nav** — N6 Newspaper masthead: centred wordmark, small-caps meta line
-  above, inline link row below (Home / Projects / Résumé / Contact / GitHub ↗ /
-  LinkedIn ↗ / Email ↗), double hairline rule beneath. Not a bordered
-  bar, not a floating pill.
-- **Footer** — Ft1 Mast-headed: wordmark, one plain line (no marketing
-  tagline), a link row (GitHub · LinkedIn · Email), tiny copyright.
+- **Nav** — N6 masthead without the meta line: centred wordmark, inline
+  link row (Home / Experience / Projects / Contact / GitHub ↗ /
+  LinkedIn ↗), double hairline rule beneath. Email lives on Contact.
+- **Footer** — one quiet centred line ("© 2026 · Built by hand, no
+  framework") under a hairline. No repeated name, no link row.
 
 ## What pages MUST share
 
 - The masthead and footer
-- Newsreader + IBM Plex Sans + JetBrains Mono
-- The green accent, used only as underline/mark/focus-ring — never a fill
-- Hairline dividers instead of card borders everywhere
+- Newsreader + IBM Plex Sans + JetBrains Mono (mono for dates only)
+- The single sage accent, used as underline / label / focus, never a fill
 
 ## What pages MAY differ on
 
@@ -176,3 +178,11 @@ lavender stays the underline/link accent. Menu order is now Home /
 Experience / Projects / Contact. Home is intro (one combined summary),
 Education, Favorite Projects, Skills; its Experience section is removed
 (the Experience page owns it).
+
+2026-11-22 (Hallmark audit pass): one accent (sage) replaces the lavender +
+green pair; mono limited to dates and years (labels, tags and coursework
+moved to Plex); masthead meta line, contact eyebrow and Email nav item
+removed; footer is one line; Experience page gains a Work `h2`; project
+descriptions capped at 68ch; search box keeps the focus ring; CTA hover
+thickens the underline instead of the border; neutrals at 0.006 chroma;
+unused font weights dropped; share image rule recoloured.

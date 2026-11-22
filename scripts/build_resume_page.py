@@ -149,6 +149,7 @@ def sync_projects_json(projects):
 def existing_tags(page):
     tags = {}
     for block in page.split('<div class="role">')[1:]:
+        block = block.split("<!-- RESUME:")[0]  # stop at the block end, not the next section
         t = re.search(r'<h3 class="role__title">(.*?)</h3>', block)
         g = re.search(r'<p class="role__tags">(.*?)</p>', block)
         if not (t and g):

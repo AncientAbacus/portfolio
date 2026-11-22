@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-11-22",
+    "scope": "app",
+    "macrostructure": "Long Document (home) / Index-First (projects) / document-flow (experience) / plain (contact)",
+    "theme": "custom",
+    "theme_axes": "dark / high-contrast-serif / chromatic-green",
+    "vibe": "Graphite, low-glare grey with sage",
+    "enrichment": "none (typography only, portrait)",
+    "brief": "Retheme Lavender Night to Graphite with a single sage accent; audit fixes (mono discipline, measure, focus, footer, nav trim)"
+  },
+  {
     "date": "2026-07-15",
     "scope": "app",
     "macrostructure": "Long Document (home) / Index-First (projects) / trimmed document-flow (resume) / plain (contact, meta)",

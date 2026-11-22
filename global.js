@@ -2,7 +2,7 @@ const ARE_WE_HOME = document.documentElement.classList.contains('home');
 const base = ARE_WE_HOME ? '' : '../';
 
 function resolve(url) {
-  if (url.startsWith('http') || url.startsWith('mailto:')) return url;
+  if (url.startsWith('http')) return url;
   return base + url;
 }
 
@@ -14,13 +14,11 @@ const navPages = [
   { url: 'contact/', title: 'Contact' },
   { url: 'https://github.com/AncientAbacus', title: 'GitHub ↗' },
   { url: 'https://linkedin.com/in/gino-angelici', title: 'LinkedIn ↗' },
-  { url: 'mailto:gino.angelici@gmail.com', title: 'Email ↗' },
 ];
 
 const header = document.createElement('header');
 header.className = 'nav-mast';
 header.innerHTML = `
-  <p class="mast-line">Data Science · Machine Learning</p>
   <a class="mast-name" href="${resolve('')}">Gino Angelici</a>
   <nav class="mast-nav" aria-label="Primary"><ul></ul></nav>
   <hr class="mast-rule" aria-hidden="true">
@@ -39,11 +37,11 @@ for (const p of navPages) {
   mastList.append(li);
 }
 
-/* ===== Footer — Ft1 Mast-headed ===== */
+/* ===== Footer — one quiet line ===== */
 const footer = document.createElement('footer');
 footer.className = 'foot-mast';
 footer.innerHTML = `
-  <p class="wordmark">Gino Angelici</p>
+  <p>© 2026 · Built by hand, no framework</p>
 `;
 document.body.append(footer);
 
