@@ -14,14 +14,14 @@ There is no build/lint/test tooling. Serve the directory with any static server 
 python3 -m http.server 5501
 ```
 
-Pages are plain files under their own directories (`projects/index.html`, `resume/index.html`, `contact/index.html`) plus the root `index.html`. There's no router — verify changes by opening the actual page.
+Pages are plain files under their own directories (`projects/index.html`, `experience/index.html`, `contact/index.html`) plus the root `index.html`. There's no router — verify changes by opening the actual page.
 
 ## Architecture
 
 - **`global.js`** — the shared shell, imported as an ES module (`type="module"`) on every page. On load it injects the nav masthead and footer into `document.body` via DOM APIs (not templated server-side), builds the ⌘K command palette, and exports two shared helpers: `fetchJSON(url)` and `renderProjects(projects, containerElement, headingLevel)`. Any page that lists projects imports these from `global.js` rather than duplicating fetch/render logic.
   - Path resolution is home-relative: `document.documentElement` gets a `home` class only on the root `index.html`; `global.js` checks for that class to decide whether asset/page links need a `../` prefix. If you add a new top-level page, follow the existing directory-per-page pattern (`newpage/index.html`) so this relative-path logic keeps working.
 - **`lib/projects.json`** — single source of truth for project data (title, year, description, tags, link, repo). `projects/projects.js` fetches this, and the free-text search box filters client-side over the visible fields (title, year, description, tags). Adding a project means adding an object here; no other file needs to change.
-- **`resume/source/resume.tex`** is the master résumé and the source of truth for résumé content. `scripts/build_resume_page.py` (run by `.github/workflows/resume.yml` on push) rewrites the `<!-- RESUME:* -->` blocks in `resume/index.html` (the Experience page) and `index.html` (experience, education, skills) and overwrites the description of every `lib/projects.json` entry whose title matches a `.tex` project (`Name -- Subtitle` in the `.tex` is `Name: Subtitle` in the JSON). Edit résumé wording in the `.tex`, not in the HTML or the JSON descriptions.
+- **`resume/source/resume.tex`** is the master résumé and the source of truth for résumé content. `scripts/build_resume_page.py` (run by `.github/workflows/resume.yml` on push) rewrites the `<!-- RESUME:* -->` blocks in `experience/index.html` and `index.html` (experience, education, skills) and overwrites the description of every `lib/projects.json` entry whose title matches a `.tex` project (`Name -- Subtitle` in the `.tex` is `Name: Subtitle` in the JSON). Edit résumé wording in the `.tex`, not in the HTML or the JSON descriptions.
 - **`style.css`** (root) is the main stylesheet shared across all pages.
 
 ## Design system — read `design.md` before touching HTML/CSS

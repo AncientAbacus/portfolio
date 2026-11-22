@@ -1,4 +1,4 @@
-"""Sync resume/index.html and index.html with resume/source/resume.tex.
+"""Sync experience/index.html and index.html with resume/source/resume.tex.
 
 Rewrites the Education, Experience and Skills blocks
 between the <!-- RESUME:*:START --> / <!-- RESUME:*:END --> markers, and the
@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TEX = ROOT / "resume" / "source" / "resume.tex"
-PAGE = ROOT / "resume" / "index.html"
+PAGE = ROOT / "experience" / "index.html"
 HOME = ROOT / "index.html"
 PROJECTS = ROOT / "lib" / "projects.json"
 
@@ -226,7 +226,7 @@ def main():
     HOME.write_text(home)
 
     sync_projects_json(projects)
-    print("resume/index.html, index.html and lib/projects.json synced from resume.tex")
+    print("experience/index.html, index.html and lib/projects.json synced from resume.tex")
 
 
 if __name__ == "__main__":

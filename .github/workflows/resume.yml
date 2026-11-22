@@ -27,7 +27,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-          git add resume/index.html index.html lib/projects.json
+          git add experience/index.html index.html lib/projects.json
           git diff --cached --quiet && exit 0
           git commit -m "Sync resume from resume.tex"
           git push

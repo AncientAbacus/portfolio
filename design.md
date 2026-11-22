@@ -19,7 +19,7 @@ dashboard — this system treats it that way: prose, hairlines, restraint.
 - **Browse** (`projects/index.html`): **Index-First** — the page IS a list.
   Hairline dividers between rows, no bordered cards. Search only (no year
   filter — dropped, see Provenance).
-- **Document** (`resume/index.html`): a trimmed, document-flow CV. A
+- **Document** (`experience/index.html`): a trimmed, document-flow CV. A
   plain "Résumé" heading and contact links, then flowing sections divided
   by hairlines. No stat row and no PDF download link.
 - **Utility** (`contact/index.html`): a plain page, no card chrome.
@@ -151,7 +151,7 @@ the same; coursework moved to a mono meta line. The CI résumé PDF build and
 the PDF file are removed.
 
 2026-11-22 (latest): the Résumé page is now the **Experience** page (nav
-label "Experience", URL still `/resume/` so old links work): Experience,
+label "Experience", URL now `/experience/`; `/resume/` redirects there): Experience,
 Education, Skills, in that order. Removed its summary (the home lede covers
 it), its GitHub/LinkedIn/Email line (in the nav) and its Projects list (the
 Projects page owns that). Rule: apart from the home page, each fact lives on
