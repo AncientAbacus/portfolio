@@ -149,3 +149,10 @@ the lede on phones. Résumé and home roles now render bullet points
 (`.role__points`) instead of one paragraph per role, and résumé projects do
 the same; coursework moved to a mono meta line. The CI résumé PDF build and
 the PDF file are removed.
+
+2026-11-22 (latest): the Résumé page is now the **Experience** page (nav
+label "Experience", URL still `/resume/` so old links work): Experience,
+Education, Skills, in that order. Removed its summary (the home lede covers
+it), its GitHub/LinkedIn/Email line (in the nav) and its Projects list (the
+Projects page owns that). Rule: apart from the home page, each fact lives on
+one page only. Home closes with "Want a copy of my résumé? Get in touch".

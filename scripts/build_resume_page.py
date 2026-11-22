@@ -1,6 +1,6 @@
 """Sync resume/index.html and index.html with resume/source/resume.tex.
 
-Rewrites the Summary, Education, Experience, Skills and Projects blocks
+Rewrites the Education, Experience and Skills blocks
 between the <!-- RESUME:*:START --> / <!-- RESUME:*:END --> markers, and the
 title/description of every lib/projects.json entry whose title matches a
 project in the .tex ("Name -- Subtitle" in the .tex is "Name: Subtitle" in
@@ -85,12 +85,6 @@ def parse_skills(tex):
     return out
 
 
-def parse_summary(tex):
-    body = section(tex, "Summary")
-    text, _ = braced(body, body.index(r"\item{") + len(r"\item"))
-    return clean(text)
-
-
 def parse_education(tex):
     body = section(tex, "Education")
     (school, dates, degree, _loc), end = args(body, body.index(r"\resumeSubheading") + len(r"\resumeSubheading"), 4)
@@ -126,25 +120,6 @@ def parse_projects(tex):
 def points(items):
     lis = "\n".join(f"                        <li>{i}</li>" for i in items)
     return f'                    <ul class="role__points">\n{lis}\n                    </ul>'
-
-
-def render_projects(projects):
-    out = []
-    for p in projects:
-        title = p["title"]
-        if p["link"]:
-            title = (f'<a href="{p["link"]}" target="_blank" rel="noopener">{title}'
-                     '<span class="link-mark" aria-hidden="true">↗</span></a>')
-        out.append("\n".join([
-            '                <div class="role">',
-            '                    <div class="role__head">',
-            f'                        <h3 class="role__title">{title}</h3>',
-            f'                        <span class="role__meta">{p["dates"]}</span>',
-            '                    </div>',
-            points(p["items"]),
-            '                </div>',
-        ]))
-    return "\n".join(out)
 
 
 def sync_projects_json(projects):
@@ -239,11 +214,9 @@ def main():
     education = parse_education(tex)
 
     page = PAGE.read_text()
-    page = replace_block(page, "SUMMARY", f"            <p>{parse_summary(tex)}</p>")
     page = replace_block(page, "EDUCATION", education)
     page = replace_block(page, "EXPERIENCE", render_roles(roles, existing_tags(page)))
     page = replace_block(page, "SKILLS", render_skills(skills))
-    page = replace_block(page, "PROJECTS", render_projects(projects))
     PAGE.write_text(page)
 
     home = HOME.read_text()
