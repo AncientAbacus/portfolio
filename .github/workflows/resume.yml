@@ -9,6 +9,8 @@ on:
       - scripts/build_resume_page.py
   workflow_dispatch:
 
+concurrency: resume
+
 permissions:
   contents: write
 

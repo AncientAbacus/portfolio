@@ -138,5 +138,5 @@ no new components), home-page skills, and title-matched descriptions in
 
 2026-11-22: removed the ⌘K "Jump to" palette at Gino's request. Its external
 links (GitHub, LinkedIn, Email) now sit in the masthead link row, so every
-destination is one click away. Résumé page links the CI-built PDF again.
+destination is one click away. The résumé page still has no PDF link.
 Contact form now mails the Gmail address. No token or type changes.
